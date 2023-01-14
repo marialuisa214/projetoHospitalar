@@ -1,11 +1,11 @@
-package controle;
+package model;
 
 public class Prontuario {
 	
 	//ATRIBUTOS
 		private Paciente pacienteVinculado;
 		private String descricaoMedica;
-		private String acompanhamento;  //o que é acompanhamento? descreição do estado do paciente?
+		private String acompanhamento;  //o que é acompanhamento? descrição do estado do paciente?
 		private float peso;
 		private float altura;
 		//private float dataDeInicioProntuario; -> inserir formatação de data!! e colocar ela no construtor

@@ -1,12 +1,12 @@
-package controle;
+package model;
 
 public class Medico extends Funcionario {
 //ATRIBUTOS
 	private String especialidade;
 	
 //CONSTRUTOR	
-	public Medico(String nome, String cpf, char sexo, String usuario, String senha, String especialidade){
-		super(nome, cpf, sexo, usuario, senha); 		
+	public Medico(String nome, String cpf, char sexo, String dataNascimento, String usuario, String senha, String especialidade){
+		super(nome, cpf, sexo, dataNascimento, usuario, senha); 		 		
 		this.especialidade = especialidade;
 	}
 

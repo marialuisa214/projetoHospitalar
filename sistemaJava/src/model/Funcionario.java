@@ -1,4 +1,4 @@
-package controle;
+package model;
 
 public class Funcionario extends Pessoa {
 	
@@ -7,8 +7,8 @@ public class Funcionario extends Pessoa {
 	private String senha;
 	
 //CONSTRUTOR	
-	public Funcionario(String nome, String cpf, char sexo, String usuario, String senha){
-		super(nome, cpf, sexo);
+	public Funcionario(String nome, String cpf, char sexo, String dataNascimento, String usuario, String senha){
+		super(nome, cpf, sexo, dataNascimento);
 		this.usuario = usuario;
 		this.senha = senha;
 	}

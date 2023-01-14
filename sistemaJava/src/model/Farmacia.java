@@ -1,14 +1,14 @@
-package controle;
+package model;
 
 import java.util.List;
 
 public class Farmacia {
 
   //ATRIBUTOS
-  String categoria;
-  List<Medicamento> medicamentos; 
-  int quantidadeMedicamento;
-  Farmaceutico farmaceutico;
+  private String categoria;
+  private List<Medicamento> medicamentos; 
+  private int quantidadeMedicamento;
+  private Farmaceutico farmaceutico;
   
   //CONSTRUTOR
   public Farmacia(String categoria, Farmaceutico farmaceutico, List<Medicamento> medicamentos,
