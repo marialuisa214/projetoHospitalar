@@ -1,15 +1,22 @@
-package controle;
+package model;
 import java.util.ArrayList;
 
 public class Paciente extends Pessoa {
 //ATRIBUTOS	
 	private String patologia;
 	private String tipoSanguineo;
-	private ArrayList<Condicao> listaCondicoes;
+	// private ArrayList<Prontuario> listaProntuario; //*rever isto*/
+	private ArrayList<Entrada> listaEntradas;
 	
-//CONSTRUTOR	
-	public Paciente(String nome, String cpf, char sexo, String patologia, String tipoSanguineo){
-		super(nome, cpf, sexo);
+public ArrayList<Entrada> getListaEntradas() {
+		return listaEntradas;
+	}
+	public void setListaEntradas(ArrayList<Entrada> listaEntradas) {
+		this.listaEntradas = listaEntradas;
+	}
+	//CONSTRUTOR	
+	public Paciente(String nome, String cpf, char sexo, String dataNascimento, String patologia, String tipoSanguineo){
+		super(nome, cpf, sexo, dataNascimento);
 		this.patologia = patologia;
 		this.tipoSanguineo = tipoSanguineo;
 	}
@@ -27,13 +34,4 @@ public class Paciente extends Pessoa {
 	public void setTipoSanguineo(String tipoSanguineo) {
 		this.tipoSanguineo = tipoSanguineo;
 	}
-	public ArrayList<Condicao> getListaCondicoes() {
-		return listaCondicoes;
-	}
-	public void novoRegistro(Condicao candicao) {
-		listaCondicoes.add(candicao);
-	}
-	
-	
-
 }

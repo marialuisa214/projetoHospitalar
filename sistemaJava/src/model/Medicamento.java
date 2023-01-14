@@ -1,4 +1,4 @@
-package controle;
+package model;
 
 public class Medicamento {
 
