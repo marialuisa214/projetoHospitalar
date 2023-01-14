@@ -1,4 +1,4 @@
-package controle;
+package model;
 
 public class Farmaceutico extends Funcionario {
 //ATRIBUTOS
@@ -6,8 +6,8 @@ public class Farmaceutico extends Funcionario {
 	
 	
 //CONSTRUTOR
-	public Farmaceutico(String nome, String cpf, char sexo, String usuario, String senha, int crf){
-		super(nome, cpf, sexo, usuario, senha); 		
+	public Farmaceutico(String nome, String cpf, char sexo, String dataNasciment, String usuario, String senha, int crf){
+		super(nome, cpf, sexo, dataNascimento, usuario, senha); 				
 		this.crf = crf;
 	}
 	
