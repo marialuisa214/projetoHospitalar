@@ -1,39 +1,53 @@
 package model;
 
-import java.util.*;
-
 public class Exame {
     //atributos
-    private String nome;
+    private String nomeExame;
     private String codigo;
     private Funcionario responsavelTecnico;
-
+    private Agenda agenda;
+    
     //construtor
-    public Exame(String nome, String codigo, Funcionario responsavelTecnico){
-        this.nome = nome;
+    public Exame(String nomeExame, String codigo, Funcionario responsavelTecnico){
+        this.nomeExame = nomeExame;
         this.codigo = codigo;
         this.responsavelTecnico = responsavelTecnico;
     }
-
     //métodos 
 
-    public String getNome() {
-        return nome;
-      }
-    public void setNome(String nome) {
-        this.nome = nome;
-      }
+    public String getNomeExame() {
+        return nomeExame;
+    }
+    public void setNomeExame(String nomeExame) {
+        this.nomeExame = nomeExame;
+    }
     public String getCodigo() {
         return codigo;
-      }  
-    public void setCodigo() {
-        this.codigo = codigo;
-      }
-    public Funcionario getResponsavelTecnico(){
-        return responsavelTecnico;
-      }  
-    public Funcionario setResponsavelTecnico(){
-        this.responsavelTecnico;
     }  
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+    public Funcionario getResponsavelTecnico() {
+      return responsavelTecnico;
+    }
+
+    public void setResponsavelTecnico(Funcionario responsavelTecnico) {
+      this.responsavelTecnico = responsavelTecnico;
+    }
+
+    public Agenda getAgenda() {
+        return agenda;
+    }
+
+    public void setAgenda(Agenda agenda) {
+        this.agenda = agenda;
+    }
+
+    private Prontuario prontuario;
+
+    public Prontuario getProntuario() {
+        return prontuario;
+    }
+
 
 }

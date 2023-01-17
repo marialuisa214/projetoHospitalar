@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Prontuario {
 	
 	//ATRIBUTOS
@@ -8,11 +10,11 @@ public class Prontuario {
 		private String acompanhamento;  //o que é acompanhamento? descrição do estado do paciente?
 		private float peso;
 		private float altura;
+		private ArrayList<Consulta> historicoConsultas;
 		//private float dataDeInicioProntuario; -> inserir formatação de data!! e colocar ela no construtor
 		//data de atualização do prontuario!
-		
-		
-	//CONSTRUTOR	
+
+		//CONSTRUTOR	
 		public Prontuario(Paciente pacienteVinculado, String descricaoMedica, float peso,float altura) {
 			this.pacienteVinculado = pacienteVinculado;
 			this.descricaoMedica = descricaoMedica;
@@ -59,6 +61,14 @@ public class Prontuario {
 
 		public void setAltura(float altura) {
 			this.altura = altura;
+		}
+
+		public ArrayList<Consulta> getHistoricoConsultas() {
+			return historicoConsultas;
+		}
+
+		public void setHistoricoConsultas(ArrayList<Consulta> historicoConsultas) {
+			this.historicoConsultas = historicoConsultas;
 		}
 		
 		

@@ -12,5 +12,7 @@ public class Atendente extends Funcionario{
 //METODO
 	public Paciente cadastraPaciente(String nome, String cpf, char sexo, String dataNascimento, String patologia, String tipoSanguineo) {
 		return new Paciente(nome, cpf, sexo, dataNascimento, patologia, tipoSanguineo);
-}
+	}
+
+	
 }

@@ -13,7 +13,10 @@ public class Agenda {
   private Medico medico;
   private String horarioInicio;
   private String horarioFim;
+  private Exame exame;
   private int quantidadeConsultas;
+  //criar lista com os horarios, a parti do tempo disponivel na agenda do médico [1,2,3,4,5,6]
+  // espaços a serem preencido por exame ou consulta
 
   //METODOS
   public Calendar getDia() {
@@ -43,7 +46,7 @@ public class Agenda {
   public int getQuantidadeConsultas(){
     return quantidadeConsultas;
   }
-
+ 
   public int diferencaHoras(String horarioInicio, String horarioFim) throws ParseException{
 
     DateFormat df = new SimpleDateFormat ("dd/MM/yyyy hh:mm");
@@ -65,5 +68,12 @@ public class Agenda {
     int consultas = (diferencaHoras(h, t) * 60) / 30;
     this.quantidadeConsultas = consultas;
 
+  }
+
+  public Exame getExame() {
+    return exame;
+  }
+  public void setExame(Exame exame) {
+    this.exame = exame;
   }
 }
