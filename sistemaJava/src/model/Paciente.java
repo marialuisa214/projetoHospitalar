@@ -14,7 +14,7 @@ public ArrayList<Entrada> getListaEntradas() {
 	public void setListaEntradas(ArrayList<Entrada> listaEntradas) {
 		this.listaEntradas = listaEntradas;
 	}
-	//CONSTRUTOR	
+//CONSTRUTOR	
 	public Paciente(String nome, String cpf, char sexo, String dataNascimento, String patologia, Prontuario prontuario){
 		super(nome, cpf, sexo, dataNascimento);
 		this.patologia = patologia; 

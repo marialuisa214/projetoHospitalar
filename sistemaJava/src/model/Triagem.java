@@ -7,6 +7,8 @@ public class Triagem {
     private String descricao;
     private String gravidade;
     private Entrada entrada;
+    private Enfermeiro enfermeiro;
+
 
     //CONSTRUTOR
     public Triagem(String descricao, String gravidade, Entrada entrada) {
@@ -43,15 +45,23 @@ public class Triagem {
         this.descricao = descricao;
     }
 
-    // public void cadastraProntuario(Float altura, Float peso, String acompanhamento ){
-    //     if (this.pacienteVinculado.getProntuario().getValidado() == false){
-    //         this.pacienteVinculado.getProntuario().setAcompanhamento(acompanhamento);
-    //         this.pacienteVinculado.getProntuario().setPeso(peso);
-    //         this.pacienteVinculado.getProntuario().setAltura(altura);
+    public Enfermeiro getEnfermeiro() {
+        return enfermeiro;
+    }
+    public void setEnfermeiro(Enfermeiro enfermeiro) {
+        this.enfermeiro = enfermeiro;
+    }
 
-    //         this.pacienteVinculado.getProntuario().setValidado() = true;
+    public void cadastraProntuario(Float altura, Float peso, String acompanhamento ){
+    //quando o paciente ainda não possui prontuario preenchido:
+        if (this.pacienteVinculado.getProntuario().getValidado() == false){
+            this.pacienteVinculado.getProntuario().setAcompanhamento(acompanhamento);
+            this.pacienteVinculado.getProntuario().setPeso(peso);
+            this.pacienteVinculado.getProntuario().setAltura(altura);
 
-    //     }
+            this.pacienteVinculado.getProntuario().setValidado(true);
+        }
+    }
     
     
 }

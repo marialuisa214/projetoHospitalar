@@ -4,62 +4,78 @@ import java.util.ArrayList;
 
 public class Prontuario {
 	
-	//ATRIBUTOS
-		private String acompanhamento;  //descrição médica
-		private float peso;
-		private float altura;
-		// private boolean validado = false;
-		private ArrayList<Consulta> historicoConsultas;
-		private ArrayList<Exame> historicoExame;
-		//private float dataDeInicioProntuario; -> inserir formatação de data!! e colocar ela no construtor
+//ATRIBUTOS
+	private Paciente paciente;
+	private String acompanhamento;  //descrição médica
+	private float peso;
+	private float altura;
+	private boolean validado;
+	private ArrayList<Consulta> historicoConsultas;
+	private ArrayList<Exame> historicoExame;
+	//private float dataDeInicioProntuario; -> inserir formatação de data!! e colocar ela no construtor
 
-	//CONSTRUTOR
+//CONSTRUTOR
 
-		//METODOS	
-		public String getAcompanhamento() {
-			return acompanhamento;
-		}
+public Prontuario(){
+	this.validado = false; 
+	//ou seja, sempre ao criar um prontuario ele vem sem os dados, 
+		// só podendo ser passar a ser 'true' quando preenchido por outra classe
 
-		public void setAcompanhamento(String acompanhamento) {
-			this.acompanhamento = acompanhamento;
-		}
+}		
 
-		public float getPeso() {
-			return peso;
-		}
+//METODOS	
 
-		public void setPeso(float peso) {
-			this.peso = peso;
-		}
+	public Paciente getPaciente() {
+		return paciente;
+	}
+	public void setPaciente(Paciente paciente) {
+		this.paciente = paciente;
+	}
 
-		public float getAltura() {
-			return altura;
-		}
+	public String getAcompanhamento() {
+		return acompanhamento;
+	}
 
-		public void setAltura(float altura) {
-			this.altura = altura;
-		}
+	public void setAcompanhamento(String acompanhamento) {
+		this.acompanhamento = acompanhamento;
+	}
 
-		// public boolean isValidado() {
-		// 	return validado;
-		// }
+	public float getPeso() {
+		return peso;
+	}
 
-		// public void setValidado(boolean validado) {
-		// 	this.validado = validado;
-		// }
+	public void setPeso(float peso) {
+		this.peso = peso;
+	}
 
-		public ArrayList<Consulta> getHistoricoConsultas() {
-			return historicoConsultas;
-		}
+	public float getAltura() {
+		return altura;
+	}
 
-		public ArrayList<Exame> getHistoricoExame() {
-			return historicoExame;
-		}
+	public void setAltura(float altura) {
+		this.altura = altura;
+	}
 
-	// inserir item por item por item dentro do array 
-		// public void setHistoricoConsultas(ArrayList<Consulta> historicoConsultas) {
-		// 	this.historicoConsultas = historicoConsultas;
-		// }
+	public boolean getValidado() {
+		return validado;
+	}
+
+	public void setValidado(boolean validado) {
+		this.validado = validado;
+	}
+
+	public ArrayList<Consulta> getHistoricoConsultas() {
+		return historicoConsultas;
+	}
+	public void adicionaConsulta(Consulta consulta){
+		this.historicoConsultas.add(consulta);
+   }
+	public ArrayList<Exame> getHistoricoExame() {
+		return historicoExame;
+	}
+	public void adicionaExame(Exame exame){
+		this.historicoExame.add(exame);
+   }
 		
 		
 	}
