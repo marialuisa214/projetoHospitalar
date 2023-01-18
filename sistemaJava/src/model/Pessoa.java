@@ -2,7 +2,7 @@ package model;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-public  class Pessoa {
+public abstract class Pessoa {
 	
 //ATRIBUTOS
 	private String nome;

@@ -3,9 +3,9 @@ import java.util.ArrayList;
 
 public class Paciente extends Pessoa {
 //ATRIBUTOS	
-	private String patologia;
+	private String patologia; //cormobidade, restrição médica
 	private String tipoSanguineo;
-	// private ArrayList<Prontuario> listaProntuario; //*rever isto*/
+	private Prontuario prontuario;
 	private ArrayList<Entrada> listaEntradas;
 	
 public ArrayList<Entrada> getListaEntradas() {
@@ -15,10 +15,10 @@ public ArrayList<Entrada> getListaEntradas() {
 		this.listaEntradas = listaEntradas;
 	}
 	//CONSTRUTOR	
-	public Paciente(String nome, String cpf, char sexo, String dataNascimento, String patologia, String tipoSanguineo){
+	public Paciente(String nome, String cpf, char sexo, String dataNascimento, String patologia, Prontuario prontuario){
 		super(nome, cpf, sexo, dataNascimento);
-		this.patologia = patologia;
-		this.tipoSanguineo = tipoSanguineo;
+		this.patologia = patologia; 
+		this.prontuario = new Prontuario();
 	}
 //METODOS
 	public String getPatologia() {
@@ -34,4 +34,12 @@ public ArrayList<Entrada> getListaEntradas() {
 	public void setTipoSanguineo(String tipoSanguineo) {
 		this.tipoSanguineo = tipoSanguineo;
 	}
+	public Prontuario getProntuario() {
+		return prontuario;
+	}
+	public void setProntuario(Prontuario prontuario) {
+		this.prontuario = prontuario;
+	}
+
+
 }

@@ -5,40 +5,17 @@ import java.util.ArrayList;
 public class Prontuario {
 	
 	//ATRIBUTOS
-		private Paciente pacienteVinculado;
-		private String descricaoMedica;
-		private String acompanhamento;  //o que é acompanhamento? descrição do estado do paciente?
+		private String acompanhamento;  //descrição médica
 		private float peso;
 		private float altura;
+		// private boolean validado = false;
 		private ArrayList<Consulta> historicoConsultas;
+		private ArrayList<Exame> historicoExame;
 		//private float dataDeInicioProntuario; -> inserir formatação de data!! e colocar ela no construtor
-		//data de atualização do prontuario!
 
-		//CONSTRUTOR	
-		public Prontuario(Paciente pacienteVinculado, String descricaoMedica, float peso,float altura) {
-			this.pacienteVinculado = pacienteVinculado;
-			this.descricaoMedica = descricaoMedica;
-			this.peso = peso;
-			this.altura = altura;
-		}
+	//CONSTRUTOR
 
-	//METODOS	
-		public Paciente getPacienteVinculado() {
-			return pacienteVinculado;
-		}
-
-		public void setPacienteVinculado(Paciente pacienteVinculado) {
-			this.pacienteVinculado = pacienteVinculado;
-		}
-
-		public String getDescricaoMedica() {
-			return descricaoMedica;
-		}
-
-		public void setDescricaoMedica(String descricaoMedica) {
-			this.descricaoMedica = descricaoMedica;
-		}
-
+		//METODOS	
 		public String getAcompanhamento() {
 			return acompanhamento;
 		}
@@ -63,13 +40,26 @@ public class Prontuario {
 			this.altura = altura;
 		}
 
+		// public boolean isValidado() {
+		// 	return validado;
+		// }
+
+		// public void setValidado(boolean validado) {
+		// 	this.validado = validado;
+		// }
+
 		public ArrayList<Consulta> getHistoricoConsultas() {
 			return historicoConsultas;
 		}
 
-		public void setHistoricoConsultas(ArrayList<Consulta> historicoConsultas) {
-			this.historicoConsultas = historicoConsultas;
+		public ArrayList<Exame> getHistoricoExame() {
+			return historicoExame;
 		}
+
+	// inserir item por item por item dentro do array 
+		// public void setHistoricoConsultas(ArrayList<Consulta> historicoConsultas) {
+		// 	this.historicoConsultas = historicoConsultas;
+		// }
 		
 		
 	}
