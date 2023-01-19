@@ -1,5 +1,4 @@
 package model;
-import java.util.ArrayList;
 
 public class Paciente extends Pessoa {
 //ATRIBUTOS	
@@ -10,7 +9,7 @@ public class Paciente extends Pessoa {
 	public Paciente(String nome, String cpf, char sexo, String dataNascimento, String patologia){
 		super(nome, cpf, sexo, dataNascimento);
 		this.patologia = patologia; 
-		//this.prontuario = new Prontuario();
+		this.prontuario = new Prontuario();
 	}
 //METODOS
 

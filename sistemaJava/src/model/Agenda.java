@@ -4,20 +4,25 @@ import java.util.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class Agenda {
 
   //ATRIBUTOS
-  private Calendar dia;
+  private Calendar dia; //colocar essa porcaria no formato certo
   private Medico medico;
   private String horarioInicio;
   private String horarioFim;
   private Exame exame;
   private int quantidadeConsultas;
+  private ArrayList<Consulta> listaConsultas;
+
+
   //criar lista com os horarios, a parti do tempo disponivel na agenda do médico [1,2,3,4,5,6]
   // espaços a serem preencido por exame ou consulta
 
+  
   //METODOS
   public Calendar getDia() {
     return dia;
@@ -76,4 +81,12 @@ public class Agenda {
   public void setExame(Exame exame) {
     this.exame = exame;
   }
+
+  public ArrayList<Consulta> getListaConsultas() {
+    return listaConsultas;
+  }
+  public void adicionaConsulta(Consulta consulta){
+		this.listaConsultas.add(consulta);
+   }
+
 }
