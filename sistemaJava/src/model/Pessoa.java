@@ -5,17 +5,17 @@ import java.util.*;
 public abstract class Pessoa {
 	
 //ATRIBUTOS
-	private String nome;
-	private String cpf;
-	private char sexo;
-	private long idade;
-	private String dataNascimento;
+	protected String nome;
+	protected String cpf;
+	protected char sexo;
+	protected long idade;
+	protected String dataNascimento;
 
 
 //CONSTRUTOR
 	public Pessoa(String nome, String cpf, char sexo, String dataNascimento) {
-		this.nome =nome;
-		this.cpf =cpf;
+		this.nome = nome;
+		this.cpf = cpf;
 		this.sexo = sexo;
 		this.dataNascimento = dataNascimento;
 		calculaIdade();

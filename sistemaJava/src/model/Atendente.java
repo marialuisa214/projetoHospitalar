@@ -10,8 +10,8 @@ public class Atendente extends Funcionario{
 	}
 	
 //METODO
-	public Paciente cadastraPaciente(String nome, String cpf, char sexo, String dataNascimento, String patologia, Prontuario prontuario) {
-		return new Paciente(nome, cpf, sexo, dataNascimento, patologia, prontuario);
+	public Paciente cadastraPaciente(String nome, String cpf, char sexo, String dataNascimento, String patologia) {
+		return new Paciente(nome, cpf, sexo, dataNascimento, patologia);
 	}
 
 	
