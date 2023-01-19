@@ -3,6 +3,7 @@ import model.*;
 
 public class ControleFuncionarios {
 
+//METODOS
   //ADMINISTRADOR
   public Medico cadastraMedico(String nome, String cpf, char sexo, String dataNascimento, String usuario, 
 	String senha, String especialidade) {
@@ -26,4 +27,5 @@ public class ControleFuncionarios {
   public Paciente cadastraPaciente(String nome, String cpf, char sexo, String dataNascimento, String patologia) {
     return new Paciente(nome, cpf, sexo, dataNascimento, patologia);
   }
+
 }
