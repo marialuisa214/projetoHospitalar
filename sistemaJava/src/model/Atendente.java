@@ -14,5 +14,10 @@ public class Atendente extends Funcionario{
 		return new Paciente(nome, cpf, sexo, dataNascimento, patologia);
 	}
 
+	public void agendaConsulta(Paciente paciente, Agenda agenda, Consulta consulta){
+		paciente.getProntuario().adicionaConsulta(consulta);
+		agenda.adicionaConsulta(consulta);
+	}
+	
 	
 }

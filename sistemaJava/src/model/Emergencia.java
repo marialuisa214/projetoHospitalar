@@ -6,8 +6,8 @@ public class Emergencia extends Consulta {
     private Triagem triagem;
 
     // CONSTRUTOR
-    public Emergencia(String codigo, String descricaoMedica, Agenda agenda, Prontuario prontuario, String codigoChamada, Triagem triagem) {
-        super(codigo, descricaoMedica, agenda, prontuario);
+    public Emergencia(String codigo, String codigoChamada, Triagem triagem) {
+        super(codigo);
         this.codigoChamada = codigoChamada;
         this.triagem = triagem;
     }
