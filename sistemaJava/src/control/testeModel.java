@@ -1,10 +1,6 @@
 package control;
 
-import model.Agenda;
-import model.Atendente;
-import model.Marcada;
-import model.Medico;
-import model.Paciente;
+import model.*;
 
 public class testeModel {
   public static void main(String[] args){

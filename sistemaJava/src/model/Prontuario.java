@@ -10,8 +10,8 @@ public class Prontuario {
 	private float peso;
 	private float altura;
 	private boolean validado;
-	private ArrayList<Consulta> historicoConsultas;
-	private ArrayList<Exame> historicoExame;
+	private ArrayList<Consulta> historicoConsultas = new ArrayList<>();
+	private ArrayList<Exame> historicoExame =  new ArrayList<>();
 	//private float dataDeInicioProntuario; -> inserir formatação de data!! e colocar ela no construtor
 
 //CONSTRUTOR

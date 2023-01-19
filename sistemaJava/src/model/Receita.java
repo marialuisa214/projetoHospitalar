@@ -1,6 +1,7 @@
 package model;
 
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Receita {
@@ -12,7 +13,7 @@ public class Receita {
   private String descricaoMed;
   private String posologia;
   private String assinatura;
-  private List<Medicamento> medicamentos;
+  private List<Medicamento> medicamentos = new ArrayList<>();
 
   //METODOS
   public Date getDataPedido() {

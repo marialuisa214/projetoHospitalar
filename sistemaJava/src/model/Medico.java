@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Medico extends Funcionario {
 //ATRIBUTOS
 	private String especialidade;
-	private ArrayList<Agenda> listaAgenda;
+	private ArrayList<Agenda> listaAgenda = new ArrayList<>();
 
 
 
