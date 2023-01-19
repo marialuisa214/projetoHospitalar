@@ -4,6 +4,7 @@ public class Exame {
     //atributos
     private String nomeExame;
     private String codigo;
+    private Prontuario prontuario;
     private Funcionario responsavelTecnico;
     private Agenda agenda;
     
@@ -43,7 +44,6 @@ public class Exame {
         this.agenda = agenda;
     }
 
-    private Prontuario prontuario;
 
     public Prontuario getProntuario() {
         return prontuario;

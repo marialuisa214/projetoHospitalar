@@ -49,16 +49,16 @@ public class Agenda {
  
   public int diferencaHoras(String horarioInicio, String horarioFim) throws ParseException{
 
-    DateFormat df = new SimpleDateFormat ("dd/MM/yyyy hh:mm");
+  DateFormat df = new SimpleDateFormat ("dd/MM/yyyy hh:mm");
 
-    Date d1 = df.parse (horarioInicio);
-    Date d2 = df.parse (horarioFim);
+  Date d1 = df.parse (horarioInicio);
+  Date d2 = df.parse (horarioFim);
 
 
-   long diff = d1.getTime() - d2.getTime();
-   int diffHours = (int) (diff /  (60 * 60 * 1000) % 24);
+  long diff = d1.getTime() - d2.getTime();
+  int diffHours = (int) (diff /  (60 * 60 * 1000) % 24);
 
-   return diffHours;
+  return diffHours;
   }
 
   public void quantidadeConsultas() throws ParseException{

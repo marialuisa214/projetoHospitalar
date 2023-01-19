@@ -1,6 +1,6 @@
 package model;
 import java.util.*;
-import controler.*;
+import control.*;
 
 public class testeModel {
   public static void main(String[] args){
