@@ -8,6 +8,7 @@ public class Enfermeiro extends Funcionario {
 	}
 //METODO
 	//fazAcompanhamento
+	//faz prontuario
 	
 
 }

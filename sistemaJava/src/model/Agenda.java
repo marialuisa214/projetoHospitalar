@@ -16,7 +16,7 @@ public class Agenda {
   private String horarioFim;
   private Exame exame;
   private int quantidadeConsultas;
-  private ArrayList<Consulta> listaConsultas;
+  private ArrayList<Consulta> listaConsultas = new ArrayList<>() ;
 
 
   //criar lista com os horarios, a parti do tempo disponivel na agenda do médico [1,2,3,4,5,6]

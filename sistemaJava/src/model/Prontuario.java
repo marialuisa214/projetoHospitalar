@@ -15,8 +15,7 @@ public class Prontuario {
 	//private float dataDeInicioProntuario; -> inserir formatação de data!! e colocar ela no construtor
 
 //CONSTRUTOR
-
-public Prontuario(){
+	public Prontuario(){
 	this.validado = false; 
 	//ou seja, sempre ao criar um prontuario ele vem sem os dados, 
 		// só podendo ser passar a ser 'true' quando preenchido por outra classe
@@ -68,13 +67,13 @@ public Prontuario(){
 		return historicoConsultas;
 	}
 	public void adicionaConsulta(Consulta consulta){
-		this.historicoConsultas.add(consulta);
+		historicoConsultas.add(consulta);
    }
 	public ArrayList<Exame> getHistoricoExame() {
 		return historicoExame;
 	}
 	public void adicionaExame(Exame exame){
-		this.historicoExame.add(exame);
+		historicoExame.add(exame);
    }
 		
 		

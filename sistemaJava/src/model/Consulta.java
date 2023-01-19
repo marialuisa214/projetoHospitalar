@@ -3,8 +3,8 @@ package model;
 public abstract class Consulta {
 
     //ATRIBUTOS
-    private String codigo;
-    private String descricaoMedica;
+    protected String codigo;
+    protected String descricaoMedica;
     
     // private horario; horario em que a colsulta será realizada
 
