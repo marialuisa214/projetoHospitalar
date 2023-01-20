@@ -10,14 +10,13 @@ public abstract class Consulta {
 
     //ambas as consultas, tanto a de emergencia e a marcada, não possuem hora de inicio e fim?
 
-
     //CONSTRUTOR
-    public Consulta(String codigo ) { 
+    public Consulta(String codigo) {
         this.codigo = codigo;
     }
-    
 
     //METODOS
+    
     public String getCodigo() {
         return codigo;
     }
@@ -30,7 +29,5 @@ public abstract class Consulta {
 
     public void setDescricaoMedica(String descricaoMedica) {
         this.descricaoMedica = descricaoMedica;
-        
     }
-    
 }

@@ -7,13 +7,12 @@ public class Marcada extends Consulta {
     private String horarioFim;
 
     //CONSTRUTOR
-    public Marcada(String codigo, String horarioInicio, String horarioFim){
+    
+    public Marcada(String codigo, String horarioInicio, String horarioFim) {
         super(codigo);
         this.horarioInicio = horarioInicio;
         this.horarioFim = horarioFim;
-
     }
-    
     // METODOS
     public String getHorarioFim() {
         return horarioFim;

@@ -6,12 +6,12 @@ public class Emergencia extends Consulta {
     private Triagem triagem;
 
     // CONSTRUTOR
+
     public Emergencia(String codigo, String codigoChamada, Triagem triagem) {
         super(codigo);
         this.codigoChamada = codigoChamada;
         this.triagem = triagem;
     }
-
     // METODOS
     public Triagem getTriagem() {
         return triagem;

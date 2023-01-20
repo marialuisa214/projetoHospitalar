@@ -1,6 +1,7 @@
 package model;
 
 public class Paciente extends Pessoa {
+
 //ATRIBUTOS	
 	private String patologia; //cormobidade, restrição médica
 	private Prontuario prontuario;
