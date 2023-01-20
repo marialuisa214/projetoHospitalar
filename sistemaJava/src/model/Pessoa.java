@@ -1,18 +1,18 @@
 package model;
+
 import java.text.SimpleDateFormat;
 import java.util.*;
 
 public abstract class Pessoa {
-	
-//ATRIBUTOS
+
+	// ATRIBUTOS
 	protected String nome;
 	protected String cpf;
 	protected char sexo;
 	protected long idade;
 	protected String dataNascimento;
 
-
-//CONSTRUTOR
+	// CONSTRUTOR
 	public Pessoa(String nome, String cpf, char sexo, String dataNascimento) {
 		this.nome = nome;
 		this.cpf = cpf;
@@ -21,12 +21,11 @@ public abstract class Pessoa {
 		calculaIdade();
 	}
 
-//MÉTODOS		
-	
+	// MÉTODOS
 	public String getNome() {
 		return nome;
 	}
-	
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
@@ -34,18 +33,25 @@ public abstract class Pessoa {
 	public String getCpf() {
 		return cpf;
 	}
+
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
+
 	public char getSexo() {
 		return sexo;
 	}
+
 	public void setSexo(char sexo) {
 		this.sexo = sexo;
 	}
-		
+
 	public long getIdade() {
 		return idade;
+	}
+
+	public void setIdade(long idade) {
+		this.idade = idade;
 	}
 
 	public String getDataNascimento() {
@@ -55,8 +61,8 @@ public abstract class Pessoa {
 	public void setDataNascimento(String dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
-	
-	public void calculaIdade(){
+
+	public void calculaIdade() {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyy");
 		Date dataBase = null;
 		Date atual = null;
@@ -64,16 +70,18 @@ public abstract class Pessoa {
 		try {
 			dataBase = sdf.parse(this.dataNascimento);
 			atual = sdf.parse("06/01/2023");
-		} catch (java.text.ParseException e) {return;}
-		
+		} catch (java.text.ParseException e) {
+			return;
+		}
+
 		long diferencaMS = atual.getTime() - dataBase.getTime();
 		long diferencaSegundos = diferencaMS / 1000;
 		long diferencaMinutos = diferencaSegundos / 60;
-		long diferencaHoras =  diferencaMinutos / 60;
+		long diferencaHoras = diferencaMinutos / 60;
 		long diferencaDias = diferencaHoras / 24;
 		long diferencaMeses = diferencaDias / 30;
-		long diferencaAnos =  diferencaMeses / 12 ;
-		this.idade =  diferencaAnos;
+		long diferencaAnos = diferencaMeses / 12;
+		this.idade = diferencaAnos;
 	}
-	
+
 }
