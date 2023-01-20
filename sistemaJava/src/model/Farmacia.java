@@ -1,12 +1,13 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Farmacia {
 
   //ATRIBUTOS
   private String categoria;
-  private List<Medicamento> medicamentos; 
+  private ArrayList<Medicamento> listaMedicamento = new ArrayList<>();
   private int quantidadeMedicamento;
   private Farmaceutico farmaceutico;
   
@@ -15,7 +16,6 @@ public class Farmacia {
       int quantidadeMedicamento) {
     this.categoria = categoria;
     this.farmaceutico = farmaceutico;
-    this.medicamentos = medicamentos;
     this.quantidadeMedicamento = quantidadeMedicamento;
   } 
 
@@ -32,11 +32,8 @@ public class Farmacia {
   public void setFarmaceutico(Farmaceutico farmaceutico) {
     this.farmaceutico = farmaceutico;
   }
-  public List<Medicamento> getMedicamentos() {
-    return medicamentos;
-  }
-  public void setMedicamentos(List<Medicamento> medicamentos) {
-    this.medicamentos = medicamentos;
+  public List<Medicamento> getListaMedicamento() {
+    return listaMedicamento;
   }
   public int getQuantidadeMedicamento() {
     return quantidadeMedicamento;
