@@ -1,15 +1,11 @@
 package view;
-
-
 public class TelaLogin extends javax.swing.JFrame{
+
     public TelaLogin() {
         initComponents();
     }
-
-    @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+                        
     private void initComponents() {
-        buttonGroup1 = new javax.swing.ButtonGroup();
         passwordSenha = new javax.swing.JPasswordField();
         textFieldUsuario = new javax.swing.JTextField();
         labelUsuario = new javax.swing.JLabel();
@@ -148,7 +144,6 @@ public class TelaLogin extends javax.swing.JFrame{
 
     // Variables declaration - do not modify                     
     private javax.swing.JButton buttonEntrar;
-    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JLabel labelLogin;
     private javax.swing.JLabel labelSenha;
@@ -160,6 +155,3 @@ public class TelaLogin extends javax.swing.JFrame{
     private javax.swing.JTextField textFieldUsuario;
     // End of variables declaration                   
 }
-
-
-    
