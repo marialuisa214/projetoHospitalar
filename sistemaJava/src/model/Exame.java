@@ -43,8 +43,7 @@ public class Exame {
     public void setAgenda(Agenda agenda) {
         this.agenda = agenda;
     }
-
-
+    
     public Prontuario getProntuario() {
         return prontuario;
     }
