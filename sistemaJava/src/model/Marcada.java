@@ -1,19 +1,39 @@
 package model;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Marcada extends Consulta {
 
     // ATRIBUTOS
+    private Date dia;
     private String horarioInicio; //ajustar formataçao das horas hein!!
     private String horarioFim;
 
     //CONSTRUTOR
     
-    public Marcada(String codigo, String horarioInicio, String horarioFim) {
-        super(codigo);
+    public Marcada(String codigo, String horarioInicio, String horarioFim, Paciente paciente) {
+        super(codigo,paciente);
         this.horarioInicio = horarioInicio;
         this.horarioFim = horarioFim;
     }
     // METODOS
+
+    public Date getDia() {
+        return dia;
+    }
+    public void setDia(String dia) {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyy");
+		Date dataBase = null;
+
+		try {
+			dataBase = sdf.parse(dia);
+		} catch (java.text.ParseException e) {
+			return;
+		}
+		this.dia = dataBase;
+    }
+
     public String getHorarioFim() {
         return horarioFim;
     }

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import model.*;
 
 public class ControleDados {
-    ArrayList<Medico> bancoMedicos;
+    ArrayList<Medico> bancoMedicos  = new ArrayList<>();;
 
     public ArrayList<Medico> getBancoMedicos() {
         return bancoMedicos;

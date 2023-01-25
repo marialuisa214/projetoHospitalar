@@ -1,10 +1,12 @@
 package view;
 
-import control.ControleDados;
+import control.*;
+import model.*;
 
 public class TelaLogin extends javax.swing.JFrame {
-    public TelaLogin() {
+    public TelaLogin(ControleDados controle) {
         initComponents();
+        this.controle = controle;
     }
                          
     private void initComponents() {
@@ -146,10 +148,15 @@ public class TelaLogin extends javax.swing.JFrame {
     private void botaoEntrarActionPerformed(java.awt.event.ActionEvent evt) {                                            
         
         if(radioMedico.isSelected()){
-            if(textUsuario.getText().equals("Ana") && passwordSenha.getText().equals("123")){
-                new TelaPrincipalMedico().setVisible(true);
+            for(Medico m : this.controle.getBancoMedicos()){
+                if(textUsuario.getText().equals(m.getUsuario()) && passwordSenha.getText().equals(m.getSenha())){
+                new TelaPrincipalMedico(controle, m).setVisible(true);
                 this.dispose();
             }
+            System.out.print(m.getUsuario());
+        }
+
+            
         }else if(radioAdm.isSelected()){
          
         }else if(radioAtendente.isSelected()){
@@ -166,14 +173,7 @@ public class TelaLogin extends javax.swing.JFrame {
     }                                           
 
     
-    public static void main(String args[]) {
-        
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TelaLogin().setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify                     
     private javax.swing.JButton botaoEntrar;
@@ -190,9 +190,5 @@ public class TelaLogin extends javax.swing.JFrame {
     // End of variables declaration     
     private ControleDados controle;
 
-    //CONSTRUTOR
-    public TelaLogin(ControleDados controle){
-        this.controle = controle;
-
-    }
+    
 }

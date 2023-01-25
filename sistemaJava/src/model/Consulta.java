@@ -3,16 +3,15 @@ package model;
 public abstract class Consulta {
 
     //ATRIBUTOS
+    protected Paciente paciente;
     protected String codigo;
     protected String descricaoMedica;
     
-    // private horario; horario em que a colsulta será realizada
-
-    //ambas as consultas, tanto a de emergencia e a marcada, não possuem hora de inicio e fim?
 
     //CONSTRUTOR
-    public Consulta(String codigo) {
+    public Consulta(String codigo, Paciente paciente) {
         this.codigo = codigo;
+        this.paciente = paciente;
     }
 
     //METODOS
@@ -30,4 +29,11 @@ public abstract class Consulta {
     public void setDescricaoMedica(String descricaoMedica) {
         this.descricaoMedica = descricaoMedica;
     }
+    public Paciente getPaciente() {
+        return paciente;
+    }
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
+    }
+
 }

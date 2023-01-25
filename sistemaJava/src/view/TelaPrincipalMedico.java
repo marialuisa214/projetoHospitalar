@@ -1,8 +1,18 @@
 package view;
 
+import control.*;
+import model.*;
+
 public class TelaPrincipalMedico extends javax.swing.JFrame { 
-    public TelaPrincipalMedico() {
+
+
+
+    public TelaPrincipalMedico(ControleDados controle, Medico m) {
+        this.medico = m;
+        this.controle = controle;
         initComponents();
+
+        tabelaConsultas.setModel(tabela);
     }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
@@ -13,7 +23,7 @@ public class TelaPrincipalMedico extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabelaConsultas = new javax.swing.JTable();
         buttonRelatorioConsulta = new javax.swing.JButton();
         buttonMundancaHorario = new javax.swing.JButton();
         buttonRelatorioExame = new javax.swing.JButton();
@@ -23,7 +33,7 @@ public class TelaPrincipalMedico extends javax.swing.JFrame {
 
         labelCrm.setFont(new java.awt.Font("Gujarati MT", 0, 8)); // NOI18N
         labelCrm.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelCrm.setText("CRM");
+        labelCrm.setText(medico.getCrm());
 
         buttonSair.setBackground(new java.awt.Color(204, 153, 255));
         buttonSair.setFont(new java.awt.Font("Gujarati MT", 1, 13)); // NOI18N
@@ -37,11 +47,11 @@ public class TelaPrincipalMedico extends javax.swing.JFrame {
 
         labelNomeMedico.setFont(new java.awt.Font("Gujarati MT", 0, 13)); // NOI18N
         labelNomeMedico.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelNomeMedico.setText("nome_do_medico");
+        labelNomeMedico.setText(medico.getNome());
 
         jLabel3.setText("Agenda de Consultas e Exames:");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaConsultas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -52,7 +62,8 @@ public class TelaPrincipalMedico extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tabelaConsultas);
+
 
         buttonRelatorioConsulta.setBackground(new java.awt.Color(204, 204, 255));
         buttonRelatorioConsulta.setFont(new java.awt.Font("Gujarati MT", 0, 14)); // NOI18N
@@ -149,7 +160,9 @@ public class TelaPrincipalMedico extends javax.swing.JFrame {
         pack();
     }// </editor-fold>                        
 
-    private void buttonSairActionPerformed(java.awt.event.ActionEvent evt) {                                           
+    private void buttonSairActionPerformed(java.awt.event.ActionEvent evt) {  
+        new TelaLogin(controle);
+        this.dispose();                                         
     }                                          
 
     private void buttonMundancaHorarioActionPerformed(java.awt.event.ActionEvent evt) {                                                      
@@ -162,14 +175,7 @@ public class TelaPrincipalMedico extends javax.swing.JFrame {
     }                                                    
 
     
-    public static void main(String args[]) {
-        
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TelaPrincipalMedico().setVisible(true);
-            }
-        });
-    }
+    
     // Variables declaration - do not modify                     
     private javax.swing.JButton buttonMundancaHorario;
     private javax.swing.JButton buttonRelatorioConsulta;
@@ -178,10 +184,14 @@ public class TelaPrincipalMedico extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tabelaConsultas;
     private javax.swing.JLabel labelCrm;
     private javax.swing.JLabel labelNomeMedico;
-    // End of variables declaration                   
+    // End of variables declaration  
+    private ControleDados controle;
+    private Medico medico;
+    TabelaMedico tabela = new TabelaMedico();
+    
 
 }
     

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Medico extends Funcionario {
 //ATRIBUTOS
 	private String especialidade;
+	private String crm;
 	private ArrayList<Agenda> listaAgenda = new ArrayList<>();
 
 
@@ -35,6 +36,14 @@ public class Medico extends Funcionario {
 	
 	public void adicionaAgenda(Agenda agenda){
 		 this.listaAgenda.add(agenda);
+	}
+
+	public String getCrm() {
+		return crm;
+	}
+
+	public void setCrm(String crm) {
+		this.crm = crm;
 	}
 
 	//criar receita para o paciente
