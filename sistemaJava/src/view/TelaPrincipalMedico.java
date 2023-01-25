@@ -1,7 +1,7 @@
 package view;
 
-public class InicioMedico extends javax.swing.JFrame { 
-    public InicioMedico() {
+public class TelaPrincipalMedico extends javax.swing.JFrame { 
+    public TelaPrincipalMedico() {
         initComponents();
     }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
@@ -166,7 +166,7 @@ public class InicioMedico extends javax.swing.JFrame {
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InicioMedico().setVisible(true);
+                new TelaPrincipalMedico().setVisible(true);
             }
         });
     }

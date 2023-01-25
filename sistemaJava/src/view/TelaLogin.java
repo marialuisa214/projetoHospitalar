@@ -1,28 +1,34 @@
 package view;
-public class TelaLogin extends javax.swing.JFrame{
 
+import control.ControleDados;
+
+public class TelaLogin extends javax.swing.JFrame {
     public TelaLogin() {
         initComponents();
     }
-                        
+                         
     private void initComponents() {
+
+        // buttonGroup1 = new javax.swing.ButtonGroup();
         passwordSenha = new javax.swing.JPasswordField();
-        textFieldUsuario = new javax.swing.JTextField();
+        textUsuario = new javax.swing.JTextField();
         labelUsuario = new javax.swing.JLabel();
         labelSenha = new javax.swing.JLabel();
         labelLogin = new javax.swing.JLabel();
-        buttonEntrar = new javax.swing.JButton();
+        botaoEntrar = new javax.swing.JButton();
         radioAdm = new javax.swing.JRadioButton();
         radioAtendente = new javax.swing.JRadioButton();
         radioMedico = new javax.swing.JRadioButton();
-        jRadioButton1 = new javax.swing.JRadioButton();
+        radioEnfermeiro = new javax.swing.JRadioButton();
+
+        controle = new ControleDados();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("frameLogin"); // NOI18N
 
-        textFieldUsuario.addActionListener(new java.awt.event.ActionListener() {
+        textUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textFieldUsuarioActionPerformed(evt);
+                textUsuarioActionPerformed(evt);
             }
         });
 
@@ -41,10 +47,15 @@ public class TelaLogin extends javax.swing.JFrame{
         labelLogin.setMaximumSize(new java.awt.Dimension(44, 24));
         labelLogin.setMinimumSize(new java.awt.Dimension(44, 24));
 
-        buttonEntrar.setBackground(new java.awt.Color(204, 204, 255));
-        buttonEntrar.setFont(new java.awt.Font("Gujarati MT", 0, 18)); // NOI18N
-        buttonEntrar.setForeground(new java.awt.Color(255, 255, 255));
-        buttonEntrar.setText("Entrar");
+
+        botaoEntrar.setFont(new java.awt.Font("Gujarati MT", 0, 18)); // NOI18N
+        botaoEntrar.setForeground(new java.awt.Color(102, 0, 255));
+        botaoEntrar.setText("Entrar");
+        botaoEntrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoEntrarActionPerformed(evt);
+            }
+        });
 
         radioAdm.setFont(new java.awt.Font("Gujarati MT", 0, 14)); // NOI18N
         radioAdm.setText("Admisnistrador");
@@ -54,17 +65,17 @@ public class TelaLogin extends javax.swing.JFrame{
             }
         });
 
-        radioAtendente.setFont(new java.awt.Font("Gurmukhi MN", 0, 14)); // NOI18N
+        radioAtendente.setFont(new java.awt.Font("Gujarati MT", 0, 14)); // NOI18N
         radioAtendente.setText("Atendente");
 
         radioMedico.setFont(new java.awt.Font("Gujarati MT", 0, 14)); // NOI18N
         radioMedico.setText("Médico");
 
-        jRadioButton1.setFont(new java.awt.Font("Gujarati MT", 0, 14)); // NOI18N
-        jRadioButton1.setText("Enfermeiro");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        radioEnfermeiro.setFont(new java.awt.Font("Gujarati MT", 0, 14)); // NOI18N
+        radioEnfermeiro.setText("Enfermeiro");
+        radioEnfermeiro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                radioEnfermeiroActionPerformed(evt);
             }
         });
 
@@ -75,20 +86,20 @@ public class TelaLogin extends javax.swing.JFrame{
             .addGroup(layout.createSequentialGroup()
                 .addGap(200, 200, 200)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(buttonEntrar, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
+                    .addComponent(botaoEntrar, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
                     .addComponent(labelSenha)
                     .addComponent(passwordSenha)
                     .addComponent(labelUsuario)
                     .addComponent(labelLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(textFieldUsuario))
+                    .addComponent(textUsuario))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(radioAdm)
                 .addGap(34, 34, 34)
                 .addComponent(radioAtendente)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addComponent(jRadioButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addComponent(radioEnfermeiro)
                 .addGap(26, 26, 26)
                 .addComponent(radioMedico)
                 .addGap(28, 28, 28))
@@ -98,10 +109,10 @@ public class TelaLogin extends javax.swing.JFrame{
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(labelLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addComponent(labelUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(textFieldUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(textUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelSenha)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -110,27 +121,49 @@ public class TelaLogin extends javax.swing.JFrame{
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(radioAtendente)
                     .addComponent(radioAdm)
-                    .addComponent(jRadioButton1)
+                    .addComponent(radioEnfermeiro)
                     .addComponent(radioMedico))
                 .addGap(26, 26, 26)
-                .addComponent(buttonEntrar)
+                .addComponent(botaoEntrar)
                 .addGap(32, 32, 32))
         );
 
         pack();
     }// </editor-fold>                        
 
-    private void textFieldUsuarioActionPerformed(java.awt.event.ActionEvent evt) {                                                 
+    private void textUsuarioActionPerformed(java.awt.event.ActionEvent evt) {                                            
        
-    }                                                
+    }                                           
 
     private void radioAdmActionPerformed(java.awt.event.ActionEvent evt) {                                         
       
     }                                        
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                              
+    private void radioEnfermeiroActionPerformed(java.awt.event.ActionEvent evt) {                                                
        
-    }                                             
+    }                                               
+
+    private void botaoEntrarActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        
+        if(radioMedico.isSelected()){
+            if(textUsuario.getText().equals("Ana") && passwordSenha.getText().equals("123")){
+                new TelaPrincipalMedico().setVisible(true);
+                this.dispose();
+            }
+        }else if(radioAdm.isSelected()){
+         
+        }else if(radioAtendente.isSelected()){
+         
+        }else if(radioEnfermeiro.isSelected()){
+        
+        }
+        
+        
+        
+        
+        
+        
+    }                                           
 
     
     public static void main(String args[]) {
@@ -143,15 +176,23 @@ public class TelaLogin extends javax.swing.JFrame{
     }
 
     // Variables declaration - do not modify                     
-    private javax.swing.JButton buttonEntrar;
-    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JButton botaoEntrar;
+    // private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel labelLogin;
     private javax.swing.JLabel labelSenha;
     private javax.swing.JLabel labelUsuario;
     private javax.swing.JPasswordField passwordSenha;
     private javax.swing.JRadioButton radioAdm;
     private javax.swing.JRadioButton radioAtendente;
+    private javax.swing.JRadioButton radioEnfermeiro;
     private javax.swing.JRadioButton radioMedico;
-    private javax.swing.JTextField textFieldUsuario;
-    // End of variables declaration                   
+    private javax.swing.JTextField textUsuario;
+    // End of variables declaration     
+    private ControleDados controle;
+
+    //CONSTRUTOR
+    public TelaLogin(ControleDados controle){
+        this.controle = controle;
+
+    }
 }
