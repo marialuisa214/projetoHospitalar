@@ -12,8 +12,8 @@ public class Marcada extends Consulta {
 
     //CONSTRUTOR
     
-    public Marcada(String codigo, String horarioInicio, String horarioFim, Paciente paciente) {
-        super(codigo,paciente);
+    public Marcada(String codigo, Paciente paciente,  Medico medico, String horarioInicio, String horarioFim) {
+        super(codigo, paciente, medico);
         this.horarioInicio = horarioInicio;
         this.horarioFim = horarioFim;
     }
@@ -59,6 +59,14 @@ public class Marcada extends Consulta {
     public void setDescricaoMedica(String descricaoMedica) {
         this.descricaoMedica = descricaoMedica;
         
+    }
+
+    public Medico getMedico() {
+        return medico;
+    }
+
+    public void setMedico(Medico medico) {
+        this.medico = medico;
     }
 
 }

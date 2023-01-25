@@ -5,13 +5,15 @@ public abstract class Consulta {
     //ATRIBUTOS
     protected Paciente paciente;
     protected String codigo;
+    protected Medico medico;
     protected String descricaoMedica;
     
 
     //CONSTRUTOR
-    public Consulta(String codigo, Paciente paciente) {
+    public Consulta(String codigo, Paciente paciente, Medico medico) {
         this.codigo = codigo;
         this.paciente = paciente;
+        this.medico = medico;
     }
 
     //METODOS
@@ -34,6 +36,13 @@ public abstract class Consulta {
     }
     public void setPaciente(Paciente paciente) {
         this.paciente = paciente;
+    }
+    public Medico getMedico() {
+        return medico;
+    }
+
+    public void setMedico(Medico medico) {
+        this.medico = medico;
     }
 
 }

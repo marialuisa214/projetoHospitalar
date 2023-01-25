@@ -1,5 +1,7 @@
 package view;
 
+import javax.swing.JOptionPane;
+
 import control.*;
 import model.*;
 
@@ -10,6 +12,7 @@ public class TelaPrincipalMedico extends javax.swing.JFrame {
     public TelaPrincipalMedico(ControleDados controle, Medico m) {
         this.medico = m;
         this.controle = controle;
+        this.tabela = new TabelaMedico(controle); 
         initComponents();
 
         tabelaConsultas.setModel(tabela);
@@ -26,7 +29,6 @@ public class TelaPrincipalMedico extends javax.swing.JFrame {
         tabelaConsultas = new javax.swing.JTable();
         buttonRelatorioConsulta = new javax.swing.JButton();
         buttonMundancaHorario = new javax.swing.JButton();
-        buttonRelatorioExame = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("frameMedico"); // NOI18N
@@ -37,7 +39,6 @@ public class TelaPrincipalMedico extends javax.swing.JFrame {
 
         buttonSair.setBackground(new java.awt.Color(204, 153, 255));
         buttonSair.setFont(new java.awt.Font("Gujarati MT", 1, 13)); // NOI18N
-        buttonSair.setForeground(new java.awt.Color(255, 255, 255));
         buttonSair.setText("sair");
         buttonSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,7 +65,6 @@ public class TelaPrincipalMedico extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tabelaConsultas);
 
-
         buttonRelatorioConsulta.setBackground(new java.awt.Color(204, 204, 255));
         buttonRelatorioConsulta.setFont(new java.awt.Font("Gujarati MT", 0, 14)); // NOI18N
         buttonRelatorioConsulta.setText("Gerar Relatórios de Consulta");
@@ -80,15 +80,6 @@ public class TelaPrincipalMedico extends javax.swing.JFrame {
         buttonMundancaHorario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonMundancaHorarioActionPerformed(evt);
-            }
-        });
-
-        buttonRelatorioExame.setBackground(new java.awt.Color(204, 204, 255));
-        buttonRelatorioExame.setFont(new java.awt.Font("Gujarati MT", 0, 14)); // NOI18N
-        buttonRelatorioExame.setText("Gerar Relatórios de Exame");
-        buttonRelatorioExame.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonRelatorioExameActionPerformed(evt);
             }
         });
 
@@ -111,23 +102,21 @@ public class TelaPrincipalMedico extends javax.swing.JFrame {
                                     .addComponent(labelNomeMedico, javax.swing.GroupLayout.DEFAULT_SIZE, 275, Short.MAX_VALUE))
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(21, 21, 21)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(buttonRelatorioConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                    .addComponent(buttonRelatorioExame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(52, 52, 52)
-                                .addComponent(jLabel3)))
-                        .addGap(0, 9, Short.MAX_VALUE)))
+                                .addComponent(jLabel3))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(31, 31, 31)
+                                .addComponent(buttonMundancaHorario)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(buttonRelatorioConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(11, 11, 11)))
+                        .addGap(0, 17, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addComponent(buttonMundancaHorario)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,15 +135,12 @@ public class TelaPrincipalMedico extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(buttonRelatorioConsulta)
-                        .addGap(18, 18, 18)
-                        .addComponent(buttonRelatorioExame)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buttonMundancaHorario)
-                .addContainerGap(11, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonMundancaHorario)
+                    .addComponent(buttonRelatorioConsulta))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         pack();
@@ -168,11 +154,19 @@ public class TelaPrincipalMedico extends javax.swing.JFrame {
     private void buttonMundancaHorarioActionPerformed(java.awt.event.ActionEvent evt) {                                                      
     }                                                     
 
-    private void buttonRelatorioConsultaActionPerformed(java.awt.event.ActionEvent evt) {                                                        
-    }                                                       
+    
+    private void buttonRelatorioConsultaActionPerformed(java.awt.event.ActionEvent evt) { 
+        
+        if(tabelaConsultas.getSelectedRow() != -1 ){
+            Marcada consulta = tabela.selecionaItem(tabelaConsultas.getSelectedRow());
+            new TelaRelatorioConsulta(consulta).setVisible(true);
+                this.dispose();
+        }else{
+            JOptionPane.showMessageDialog(null, "Selecione uma consulta antes de ir para a proxima página!");
+        }
 
-    private void buttonRelatorioExameActionPerformed(java.awt.event.ActionEvent evt) {                                                     
-    }                                                    
+        
+    }                                                                                                        
 
     
     
@@ -190,7 +184,7 @@ public class TelaPrincipalMedico extends javax.swing.JFrame {
     // End of variables declaration  
     private ControleDados controle;
     private Medico medico;
-    TabelaMedico tabela = new TabelaMedico();
+    private TabelaMedico tabela;
     
 
 }
