@@ -1,8 +1,17 @@
 
 package view;
+import control.ControlePaciente;
 
 public class CadastroPaciente extends javax.swing.JFrame {
 
+  private static ControlePaciente pacientes;
+
+    public CadastroPaciente(ControlePaciente pacientes) {
+      CadastroPaciente.pacientes = pacientes;
+        initComponents();
+    }
+
+    private char selectSexo;
     public CadastroPaciente() {
         initComponents();
     }
@@ -14,7 +23,7 @@ public class CadastroPaciente extends javax.swing.JFrame {
         inputNascimento = new javax.swing.JTextField();
         patologiascroll = new javax.swing.JScrollPane();
         restricoesMedicas = new javax.swing.JTextArea();
-        selecaooSexoFeminino = new javax.swing.JCheckBox();
+        selecaoSexoFeminino = new javax.swing.JCheckBox();
         selecaoSexoMasculino = new javax.swing.JCheckBox();
         labelNomePaciente = new javax.swing.JLabel();
         labelCpfPaciente = new javax.swing.JLabel();
@@ -60,10 +69,10 @@ public class CadastroPaciente extends javax.swing.JFrame {
         restricoesMedicas.setText("(alergia, alerta ou restrição médica, etc..) ");
         patologiascroll.setViewportView(restricoesMedicas);
 
-        selecaooSexoFeminino.setText("Feminino");
-        selecaooSexoFeminino.addActionListener(new java.awt.event.ActionListener() {
+        selecaoSexoFeminino.setText("Feminino");
+        selecaoSexoFeminino.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                selecaooSexoFemininoActionPerformed(evt);
+                selecaoSexoFemininoActionPerformed(evt);
             }
         });
 
@@ -183,7 +192,7 @@ public class CadastroPaciente extends javax.swing.JFrame {
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(inputNascimento)
-                                        .addComponent(selecaooSexoFeminino, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                        .addComponent(selecaoSexoFeminino, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addGroup(layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(labelNomePaciente)
@@ -222,7 +231,7 @@ public class CadastroPaciente extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelSexoPaciente)
                     .addComponent(selecaoSexoMasculino)
-                    .addComponent(selecaooSexoFeminino))
+                    .addComponent(selecaoSexoFeminino))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelNascimentoPaciente)
@@ -267,16 +276,19 @@ public class CadastroPaciente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }                                               
 
-    private void selecaooSexoFemininoActionPerformed(java.awt.event.ActionEvent evt) {                                                     
-        // TODO add your handling code here:
+    private void selecaoSexoFemininoActionPerformed(java.awt.event.ActionEvent evt) {                                                     
+      this.selecaoSexoMasculino.setSelected(false);
+      this.selectSexo = 'F';
     }                                                    
 
-    private void selecaoSexoMasculinoActionPerformed(java.awt.event.ActionEvent evt) {                                                     
-        // TODO add your handling code here:
+    private void selecaoSexoMasculinoActionPerformed(java.awt.event.ActionEvent evt) {    
+      this.selecaoSexoFeminino.setSelected(false);                                                 
+      this.selectSexo = 'M';
     }                                                    
 
     private void buttonCadastraPacienteActionPerformed(java.awt.event.ActionEvent evt) {                                                       
-        // TODO add your handling code here:
+      //String nome, String rg, String cpf, char sexo,String dataNascimento, String telefone, String email, String cidade, String endereco, String patologia  
+      pacientes.cadastraPaciente(this.inputNome.getText(), this.inputRG.getText(), this.inputCpf.getText(), this.selectSexo, this.inputNascimento.getText(), this.inputTelefone.getText(), this.inputEmail.getText(), this.inputCidadeEstado.getText(), this.inputEndereco.getText(), this.restricoesMedicas.getText());
     }                                                      
 
     private void inputEnderecoActionPerformed(java.awt.event.ActionEvent evt) {                                              
@@ -297,6 +309,7 @@ public class CadastroPaciente extends javax.swing.JFrame {
 
     private void buttonVoltarActionPerformed(java.awt.event.ActionEvent evt) {                                             
         this.dispose();
+        System.out.println(pacientes.listaPacientes().get(0));
     }                                            
 
     /**
@@ -362,6 +375,6 @@ public class CadastroPaciente extends javax.swing.JFrame {
     private javax.swing.JScrollPane patologiascroll;
     private javax.swing.JTextArea restricoesMedicas;
     private javax.swing.JCheckBox selecaoSexoMasculino;
-    private javax.swing.JCheckBox selecaooSexoFeminino;
+    private javax.swing.JCheckBox selecaoSexoFeminino;
     // End of variables declaration                   
 }

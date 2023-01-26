@@ -7,8 +7,8 @@ public class Atendente extends Funcionario{
 
 	
 //CONSTRUTOR
-	public Atendente(String nome, String rg, String cpf, char sexo, long idade,  String dataNascimento, String telefone, String email, String cidade, String endereco, String usuario, String senha){
-		super(nome, rg, cpf, sexo, idade, dataNascimento, telefone, email, cidade, endereco, usuario, senha); 		
+	public Atendente(String nome, String rg, String cpf, char sexo, String dataNascimento, String telefone, String email, String cidade, String endereco, String usuario, String senha){
+		super(nome, rg, cpf, sexo, dataNascimento, telefone, email, cidade, endereco, usuario, senha); 		
 	}
 	
 //METODO

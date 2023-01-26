@@ -19,7 +19,7 @@ public abstract class Pessoa {
 
 	
 	// CONSTRUTOR
-	public Pessoa(String nome, String rg, String cpf, char sexo, long idade2, String dataNascimento, String telefone, String email, String cidade, String endereco) {
+	public Pessoa(String nome, String rg, String cpf, char sexo, String dataNascimento, String telefone, String email, String cidade, String endereco) {
 		this.nome = nome;
 		this.rg = rg;
 		this.cpf = cpf;

@@ -1,9 +1,15 @@
 package view;
 
+import control.ControlePaciente;
+
 public class TransicaoMetodosAtendente extends javax.swing.JFrame {
 
-    public TransicaoMetodosAtendente() {
-        initComponents();
+    private static ControlePaciente pacientes;
+    public static TransicaoMetodosAtendente telaInicial;
+
+    public TransicaoMetodosAtendente(ControlePaciente pacientes) {
+      TransicaoMetodosAtendente.pacientes = pacientes;
+      initComponents();
     }
                        
     private void initComponents() {
@@ -177,7 +183,7 @@ public class TransicaoMetodosAtendente extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TransicaoMetodosAtendente().setVisible(true);
+                new TransicaoMetodosAtendente(pacientes).setVisible(true);
             }
         });
     }
@@ -193,4 +199,6 @@ public class TransicaoMetodosAtendente extends javax.swing.JFrame {
     private javax.swing.JLabel labelDataHora;
     private javax.swing.JLabel labelIdAtendente;
     // End of variables declaration                   
+    public interface telaInicial {
+    }
 }
