@@ -7,6 +7,7 @@ import java.util.List;
 public class Receita {
 
   //ATRIBUTOS
+  private Paciente paciente;
   private Date dataPedido;
   private Date dataEntrega;
   private String unidade;
@@ -55,8 +56,8 @@ public class Receita {
   public List<Medicamento> getMedicamentos() {
     return medicamentos;
   }
-  public void setMedicamentos(List<Medicamento> medicamentos) {
-    this.medicamentos = medicamentos;
+  public void addMedicamentos(Medicamento medicamento) {
+    this.medicamentos.add(medicamento);
   }
   
 }

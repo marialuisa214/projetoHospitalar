@@ -3,16 +3,16 @@ package model;
 public class Exame {
     //atributos
     private String nomeExame;
+    private String data;
     private String codigo;
     private Prontuario prontuario;
     private Funcionario responsavelTecnico;
     private Agenda agenda;
     
     //construtor
-    public Exame(String nomeExame, String codigo, Funcionario responsavelTecnico){
+    public Exame(String nomeExame, String codigo){
         this.nomeExame = nomeExame;
         this.codigo = codigo;
-        this.responsavelTecnico = responsavelTecnico;
     }
     //métodos 
 
@@ -46,6 +46,13 @@ public class Exame {
     
     public Prontuario getProntuario() {
         return prontuario;
+    }
+
+    public String getData() {
+        return data;
+    }
+    public void setData(String data) {
+        this.data = data;
     }
 
 

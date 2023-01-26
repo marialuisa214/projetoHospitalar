@@ -1,12 +1,16 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Paciente extends Pessoa {
 
 //ATRIBUTOS	
 	private String patologia; //cormobidade, restrição médica
 	private Prontuario prontuario;
+	ArrayList<Receita> listaReceitas = new ArrayList<>();
 	
-//CONSTRUTOR	
+
+	//CONSTRUTOR	
 	public Paciente(String nome, String cpf, char sexo, String dataNascimento, String patologia){
 		super(nome, cpf, sexo, dataNascimento);
 		this.patologia = patologia; 
@@ -59,6 +63,13 @@ public void setDataNascimento(String dataNascimento) {
 	}
 	public void setProntuario(Prontuario prontuario) {
 		this.prontuario = prontuario;
+	}
+	public ArrayList<Receita> getListaReceitas() {
+		return listaReceitas;
+	}
+
+	public void addReceitas(Receita receitas) {
+		this.listaReceitas.add(receitas);
 	}
 
 }

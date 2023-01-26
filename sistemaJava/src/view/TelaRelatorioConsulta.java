@@ -1,6 +1,8 @@
 package view;
 
 
+import javax.swing.JOptionPane;
+
 import control.ControleDados;
 import model.*;
 
@@ -98,6 +100,15 @@ public class TelaRelatorioConsulta extends javax.swing.JFrame {
         botaoFinalizaConsulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoFinalizaConsultaActionPerformed(evt);
+            }
+        });
+
+        botaoGeraReceita.setBackground(new java.awt.Color(204, 204, 255));
+        botaoGeraReceita.setFont(new java.awt.Font("Gujarati MT", 0, 13)); // NOI18N
+        botaoGeraReceita.setText("Gerar Receita Médica ");
+        botaoGeraReceita.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoGeraReceitaActionPerformed(evt);
             }
         });
 
@@ -224,7 +235,9 @@ public class TelaRelatorioConsulta extends javax.swing.JFrame {
         
     }                                                 
 
-    private void botaoConsultaProntuarioActionPerformed(java.awt.event.ActionEvent evt) {                                                        
+    private void botaoConsultaProntuarioActionPerformed(java.awt.event.ActionEvent evt) {  
+        new TelaProntuario(consulta.getPaciente().getProntuario() , dados, consulta).setVisible(true);
+        this.disable();                                                      
         
     }                                                       
 
@@ -232,14 +245,29 @@ public class TelaRelatorioConsulta extends javax.swing.JFrame {
         
     }                                             
 
-    private void botaoFinalizaConsultaActionPerformed(java.awt.event.ActionEvent evt) {                                                      
+    private void botaoFinalizaConsultaActionPerformed(java.awt.event.ActionEvent evt) {    
+        if(textDescricao.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null,"Vocé deve preencher todos os campos para Finalizar a Consulta." );
+        } else{ 
+            consulta.setDescricaoMedica(textDescricao.getText());
+            consulta.setStatus(true);
+
+            new TelaPrincipalMedico(dados, consulta.getMedico()).setVisible(true);
+            this.dispose();
+
+        }                                               
         
     }                                                     
 
     private void botaoExameActionPerformed(java.awt.event.ActionEvent evt) {                                           
         new TelaExame(consulta.getPaciente(), consulta.getMedico(), consulta, dados).setVisible(true);
         this.dispose();
-    }                                          
+    }
+    
+    private void botaoGeraReceitaActionPerformed(java.awt.event.ActionEvent evt) {                                                 
+        new TelaReceita(consulta.getMedico(), consulta, dados).setVisible(true);
+        this.disable();
+    }
 
     // Variables declaration - do not modify                     
     private javax.swing.JButton botaoAtestado;

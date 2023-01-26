@@ -52,12 +52,16 @@ public class TelaExame extends javax.swing.JFrame {
         labelCodigo.setFont(new java.awt.Font("Gujarati MT", 0, 13)); // NOI18N
         labelCodigo.setText("Código:");
 
-        textCodigo.setFont(new java.awt.Font("Gujarati MT", 0, 13)); // NOI18N
 
         labelNomePaciente.setFont(new java.awt.Font("Gujarati MT", 0, 13)); // NOI18N
         labelNomePaciente.setText(paciente.getNome());
 
         botaoSolicita.setText("Solicitar");
+        botaoSolicita.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoSolicitaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -135,13 +139,21 @@ public class TelaExame extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {                                            
-        new TelaRelatorioConsulta(dados, consulta).setVisible(rootPaneCheckingEnabled);
+        new TelaRelatorioConsulta(dados, consulta).setVisible(true);
         this.disable();
     }            
     
-    // private void botaoSolicitaActionPerformed(java.awt.event.ActionEvent evt) {                                              
-    //     this.disable();
-    // } 
+    private void botaoSolicitaActionPerformed(java.awt.event.ActionEvent evt) {   
+        Exame exame = new Exame(textExame.getText(), textCodigo.getText());
+        
+         Solicitacao novaSolicitacao = new Solicitacao();
+         novaSolicitacao.setMedico(medico);
+         novaSolicitacao.solicitaExame(exame);
+        
+        dados.adicionaSolicitacao(novaSolicitacao);
+        new TelaRelatorioConsulta(dados, consulta).setVisible(true);;
+        this.disable();
+    } 
 
     // public static void main(String args[]) {
         

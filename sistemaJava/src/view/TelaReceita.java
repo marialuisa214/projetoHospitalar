@@ -1,39 +1,51 @@
 package view;
 
-public class Receita extends javax.swing.JFrame {
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import javax.swing.JOptionPane;
+
+import control.ControleDados;
+import model.*;
+
+public class TelaReceita extends javax.swing.JFrame {
 
     
-    public Receita() {
+    public TelaReceita(Medico medico, Marcada consulta, ControleDados dados) {
+        this.medico = medico;
+        this.dados = dados;
+        this.c = new Date();
+        this.consulta = consulta;
         initComponents();
     }
 
-    
-    @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+                            
     private void initComponents() {
 
-        labelCrm = new javax.swing.JLabel();
-        botaoVoltar = new javax.swing.JButton();
-        labelNomeMedico = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
-        labelPaciente = new javax.swing.JLabel();
-        labelCodigoConsulta = new javax.swing.JLabel();
-        labelNomePaciente = new javax.swing.JLabel();
-        labelTipoConsulta = new javax.swing.JLabel();
-        labelCodigo = new javax.swing.JLabel();
-        labelData = new javax.swing.JLabel();
-        labelDescricao = new javax.swing.JLabel();
-        textDescricao = new javax.swing.JTextField();
-        labelDataHoje = new javax.swing.JLabel();
-        botaoFinalizaConsulta = new javax.swing.JButton();
-        labelMedicamento = new javax.swing.JLabel();
-        textMedicamento = new javax.swing.JTextField();
-
+            labelCrm = new javax.swing.JLabel();
+            botaoVoltar = new javax.swing.JButton();
+            labelNomeMedico = new javax.swing.JLabel();
+            jSeparator1 = new javax.swing.JSeparator();
+            labelPaciente = new javax.swing.JLabel();
+            labelCodigoConsulta = new javax.swing.JLabel();
+            labelNomePaciente = new javax.swing.JLabel();
+            labelTipoConsulta = new javax.swing.JLabel();
+            labelCodigo = new javax.swing.JLabel();
+            labelData = new javax.swing.JLabel();
+            labelDescricao = new javax.swing.JLabel();
+            labelDataHoje = new javax.swing.JLabel();
+            botaoFinalizaConsulta = new javax.swing.JButton();
+            labelMedicamento = new javax.swing.JLabel();
+            textMedicamento = new javax.swing.JTextField();
+            jScrollPane1 = new javax.swing.JScrollPane();
+            textDescricao = new javax.swing.JTextArea();
+            labelCodMedicamento = new javax.swing.JLabel();
+            textCodigoMedicamento = new javax.swing.JTextField();
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         labelCrm.setFont(new java.awt.Font("Gujarati MT", 0, 8)); // NOI18N
         labelCrm.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelCrm.setText("CRM");
+        labelCrm.setText(medico.getCrm());
 
         botaoVoltar.setBackground(new java.awt.Color(204, 153, 255));
         botaoVoltar.setFont(new java.awt.Font("Gujarati MT", 1, 13)); // NOI18N
@@ -47,7 +59,7 @@ public class Receita extends javax.swing.JFrame {
 
         labelNomeMedico.setFont(new java.awt.Font("Gujarati MT", 0, 13)); // NOI18N
         labelNomeMedico.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelNomeMedico.setText("nome_do_medico");
+        labelNomeMedico.setText(medico.getNome());
 
         labelPaciente.setFont(new java.awt.Font("Gujarati MT", 0, 13)); // NOI18N
         labelPaciente.setText("Paciente:");
@@ -56,14 +68,14 @@ public class Receita extends javax.swing.JFrame {
         labelCodigoConsulta.setText("Código de Consulta:");
 
         labelNomePaciente.setFont(new java.awt.Font("Gujarati MT", 0, 13)); // NOI18N
-        labelNomePaciente.setText("nome_paciente");
+        labelNomePaciente.setText(consulta.getPaciente().getNome());
 
         labelTipoConsulta.setFont(new java.awt.Font("Gujarati MT", 0, 12)); // NOI18N
         labelTipoConsulta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelTipoConsulta.setText("Tipo_de_consulta");
 
         labelCodigo.setFont(new java.awt.Font("Gujarati MT", 0, 13)); // NOI18N
-        labelCodigo.setText("codigo_consulta");
+        labelCodigo.setText(consulta.getCodigo());
 
         labelData.setFont(new java.awt.Font("Gujarati MT", 0, 13)); // NOI18N
         labelData.setText("Data:");
@@ -71,16 +83,15 @@ public class Receita extends javax.swing.JFrame {
         labelDescricao.setFont(new java.awt.Font("Gujarati MT", 0, 13)); // NOI18N
         labelDescricao.setText("Descrição / Posologia:");
 
-        textDescricao.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        textDescricao.setToolTipText("");
-        textDescricao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textDescricaoActionPerformed(evt);
-            }
-        });
+        textDescricao.setColumns(20);
+        textDescricao.setRows(5);
+        jScrollPane1.setViewportView(textDescricao);
+
+        labelCodMedicamento.setFont(new java.awt.Font("Gujarati MT", 0, 13)); // NOI18N
+        labelCodMedicamento.setText("Código");
 
         labelDataHoje.setFont(new java.awt.Font("Gujarati MT", 0, 13)); // NOI18N
-        labelDataHoje.setText("data_de_hoje");
+        labelDataHoje.setText(formatador.format(c));
 
         botaoFinalizaConsulta.setBackground(new java.awt.Color(153, 153, 255));
         botaoFinalizaConsulta.setFont(new java.awt.Font("Gujarati MT", 0, 14)); // NOI18N
@@ -90,7 +101,7 @@ public class Receita extends javax.swing.JFrame {
                 botaoFinalizaConsultaActionPerformed(evt);
             }
         });
-
+        labelMedicamento.setFont(new java.awt.Font("Gujarati MT", 0, 13));
         labelMedicamento.setText("Medicamento:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -179,32 +190,46 @@ public class Receita extends javax.swing.JFrame {
         pack();
     }// </editor-fold>                        
 
-    private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {                                            
+    private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) { 
+        new TelaRelatorioConsulta(dados, consulta);
+        this.dispose();                                           
         
     }                                           
 
-    private void botaoFinalizaConsultaActionPerformed(java.awt.event.ActionEvent evt) {                                                      
+    private void botaoFinalizaConsultaActionPerformed(java.awt.event.ActionEvent evt) {   
+        if(textMedicamento.getText().isEmpty() || textDescricao.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null,"océ deve preencher todos os campos para gerar a receita." );
+        } else{
+            Receita novaReceita = new Receita();
+            Medicamento med = new Medicamento(textMedicamento.getText(), textCodigoMedicamento.getText());
+            novaReceita.setDescricaoMed(textDescricao.getText());
+            novaReceita.addMedicamentos(med);
+            consulta.getPaciente().addReceitas(novaReceita);
+            new TelaRelatorioConsulta(dados, consulta).setVisible(true);
+            this.dispose(); 
+
+        }                                                  
         
     }                                                     
 
-    private void textDescricaoActionPerformed(java.awt.event.ActionEvent evt) {                                              
-        
-    }                                             
+                                                 
 
     
-    public static void main(String args[]) {
+    // public static void main(String args[]) {
         
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Receita().setVisible(true);
-            }
-        });
-    }
+    //     java.awt.EventQueue.invokeLater(new Runnable() {
+    //         public void run() {
+    //             new Receita().setVisible(true);
+    //         }
+    //     });
+    // }
 
     // Variables declaration - do not modify                     
     private javax.swing.JButton botaoFinalizaConsulta;
     private javax.swing.JButton botaoVoltar;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel labelCodMedicamento;
     private javax.swing.JLabel labelCodigo;
     private javax.swing.JLabel labelCodigoConsulta;
     private javax.swing.JLabel labelCrm;
@@ -216,9 +241,17 @@ public class Receita extends javax.swing.JFrame {
     private javax.swing.JLabel labelNomePaciente;
     private javax.swing.JLabel labelPaciente;
     private javax.swing.JLabel labelTipoConsulta;
-    private javax.swing.JTextField textDescricao;
+    private javax.swing.JTextField textCodigoMedicamento;
+    private javax.swing.JTextArea textDescricao;
     private javax.swing.JTextField textMedicamento;
     // End of variables declaration                   
+    private ControleDados dados;
+    private Medico medico;
+    private Marcada consulta;  
+
+    
+    private SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
+    private Date c;
 }
     
 

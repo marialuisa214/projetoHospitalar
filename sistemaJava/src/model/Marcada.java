@@ -13,10 +13,8 @@ public class Marcada extends Consulta {
     private String descricaoMedica;
 
     //CONSTRUTOR
-    public Marcada(String codigo, Paciente paciente,  Medico medico, String horarioInicio, String horarioFim) {
+    public Marcada(String codigo, Paciente paciente,  Medico medico) {
         super(codigo, paciente, medico);
-        this.horarioInicio = horarioInicio;
-        this.horarioFim = horarioFim;
         this.status = false;
     }
     // METODOS

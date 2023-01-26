@@ -1,14 +1,17 @@
 package view;
 
 import control.ControleDados;
-import model.Paciente;
+import model.*;
 
 public class TelaProntuario extends javax.swing.JFrame {
 
-
-
-    public TelaProntuario() {
+    public TelaProntuario(Prontuario p , ControleDados dados, Marcada consulta) {
+        this.tabela1 = new TabelaProntuarioConsulta(p);
+        this.tabela2 = new TabelaProntuarioExame(p);
         initComponents();
+
+        tabelaHistConsulta.setModel(tabela1);
+        tabelaHistoExame.setModel(tabela2);
     }
                        
     private void initComponents() {
@@ -48,13 +51,13 @@ public class TelaProntuario extends javax.swing.JFrame {
             }
         });
 
-        labelNomePaciente.setText("nome__");
+        // labelNomePaciente.setText();
 
-        labelIdadePaciente.setText("_idade");
+        // labelIdadePaciente.setText();
 
-        labelPesoPaciente.setText("p_eso");
+        // labelPesoPaciente.setText();
 
-        labelAlturaPaciente.setText("altura_do_paciente");
+        // labelAlturaPaciente.setText();
 
         tabelaHistConsulta.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -213,4 +216,9 @@ public class TelaProntuario extends javax.swing.JFrame {
     private javax.swing.JTable tabelaHistConsulta;
     private javax.swing.JTable tabelaHistoExame;
     // End of variables declaration  
+
+    private TabelaProntuarioConsulta tabela1;
+    private TabelaProntuarioExame tabela2;
+    private Marcada marcada;
+
 }

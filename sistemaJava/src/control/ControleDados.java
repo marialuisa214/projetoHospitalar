@@ -37,6 +37,16 @@ public class ControleDados {
 //LISTA DE SOLICITAÇOES MEDICO P/ ATENDENTE
     // nova classe???
 
+//LISTA SOLICITACOES
+    ArrayList<Solicitacao> bancoSolicitacaos = new ArrayList<>();
+
+    public ArrayList<Solicitacao> getBancoSolicitacaos() {
+        return bancoSolicitacaos;
+    }
+    public void adicionaSolicitacao(Solicitacao solicitacao) {
+        this.bancoSolicitacaos.add(solicitacao);
+    }
+
 
 
 
