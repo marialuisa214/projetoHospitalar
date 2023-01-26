@@ -4,9 +4,9 @@ import model.*;
 
 public class testeModel {
   public static void main(String[] args){
-    Paciente paciente = new Paciente("Maria", "123", 'F', "10/12/2001", "nenhuma");
-    Atendente atendente = new Atendente("luana", "1234", 'F', "10/12/2001","luana123", "123");
-    Medico medico = new Medico("carlos", "333", 'M', "06/04/1991", "2121", "malu", "ginicologista");
+    Paciente paciente = new Paciente("Maria", "321", "123", 'F', 0, "10/12/2001", "4002-8922", "gatinhaassanhada@gmail.com", "Brasilia-DF", "casa do capeta", "nenhuma"); //(nome, rg, cpf, sexo, idade, dataNascimento, telefone, email, cidade, endereco, patologia);
+    Atendente atendente = new Atendente("luana", "1234", null, 'F', 0, "10/12/2001","luana123", "123", null, null, null, null);
+    Medico medico = new Medico("carlos", "333", null, 'M', 0, "06/04/1991", "2121", "malu", "ginicologista", null, null, null, null);
     Marcada consulta = new Marcada("sdfg","16:00", "16:22");
 
 

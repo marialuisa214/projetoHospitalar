@@ -6,8 +6,8 @@ public class Farmaceutico extends Funcionario {
 	
 	
 //CONSTRUTOR
-	public Farmaceutico(String nome, String cpf, char sexo, String dataNascimento, String usuario, String senha, int crf){
-		super(nome, cpf, sexo, dataNascimento, usuario, senha); 				
+	public Farmaceutico(String nome, String rg, String cpf, char sexo, long idade,  String dataNascimento, String telefone, String email, String cidade, String endereco, String usuario, String senha, int crf){
+		super(nome, rg, cpf, sexo, idade, dataNascimento, telefone, email, cidade, endereco, usuario, senha);				
 		this.crf = crf;
 	}
 	

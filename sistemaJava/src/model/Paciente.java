@@ -6,31 +6,33 @@ public class Paciente extends Pessoa {
 	private String patologia; //cormobidade, restrição médica
 	private Prontuario prontuario;
 	
-//CONSTRUTOR	
-	public Paciente(String nome, String cpf, char sexo, String dataNascimento, String patologia){
-		super(nome, cpf, sexo, dataNascimento);
+	//CONSTRUTOR	
+	public Paciente(String nome, String rg, String cpf, char sexo, long idade,  String dataNascimento, String telefone, String email, String cidade, String endereco, String patologia){
+		super(nome, rg, cpf, sexo, idade, dataNascimento, telefone, email, cidade, endereco);
 		this.patologia = patologia; 
 		this.prontuario = new Prontuario();
 	}
-//METODOS
+	//METODOS
+	
+	public String getNome() {
+		return nome;
+	}
+	
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	
+	public String getCpf() {
+		return cpf;
+	}
 
-public String getNome() {
-	return nome;
-}
-
-public void setNome(String nome) {
-	this.nome = nome;
-}
-
-public String getCpf() {
-	return cpf;
-}
-public void setCpf(String cpf) {
-	this.cpf = cpf;
-}
-public char getSexo() {
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+	public char getSexo() {
 	return sexo;
 }
+
 public void setSexo(char sexo) {
 	this.sexo = sexo;
 }
@@ -47,18 +49,20 @@ public void setDataNascimento(String dataNascimento) {
 	this.dataNascimento = dataNascimento;
 }
 
-	public String getPatologia() {
-		return patologia;
-	}
-	public void setPatologia(String patologia) {
-		this.patologia = patologia;
-	}
+public String getPatologia() {
+	return patologia;
+}
 
-	public Prontuario getProntuario() {
-		return prontuario;
-	}
-	public void setProntuario(Prontuario prontuario) {
-		this.prontuario = prontuario;
-	}
+public void setPatologia(String patologia) {
+	this.patologia = patologia;
+}
+
+public Prontuario getProntuario() {
+	return prontuario;
+}
+
+public void setProntuario(Prontuario prontuario) {
+	this.prontuario = prontuario;
+}
 
 }
