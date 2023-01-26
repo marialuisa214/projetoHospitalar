@@ -10,6 +10,7 @@ public abstract class Consulta {
     protected String codigo;
     protected Medico medico;
     protected String descricaoMedica;
+    protected boolean status;
     
 
     //CONSTRUTOR
@@ -50,6 +51,13 @@ public abstract class Consulta {
 
     public String getDia() {
         return dia;
+    }
+    public boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 
 }

@@ -5,10 +5,12 @@ import model.Paciente;
 
 public class TelaProntuario extends javax.swing.JFrame {
 
+
+
     public TelaProntuario() {
         initComponents();
     }
-                         
+                       
     private void initComponents() {
 
         labelNome = new javax.swing.JLabel();
@@ -21,9 +23,9 @@ public class TelaProntuario extends javax.swing.JFrame {
         labelPesoPaciente = new javax.swing.JLabel();
         labelAlturaPaciente = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabelaHistConsulta = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tabelaHistoExame = new javax.swing.JTable();
         labelHistoricoConsulta = new javax.swing.JLabel();
         labelHistoricoExame = new javax.swing.JLabel();
         botaoDetalhesConsulta = new javax.swing.JButton();
@@ -54,7 +56,7 @@ public class TelaProntuario extends javax.swing.JFrame {
 
         labelAlturaPaciente.setText("altura_do_paciente");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaHistConsulta.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -65,9 +67,9 @@ public class TelaProntuario extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tabelaHistConsulta);
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaHistoExame.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -78,7 +80,7 @@ public class TelaProntuario extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(tabelaHistoExame);
 
         labelHistoricoConsulta.setText("Historico de Consultas");
 
@@ -180,17 +182,17 @@ public class TelaProntuario extends javax.swing.JFrame {
     }                                           
 
     private void botaoDetalhesConsultaActionPerformed(java.awt.event.ActionEvent evt) {                                                      
-       
+        
     }                                                     
 
-    public static void main(String args[]) {
+    // public static void main(String args[]) {
        
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TelaProntuario().setVisible(true);
-            }
-        });
-    }
+    //     java.awt.EventQueue.invokeLater(new Runnable() {
+    //         public void run() {
+    //             new TelaProntuario().setVisible(true);
+    //         }
+    //     });
+    // }
 
     // Variables declaration - do not modify                     
     private javax.swing.JButton botaoDetalhesConsulta;
@@ -198,8 +200,6 @@ public class TelaProntuario extends javax.swing.JFrame {
     private javax.swing.JButton botaoVoltar;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JLabel labelAltura;
     private javax.swing.JLabel labelAlturaPaciente;
     private javax.swing.JLabel labelHistoricoConsulta;
@@ -210,5 +210,7 @@ public class TelaProntuario extends javax.swing.JFrame {
     private javax.swing.JLabel labelNomePaciente;
     private javax.swing.JLabel labelPeso;
     private javax.swing.JLabel labelPesoPaciente;
-    // End of variables declaration                   
+    private javax.swing.JTable tabelaHistConsulta;
+    private javax.swing.JTable tabelaHistoExame;
+    // End of variables declaration  
 }

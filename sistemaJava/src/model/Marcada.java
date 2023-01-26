@@ -9,15 +9,15 @@ public class Marcada extends Consulta {
     private String horarioInicio; //ajustar formataçao das horas hein!!
     private String horarioFim;
     private String Dia;
+    private boolean status;
+    private String descricaoMedica;
 
     //CONSTRUTOR
-    
-    
-
     public Marcada(String codigo, Paciente paciente,  Medico medico, String horarioInicio, String horarioFim) {
         super(codigo, paciente, medico);
         this.horarioInicio = horarioInicio;
         this.horarioFim = horarioFim;
+        this.status = false;
     }
     // METODOS
 
@@ -57,14 +57,6 @@ public class Marcada extends Consulta {
     public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
-    public String getDescricaoMedica() {
-        return descricaoMedica;
-    }
-
-    public void setDescricaoMedica(String descricaoMedica) {
-        this.descricaoMedica = descricaoMedica;
-        
-    }
 
     public Medico getMedico() {
         return medico;
@@ -79,6 +71,21 @@ public class Marcada extends Consulta {
     }
     public void setPaciente(Paciente paciente) {
         this.paciente = paciente;
+    }
+
+    public boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+    public String getDescricaoMedica() {
+        return descricaoMedica;
+    }
+
+    public void setDescricaoMedica(String descricaoMedica) {
+        this.descricaoMedica = descricaoMedica;
     }
 }
 

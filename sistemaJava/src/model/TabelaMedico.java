@@ -1,9 +1,8 @@
-package view;
+package model;
 
 
 import javax.swing.table.AbstractTableModel;
 import control.*;
-import model.*;
 
 public class TabelaMedico extends AbstractTableModel {
 

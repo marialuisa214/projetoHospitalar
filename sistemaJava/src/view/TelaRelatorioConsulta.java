@@ -26,18 +26,18 @@ public class TelaRelatorioConsulta extends javax.swing.JFrame {
         labelTipoConsulta = new javax.swing.JLabel();
         textDescricao = new javax.swing.JTextField();
         labelDescricao = new javax.swing.JLabel();
-        botaoReceita = new javax.swing.JButton();
+        botaoGeraReceita = new javax.swing.JButton();
         botaoFinalizaConsulta = new javax.swing.JButton();
         botaoAtestado = new javax.swing.JButton();
         labelNomePaciente = new javax.swing.JLabel();
         labelCodigo = new javax.swing.JLabel();
-        botaoReceita1 = new javax.swing.JButton();
+        botaoExame = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         labelCrm.setFont(new java.awt.Font("Gujarati MT", 0, 8)); // NOI18N
         labelCrm.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelCrm.setText(consulta.getMedico().getCrm());
+        labelCrm.setText("CRM");
 
         botaoVoltarMedico.setBackground(new java.awt.Color(204, 153, 255));
         botaoVoltarMedico.setFont(new java.awt.Font("Gujarati MT", 1, 13)); // NOI18N
@@ -70,9 +70,15 @@ public class TelaRelatorioConsulta extends javax.swing.JFrame {
 
         labelTipoConsulta.setFont(new java.awt.Font("Gujarati MT", 0, 12)); // NOI18N
         labelTipoConsulta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelTipoConsulta.setText("Tipo_de_consulta");
+        labelTipoConsulta.setText("Consulta Marcada");
 
         textDescricao.setFont(new java.awt.Font("Gujarati MT", 0, 13)); // NOI18N
+        textDescricao.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        textDescricao.setToolTipText("descrição do estado do paciente");
+        textDescricao.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        textDescricao.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        textDescricao.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        textDescricao.setPreferredSize(new java.awt.Dimension(0, 0));
         textDescricao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textDescricaoActionPerformed(evt);
@@ -82,9 +88,9 @@ public class TelaRelatorioConsulta extends javax.swing.JFrame {
         labelDescricao.setFont(new java.awt.Font("Gujarati MT", 0, 13)); // NOI18N
         labelDescricao.setText("Descriçao:");
 
-        botaoReceita.setBackground(new java.awt.Color(204, 204, 255));
-        botaoReceita.setFont(new java.awt.Font("Gujarati MT", 0, 13)); // NOI18N
-        botaoReceita.setText("Gerar Receita Médica ");
+        botaoGeraReceita.setBackground(new java.awt.Color(204, 204, 255));
+        botaoGeraReceita.setFont(new java.awt.Font("Gujarati MT", 0, 13)); // NOI18N
+        botaoGeraReceita.setText("Gerar Receita Médica ");
 
         botaoFinalizaConsulta.setBackground(new java.awt.Color(204, 204, 255));
         botaoFinalizaConsulta.setFont(new java.awt.Font("Gujarati MT", 0, 13)); // NOI18N
@@ -105,9 +111,14 @@ public class TelaRelatorioConsulta extends javax.swing.JFrame {
         labelCodigo.setFont(new java.awt.Font("Gujarati MT", 0, 13)); // NOI18N
         labelCodigo.setText(consulta.getCodigo());
 
-        botaoReceita1.setBackground(new java.awt.Color(204, 204, 255));
-        botaoReceita1.setFont(new java.awt.Font("Gujarati MT", 0, 13)); // NOI18N
-        botaoReceita1.setText("Solicitar Exame");
+        botaoExame.setBackground(new java.awt.Color(204, 204, 255));
+        botaoExame.setFont(new java.awt.Font("Gujarati MT", 0, 13)); // NOI18N
+        botaoExame.setText("Solicitar Exame");
+        botaoExame.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoExameActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -139,8 +150,8 @@ public class TelaRelatorioConsulta extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(botaoAtestado)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(botaoReceita1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(botaoReceita, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(botaoExame, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(botaoGeraReceita, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGap(35, 35, 35))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(labelCodigoConsulta)
@@ -193,9 +204,9 @@ public class TelaRelatorioConsulta extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(botaoReceita1)
+                        .addComponent(botaoExame)
                         .addGap(18, 18, 18)
-                        .addComponent(botaoReceita)
+                        .addComponent(botaoGeraReceita)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(botaoAtestado))
                     .addComponent(textDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -207,13 +218,13 @@ public class TelaRelatorioConsulta extends javax.swing.JFrame {
         pack();
     }// </editor-fold>                        
 
-    private void botaoVoltarMedicoActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+    private void botaoVoltarMedicoActionPerformed(java.awt.event.ActionEvent evt) {    
+        new TelaPrincipalMedico(dados, consulta.getMedico()).setVisible(true); 
+        this.disable();                                       
         
     }                                                 
 
-    private void botaoConsultaProntuarioActionPerformed(java.awt.event.ActionEvent evt) {  
-       new TelaProntuario().setVisible(true);
-       this.dispose();                                                     
+    private void botaoConsultaProntuarioActionPerformed(java.awt.event.ActionEvent evt) {                                                        
         
     }                                                       
 
@@ -225,12 +236,17 @@ public class TelaRelatorioConsulta extends javax.swing.JFrame {
         
     }                                                     
 
+    private void botaoExameActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        new TelaExame(consulta.getPaciente(), consulta.getMedico(), consulta, dados).setVisible(true);
+        this.dispose();
+    }                                          
+
     // Variables declaration - do not modify                     
     private javax.swing.JButton botaoAtestado;
     private javax.swing.JButton botaoConsultaProntuario;
+    private javax.swing.JButton botaoExame;
     private javax.swing.JButton botaoFinalizaConsulta;
-    private javax.swing.JButton botaoReceita;
-    private javax.swing.JButton botaoReceita1;
+    private javax.swing.JButton botaoGeraReceita;
     private javax.swing.JButton botaoVoltarMedico;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel labelCodigo;
