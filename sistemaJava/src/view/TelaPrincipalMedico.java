@@ -147,8 +147,7 @@ public class TelaPrincipalMedico extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void buttonSairActionPerformed(java.awt.event.ActionEvent evt) {  
-        new TelaLogin(controle);
-        this.dispose();                                         
+                                              
     }                                          
 
     private void buttonMundancaHorarioActionPerformed(java.awt.event.ActionEvent evt) {                                                      
@@ -159,7 +158,7 @@ public class TelaPrincipalMedico extends javax.swing.JFrame {
         
         if(tabelaConsultas.getSelectedRow() != -1 ){
             Marcada consulta = tabela.selecionaItem(tabelaConsultas.getSelectedRow());
-            new TelaRelatorioConsulta(consulta).setVisible(true);
+            new TelaRelatorioConsulta(controle, consulta).setVisible(true);
                 this.dispose();
         }else{
             JOptionPane.showMessageDialog(null, "Selecione uma consulta antes de ir para a proxima página!");
@@ -173,7 +172,6 @@ public class TelaPrincipalMedico extends javax.swing.JFrame {
     // Variables declaration - do not modify                     
     private javax.swing.JButton buttonMundancaHorario;
     private javax.swing.JButton buttonRelatorioConsulta;
-    private javax.swing.JButton buttonRelatorioExame;
     private javax.swing.JButton buttonSair;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;

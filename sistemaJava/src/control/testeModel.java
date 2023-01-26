@@ -16,6 +16,11 @@ public class testeModel {
     Marcada consulta = new Marcada("123", paciente, medico,"12:30", "13:30");
     Marcada consulta2 = new Marcada("333", paciente2, medico,"14:30", "15:00");
     Marcada consulta3 = new Marcada("456", paciente3, medico,"18:00", "17:00");
+    Marcada consultafeita = new Marcada("456", paciente3, medico,"14:30", "15:00");
+    consultafeita.setDescricaoMedica("muita daiarreia, Todo cagado");
+    consultafeita.setDia("12/02/2023");
+
+
     
 
     ControleDados banco = new ControleDados();

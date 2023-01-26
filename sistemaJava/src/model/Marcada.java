@@ -6,12 +6,14 @@ import java.util.Date;
 public class Marcada extends Consulta {
 
     // ATRIBUTOS
-    private Date dia;
     private String horarioInicio; //ajustar formataçao das horas hein!!
     private String horarioFim;
+    private String Dia;
 
     //CONSTRUTOR
     
+    
+
     public Marcada(String codigo, Paciente paciente,  Medico medico, String horarioInicio, String horarioFim) {
         super(codigo, paciente, medico);
         this.horarioInicio = horarioInicio;
@@ -19,20 +21,23 @@ public class Marcada extends Consulta {
     }
     // METODOS
 
-    public Date getDia() {
+    public String getDia() {
         return dia;
     }
     public void setDia(String dia) {
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyy");
-		Date dataBase = null;
-
-		try {
-			dataBase = sdf.parse(dia);
-		} catch (java.text.ParseException e) {
-			return;
-		}
-		this.dia = dataBase;
+        Dia = dia;
     }
+    // public void setDia(String dia) {
+    //     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyy");
+	// 	Date dataBase = null;
+
+	// 	try {
+	// 		dataBase = sdf.parse(dia);
+	// 	} catch (java.text.ParseException e) {
+	// 		return;
+	// 	}
+	// 	this.dia = dataBase;
+    // }
 
     public String getHorarioFim() {
         return horarioFim;
@@ -69,6 +74,12 @@ public class Marcada extends Consulta {
         this.medico = medico;
     }
 
+    public Paciente getPaciente() {
+        return paciente;
+    }
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
+    }
 }
 
 

@@ -1,12 +1,14 @@
 package view;
 
 
+import control.ControleDados;
 import model.*;
 
 public class TelaRelatorioConsulta extends javax.swing.JFrame {
 
     
-    public TelaRelatorioConsulta(Marcada consulta) {
+    public TelaRelatorioConsulta(ControleDados dados, Marcada consulta) {
+        this.dados = dados;
         this.consulta = consulta;
         initComponents();
     }
@@ -209,7 +211,9 @@ public class TelaRelatorioConsulta extends javax.swing.JFrame {
         
     }                                                 
 
-    private void botaoConsultaProntuarioActionPerformed(java.awt.event.ActionEvent evt) {                                                        
+    private void botaoConsultaProntuarioActionPerformed(java.awt.event.ActionEvent evt) {  
+       new TelaProntuario().setVisible(true);
+       this.dispose();                                                     
         
     }                                                       
 
@@ -241,6 +245,7 @@ public class TelaRelatorioConsulta extends javax.swing.JFrame {
     // End of variables declaration           
     
     private Marcada consulta;
+    private ControleDados dados;
 }
 
 
