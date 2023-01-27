@@ -4,11 +4,8 @@ import control.ControlePaciente;
 
 public class TransicaoMetodosAtendente extends javax.swing.JFrame {
 
-    private static ControlePaciente pacientes;
-    public static TransicaoMetodosAtendente telaInicial;
-
     public TransicaoMetodosAtendente(ControlePaciente pacientes) {
-      TransicaoMetodosAtendente.pacientes = pacientes;
+      this.listaPaciente = pacientes;
       initComponents();
     }
                        
@@ -138,7 +135,7 @@ public class TransicaoMetodosAtendente extends javax.swing.JFrame {
     }                                                  
 
     private void buttonCadastraPacienteActionPerformed(java.awt.event.ActionEvent evt) {                                                       
-        new CadastroPaciente().setVisible(true);
+        new CadastroPaciente(listaPaciente).setVisible(true);
     }                                                      
 
     private void buttonSolicitaçõesActionPerformed(java.awt.event.ActionEvent evt) {                                                   
@@ -178,14 +175,6 @@ public class TransicaoMetodosAtendente extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(TransicaoMetodosAtendente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TransicaoMetodosAtendente(pacientes).setVisible(true);
-            }
-        });
     }
 
     // Variables declaration - do not modify                     
@@ -198,6 +187,8 @@ public class TransicaoMetodosAtendente extends javax.swing.JFrame {
     private javax.swing.JLabel labelAtendente;
     private javax.swing.JLabel labelDataHora;
     private javax.swing.JLabel labelIdAtendente;
+
+    private ControlePaciente listaPaciente;
     // End of variables declaration                   
     public interface telaInicial {
     }

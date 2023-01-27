@@ -3,17 +3,10 @@ package view;
 import control.ControlePaciente;
 
 public class CadastroPaciente extends javax.swing.JFrame {
-
-  private static ControlePaciente pacientes;
-
-    public CadastroPaciente(ControlePaciente pacientes) {
-      CadastroPaciente.pacientes = pacientes;
-        initComponents();
-    }
-
-    private char selectSexo;
-    public CadastroPaciente() {
-        initComponents();
+  
+    public CadastroPaciente(ControlePaciente listaRepassadaPacientes) {
+      this.listaTodosPacientes = listaRepassadaPacientes;
+      initComponents();
     }
                         
     private void initComponents() {
@@ -288,7 +281,8 @@ public class CadastroPaciente extends javax.swing.JFrame {
 
     private void buttonCadastraPacienteActionPerformed(java.awt.event.ActionEvent evt) {                                                       
       //String nome, String rg, String cpf, char sexo,String dataNascimento, String telefone, String email, String cidade, String endereco, String patologia  
-      pacientes.cadastraPaciente(this.inputNome.getText(), this.inputRG.getText(), this.inputCpf.getText(), this.selectSexo, this.inputNascimento.getText(), this.inputTelefone.getText(), this.inputEmail.getText(), this.inputCidadeEstado.getText(), this.inputEndereco.getText(), this.restricoesMedicas.getText());
+      listaTodosPacientes.cadastraPaciente(this.inputNome.getText(), this.inputRG.getText(), this.inputCpf.getText(), this.selectSexo, this.inputNascimento.getText(), this.inputTelefone.getText(), this.inputEmail.getText(), this.inputCidadeEstado.getText(), this.inputEndereco.getText(), this.restricoesMedicas.getText());
+      System.out.println(listaTodosPacientes.getListaPacientes().get(0).getNome());
     }                                                      
 
     private void inputEnderecoActionPerformed(java.awt.event.ActionEvent evt) {                                              
@@ -309,7 +303,6 @@ public class CadastroPaciente extends javax.swing.JFrame {
 
     private void buttonVoltarActionPerformed(java.awt.event.ActionEvent evt) {                                             
         this.dispose();
-        System.out.println(pacientes.listaPacientes().get(0));
     }                                            
 
     /**
@@ -342,12 +335,6 @@ public class CadastroPaciente extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new CadastroPaciente().setVisible(true);
-            }
-        });
     }
 
     // Variables declaration - do not modify                     
@@ -376,5 +363,8 @@ public class CadastroPaciente extends javax.swing.JFrame {
     private javax.swing.JTextArea restricoesMedicas;
     private javax.swing.JCheckBox selecaoSexoMasculino;
     private javax.swing.JCheckBox selecaoSexoFeminino;
+    
+    private ControlePaciente listaTodosPacientes;
+    private char selectSexo;
     // End of variables declaration                   
 }
