@@ -150,18 +150,30 @@ public class TelaLogin extends javax.swing.JFrame {
         if(radioMedico.isSelected()){
             for(Medico m : this.controle.getBancoMedicos()){
                 if(textUsuario.getText().equals(m.getUsuario()) && passwordSenha.getText().equals(m.getSenha())){
-                new TelaPrincipalMedico(controle, m).setVisible(true);
-                this.dispose();
+                    new TelaPrincipalMedico(controle, m).setVisible(true);
+                    this.dispose();
+                }
+                System.out.print(m.getUsuario());
             }
-            System.out.print(m.getUsuario());
-        }
-
             
+        
         }else if(radioAdm.isSelected()){
+            
+
          
         }else if(radioAtendente.isSelected()){
          
         }else if(radioEnfermeiro.isSelected()){
+            for(Enfermeiro e: this.controle.getBancoEnfermeiros()){
+                if(textUsuario.getText().equals(e.getUsuario()) && passwordSenha.getText().equals(e.getSenha())){
+                    
+                    System.out.print("passei aqui");
+                    new TelaPrincipalEnfermeiro(controle, e).setVisible(true);
+                    this.dispose();
+                }
+                System.out.print(e.getUsuario());
+            }
+            
         
         }
         

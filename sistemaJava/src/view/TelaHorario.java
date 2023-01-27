@@ -14,15 +14,18 @@ public class TelaHorario extends javax.swing.JFrame {
     private void initComponents() {
 
         labelNomeMedico = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        labelCrm = new javax.swing.JLabel();
         botaoVoltar = new javax.swing.JButton();
         botaoSolicita = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        textEmail = new javax.swing.JTextArea();
+        labelEmail = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         labelNomeMedico.setText("nomeMedico");
 
-        jLabel2.setText("crm");
+        labelCrm.setText("crm");
 
         botaoVoltar.setText("Voltar");
         botaoVoltar.addActionListener(new java.awt.event.ActionListener() {
@@ -38,25 +41,36 @@ public class TelaHorario extends javax.swing.JFrame {
             }
         });
 
+        textEmail.setColumns(20);
+        textEmail.setRows(5);
+        jScrollPane1.setViewportView(textEmail);
+
+        labelEmail.setText("Adicionar e-mail:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(82, 82, 82)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(botaoSolicita)
-                .addGap(0, 84, Short.MAX_VALUE))
+                .addGap(128, 128, 128))
             .addGroup(layout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane1)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(labelNomeMedico)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 196, Short.MAX_VALUE)
+                                .addComponent(botaoVoltar)))
+                        .addGap(20, 20, 20))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(labelNomeMedico)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(botaoVoltar)
-                        .addGap(20, 20, 20))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelEmail)
+                            .addComponent(labelCrm))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -66,33 +80,40 @@ public class TelaHorario extends javax.swing.JFrame {
                     .addComponent(labelNomeMedico)
                     .addComponent(botaoVoltar))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addGap(35, 35, 35)
+                .addComponent(labelCrm)
+                .addGap(18, 18, 18)
+                .addComponent(labelEmail)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(botaoSolicita)
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addGap(17, 17, 17))
         );
 
         pack();
-    }// </editor-fold>                        
+    }                     
 
     private void botaoSolicitaActionPerformed(java.awt.event.ActionEvent evt) {                                              
         //como fazer? Mandar string?
 
         new TelaPrincipalMedico(dados, medico).setVisible(true); 
-        this.disable();
+        this.dispose();
     }                                             
 
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {                                            
         new TelaPrincipalMedico(dados, medico).setVisible(true); 
-        this.disable();
+        this.dispose();
     }    
     
 
     // Variables declaration - do not modify                     
     private javax.swing.JButton botaoSolicita;
     private javax.swing.JButton botaoVoltar;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel labelCrm;
     private javax.swing.JLabel labelNomeMedico;
+    private javax.swing.JTextArea textEmail;
+    private javax.swing.JLabel labelEmail;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration       
     ControleDados dados;
     Medico medico;            

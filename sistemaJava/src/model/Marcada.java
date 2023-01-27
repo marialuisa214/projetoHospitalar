@@ -8,7 +8,7 @@ public class Marcada extends Consulta {
     // ATRIBUTOS
     private String horarioInicio; //ajustar formataçao das horas hein!!
     private String horarioFim;
-    private String Dia;
+    private String Data;
     private boolean status;
     private String descricaoMedica;
 
@@ -19,12 +19,12 @@ public class Marcada extends Consulta {
     }
     // METODOS
 
-    public String getDia() {
-        return dia;
-    }
-    public void setDia(String dia) {
-        Dia = dia;
-    }
+    // public String get() {
+    //     return dia;
+    // }
+    // public void setDia(String dia) {
+    //     Dia = dia;
+    // }
     // public void setDia(String dia) {
     //     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyy");
 	// 	Date dataBase = null;

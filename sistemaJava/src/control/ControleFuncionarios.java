@@ -5,6 +5,7 @@ import model.*;
 public class ControleFuncionarios {
 
   // METODOS
+  
   // ADMINISTRADOR
   public Medico cadastraMedico(String nome, String cpf, char sexo, String dataNascimento, String usuario,
       String senha, String especialidade) {

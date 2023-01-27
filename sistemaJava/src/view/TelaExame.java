@@ -140,7 +140,7 @@ public class TelaExame extends javax.swing.JFrame {
 
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {                                            
         new TelaRelatorioConsulta(dados, consulta).setVisible(true);
-        this.disable();
+        this.dispose();;
     }            
     
     private void botaoSolicitaActionPerformed(java.awt.event.ActionEvent evt) {   
@@ -152,7 +152,7 @@ public class TelaExame extends javax.swing.JFrame {
         
         dados.adicionaSolicitacao(novaSolicitacao);
         new TelaRelatorioConsulta(dados, consulta).setVisible(true);;
-        this.disable();
+        this.dispose();
     } 
 
     // public static void main(String args[]) {

@@ -34,6 +34,7 @@ public class ControleDados {
     public void adicionaPacientes(Paciente paciente) {
         this.bancoPacientes.add(paciente);
     }
+    
 //LISTA DE SOLICITAÇOES MEDICO P/ ATENDENTE
     // nova classe???
 
@@ -46,8 +47,15 @@ public class ControleDados {
     public void adicionaSolicitacao(Solicitacao solicitacao) {
         this.bancoSolicitacaos.add(solicitacao);
     }
+//ENFERMEIROS
+    ArrayList<Enfermeiro> bancoEnfermeiros = new ArrayList<>();
 
-
+    public ArrayList<Enfermeiro> getBancoEnfermeiros() {
+        return bancoEnfermeiros;
+    }
+    public void adicionaEnfermeiro(Enfermeiro enfermeiro) {
+        this.bancoEnfermeiros.add(enfermeiro);
+    }
 
 
 

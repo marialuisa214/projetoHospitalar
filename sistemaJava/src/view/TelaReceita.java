@@ -191,7 +191,7 @@ public class TelaReceita extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) { 
-        new TelaRelatorioConsulta(dados, consulta);
+        new TelaRelatorioConsulta(dados, consulta).setVisible(true);;
         this.dispose();                                           
         
     }                                           

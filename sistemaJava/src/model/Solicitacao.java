@@ -36,6 +36,8 @@ public class Solicitacao {
     }
       public void solicitaExame(Exame exame) {
         this.listaSolicitacaoExame.add(exame);
-      }
+    }
+
+    //public ArrayList<aviso> OU o medico pode mandar um email!!! ai maria como vc é inteligente
     
 }

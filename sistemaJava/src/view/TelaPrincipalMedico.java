@@ -148,11 +148,13 @@ public class TelaPrincipalMedico extends javax.swing.JFrame {
 
     private void buttonSairActionPerformed(java.awt.event.ActionEvent evt) {  
         new TelaLogin(controle).setVisible(true);
-        this.disable();
+        this.dispose();
 
     }                                          
 
-    private void buttonMundancaHorarioActionPerformed(java.awt.event.ActionEvent evt) {                                                      
+    private void buttonMundancaHorarioActionPerformed(java.awt.event.ActionEvent evt) {    
+        new TelaHorario(controle, medico).setVisible(true);
+        this.dispose();                                               
     }                                                     
 
     

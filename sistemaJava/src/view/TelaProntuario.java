@@ -8,6 +8,8 @@ public class TelaProntuario extends javax.swing.JFrame {
     public TelaProntuario(Prontuario p , ControleDados dados, Marcada consulta) {
         this.tabela1 = new TabelaProntuarioConsulta(p);
         this.tabela2 = new TabelaProntuarioExame(p);
+        this.consulta = consulta;
+        this.dados = dados;
         initComponents();
 
         tabelaHistConsulta.setModel(tabela1);
@@ -51,13 +53,13 @@ public class TelaProntuario extends javax.swing.JFrame {
             }
         });
 
-        // labelNomePaciente.setText();
+        labelNomePaciente.setText(this.consulta.getPaciente().getNome());
 
-        // labelIdadePaciente.setText();
+        labelIdadePaciente.setText(String.valueOf(this.consulta.getPaciente().getIdade()));
 
-        // labelPesoPaciente.setText();
+        labelPesoPaciente.setText(String.valueOf(this.consulta.getPaciente().getProntuario().getPeso()));
 
-        // labelAlturaPaciente.setText();
+        labelAlturaPaciente.setText(String.valueOf(this.consulta.getPaciente().getProntuario().getAltura()));
 
         tabelaHistConsulta.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -181,7 +183,8 @@ public class TelaProntuario extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {                                            
-        
+        new TelaRelatorioConsulta(dados, consulta).setVisible(true); 
+        this.dispose();
     }                                           
 
     private void botaoDetalhesConsultaActionPerformed(java.awt.event.ActionEvent evt) {                                                      
@@ -219,6 +222,7 @@ public class TelaProntuario extends javax.swing.JFrame {
 
     private TabelaProntuarioConsulta tabela1;
     private TabelaProntuarioExame tabela2;
-    private Marcada marcada;
+    private Marcada consulta;
+    private ControleDados dados;
 
 }

@@ -17,6 +17,13 @@ public class Receita {
   private List<Medicamento> medicamentos = new ArrayList<>();
 
   //METODOS
+  public Paciente getPaciente() {
+		return paciente;
+	}
+
+	public void setPaciente(Paciente paciente) {
+		this.paciente = paciente;
+	}
   public Date getDataPedido() {
     return dataPedido;
   }

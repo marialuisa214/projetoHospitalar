@@ -19,17 +19,18 @@ public class testeModel {
     Paciente paciente3 = new Paciente("Elaine", "2134", 'F', "13/01/2007", "nenhuma");
     
     
-    Atendente atendente = new Atendente("luana", "1234", 'F', "10/12/2001","luana123", "123");
+    // Atendente atendente = new Atendente("luana", "1234", 'F', "10/12/2001","luana123", "123");
     Medico medico = new Medico("carlos", "333", 'M', "06/04/1991", "2121", "malu", "ginicologista");
     Marcada consulta = new Marcada("123", paciente, medico);
 
+    Enfermeiro enfermeiro = new Enfermeiro("Joana", "54323", 'M',"23/04/1987", "Jona", "1212");
     System.out.println(consulta.getPaciente().getNome());
     Marcada consulta2 = new Marcada("333", paciente2, medico);
-    Marcada consulta3 = new Marcada("456", paciente3, medico);
+    Marcada consulta3 = new Marcada("457", paciente3, medico);
     Marcada consultafeita = new Marcada("456", paciente3, medico);
     Marcada consulta4 = new Marcada("33763", paciente3, medico);
     consultafeita.setDescricaoMedica("muita daiarreia, Todo cagado");
-    consultafeita.setDia("12/02/2023");
+    // consultafeita.setDia("12/02/2023");
 
     Exame exame1 = new Exame("tomografia", "211");
     Exame exame2 = new Exame("colonoscopia", "421");
@@ -46,8 +47,10 @@ public class testeModel {
     banco.adicionaConsulta(consulta);
     banco.adicionaConsulta(consulta2);
     banco.adicionaConsulta(consulta3);
+    banco.getBancoEnfermeiros().add(enfermeiro);
   
     new TelaLogin(banco).setVisible(true);
+
    
   }
 }

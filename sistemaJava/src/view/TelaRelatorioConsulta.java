@@ -231,13 +231,13 @@ public class TelaRelatorioConsulta extends javax.swing.JFrame {
 
     private void botaoVoltarMedicoActionPerformed(java.awt.event.ActionEvent evt) {    
         new TelaPrincipalMedico(dados, consulta.getMedico()).setVisible(true); 
-        this.disable();                                       
+        this.dispose();                                       
         
     }                                                 
 
     private void botaoConsultaProntuarioActionPerformed(java.awt.event.ActionEvent evt) {  
         new TelaProntuario(consulta.getPaciente().getProntuario() , dados, consulta).setVisible(true);
-        this.disable();                                                      
+        this.dispose();                                                     
         
     }                                                       
 
@@ -266,7 +266,7 @@ public class TelaRelatorioConsulta extends javax.swing.JFrame {
     
     private void botaoGeraReceitaActionPerformed(java.awt.event.ActionEvent evt) {                                                 
         new TelaReceita(consulta.getMedico(), consulta, dados).setVisible(true);
-        this.disable();
+        this.dispose();
     }
 
     // Variables declaration - do not modify                     
