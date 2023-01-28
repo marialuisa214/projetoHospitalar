@@ -282,7 +282,8 @@ public class CadastroPaciente extends javax.swing.JFrame {
     private void buttonCadastraPacienteActionPerformed(java.awt.event.ActionEvent evt) {                                                       
       //String nome, String rg, String cpf, char sexo,String dataNascimento, String telefone, String email, String cidade, String endereco, String patologia  
       listaTodosPacientes.cadastraPaciente(this.inputNome.getText(), this.inputRG.getText(), this.inputCpf.getText(), this.selectSexo, this.inputNascimento.getText(), this.inputTelefone.getText(), this.inputEmail.getText(), this.inputCidadeEstado.getText(), this.inputEndereco.getText(), this.restricoesMedicas.getText());
-      System.out.println(listaTodosPacientes.getListaPacientes().get(0).getNome());
+      this.dispose();
+      new TransicaoMetodosAtendente(listaTodosPacientes).setVisible(true);  
     }                                                      
 
     private void inputEnderecoActionPerformed(java.awt.event.ActionEvent evt) {                                              
@@ -303,6 +304,7 @@ public class CadastroPaciente extends javax.swing.JFrame {
 
     private void buttonVoltarActionPerformed(java.awt.event.ActionEvent evt) {                                             
         this.dispose();
+        new TransicaoMetodosAtendente(listaTodosPacientes).setVisible(true);
     }                                            
 
     /**

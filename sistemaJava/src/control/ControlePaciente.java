@@ -19,7 +19,7 @@ public class ControlePaciente {
       }
       
       public void cadastraPaciente(String nome, String rg, String cpf, char sexo,String dataNascimento, String telefone, String email, String cidade, String endereco, String patologia) {
-        Paciente paciente = new Paciente(patologia, patologia, patologia, sexo, patologia, patologia, patologia, patologia, patologia, patologia);
+        Paciente paciente = new Paciente(nome, rg, cpf, sexo, dataNascimento, telefone, email, cidade, endereco, patologia);
         this.listaPacientes.add(paciente);
       }
 
@@ -30,5 +30,19 @@ public class ControlePaciente {
       public void setListaPacientes(ArrayList<Paciente> listaPacientes) {
         this.listaPacientes = listaPacientes;
       }
+
+      public String[] listaNomePacientes(){
+        int qtdPacientes = this.getListaPacientes().size();
+        String[] nomesPacientes = new String[qtdPacientes];
+
+        for (int i=0; i<qtdPacientes; i++){
+          String nome = this.getListaPacientes().get(i).getNome();
+
+          nomesPacientes[i] = nome;
+        }
+
+        return nomesPacientes;
+      } 
+
   }
   

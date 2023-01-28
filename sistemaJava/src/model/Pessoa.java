@@ -8,6 +8,7 @@ public abstract class Pessoa {
 	// ATRIBUTOS
 	protected String nome;
 	protected String rg;
+	
 	protected String cpf;
 	protected char sexo;
 	protected long idade;
@@ -31,7 +32,7 @@ public abstract class Pessoa {
 		this.cidadeEstado = cidade;
 		this.endereco = endereco;
 	}
-
+	
 	// MÉTODOS
 	public String getNome() {
 		return nome;
@@ -40,7 +41,15 @@ public abstract class Pessoa {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	
+	public String getRg() {
+		return rg;
+	}
 
+	public void setRg(String rg) {
+		this.rg = rg;
+	}
+	
 	public String getCpf() {
 		return cpf;
 	}

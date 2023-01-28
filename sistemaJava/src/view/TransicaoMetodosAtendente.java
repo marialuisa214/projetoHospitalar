@@ -1,8 +1,11 @@
 package view;
 
+import javax.swing.JList;
+
 import control.ControlePaciente;
 
 public class TransicaoMetodosAtendente extends javax.swing.JFrame {
+
 
     public TransicaoMetodosAtendente(ControlePaciente pacientes) {
       this.listaPaciente = pacientes;
@@ -15,11 +18,12 @@ public class TransicaoMetodosAtendente extends javax.swing.JFrame {
         labelIdAtendente = new javax.swing.JLabel();
         labelDataHora = new javax.swing.JLabel();
         buttonBuscaPaciente = new javax.swing.JButton();
-        fieldBuscaPaciente = new javax.swing.JTextField();
         buttonCadastraPaciente = new javax.swing.JButton();
         buttonAgendaConsulta = new javax.swing.JButton();
         buttonAgendaExame = new javax.swing.JButton();
         buttonSolicitações = new javax.swing.JButton();
+        fieldBuscaPaciente = new javax.swing.JTextField();
+        listaPacientes = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -34,12 +38,6 @@ public class TransicaoMetodosAtendente extends javax.swing.JFrame {
         buttonBuscaPaciente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonBuscaPacienteActionPerformed(evt);
-            }
-        });
-
-        fieldBuscaPaciente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fieldBuscaPacienteActionPerformed(evt);
             }
         });
 
@@ -75,29 +73,32 @@ public class TransicaoMetodosAtendente extends javax.swing.JFrame {
             }
         });
 
+        fieldBuscaPaciente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fieldBuscaPacienteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(labelAtendente, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelDataHora, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelIdAtendente, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(buttonAgendaExame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(buttonAgendaConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(fieldBuscaPaciente, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(buttonBuscaPaciente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(buttonCadastraPaciente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
-                        .addComponent(buttonSolicitações, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(25, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(labelAtendente)
+                    .addComponent(labelDataHora)
+                    .addComponent(labelIdAtendente)
+                    .addComponent(fieldBuscaPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+                    .addComponent(listaPacientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(buttonBuscaPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(buttonCadastraPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(buttonAgendaConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(buttonAgendaExame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(buttonSolicitações, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -108,23 +109,28 @@ public class TransicaoMetodosAtendente extends javax.swing.JFrame {
                 .addComponent(labelIdAtendente)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelDataHora)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                .addComponent(fieldBuscaPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(buttonBuscaPaciente)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(buttonCadastraPaciente)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(buttonAgendaConsulta)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonAgendaExame)
-                    .addComponent(buttonSolicitações))
-                .addGap(39, 39, 39))
+                    .addComponent(fieldBuscaPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonBuscaPaciente))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(buttonCadastraPaciente)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonAgendaConsulta)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonAgendaExame)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonSolicitações))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(listaPacientes, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
         pack();
-    }// </editor-fold>                        
+    }                        
 
     private void buttonBuscaPacienteActionPerformed(java.awt.event.ActionEvent evt) {                                                    
         // TODO add your handling code here:
@@ -132,9 +138,12 @@ public class TransicaoMetodosAtendente extends javax.swing.JFrame {
 
     private void fieldBuscaPacienteActionPerformed(java.awt.event.ActionEvent evt) {                                                   
         // TODO add your handling code here:
+        System.out.println("oi");
+        this.listaPacientes = new JList<>(this.listaPaciente.listaNomePacientes());
     }                                                  
 
     private void buttonCadastraPacienteActionPerformed(java.awt.event.ActionEvent evt) {                                                       
+        this.dispose();
         new CadastroPaciente(listaPaciente).setVisible(true);
     }                                                      
 
@@ -187,9 +196,11 @@ public class TransicaoMetodosAtendente extends javax.swing.JFrame {
     private javax.swing.JLabel labelAtendente;
     private javax.swing.JLabel labelDataHora;
     private javax.swing.JLabel labelIdAtendente;
+    private javax.swing.JList<String> listaPacientes;
 
     private ControlePaciente listaPaciente;
-    // End of variables declaration                   
+    // End of variables declaration
+    
     public interface telaInicial {
     }
 }
