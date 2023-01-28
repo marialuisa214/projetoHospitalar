@@ -5,12 +5,13 @@ import java.util.Date;
 public abstract class Consulta {
 
     //ATRIBUTOS
-    protected String dia;
     protected Paciente paciente;
     protected String codigo;
     protected Medico medico;
     protected String descricaoMedica;
     protected boolean status;
+    protected String data;
+    protected String horario;
     
 
     //CONSTRUTOR
@@ -48,10 +49,7 @@ public abstract class Consulta {
     public void setMedico(Medico medico) {
         this.medico = medico;
     }
-
-    public String getDia() {
-        return dia;
-    }
+    
     public boolean getStatus() {
         return status;
     }

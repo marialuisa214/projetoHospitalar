@@ -31,7 +31,7 @@ public class TabelaProntuarioConsulta extends AbstractTableModel {
     public Object getValueAt(int linha, int coluna) {
         switch(coluna){
             case 0:
-                return prontuario.getHistoricoConsultasMarcadas().get(linha).getDia();
+                return prontuario.getHistoricoConsultasMarcadas().get(linha).getData();
             case 1:
                 return prontuario.getHistoricoConsultasMarcadas().get(linha).getCodigo();
             case 2:

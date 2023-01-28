@@ -204,7 +204,7 @@ public class TelaReceita extends javax.swing.JFrame {
             Medicamento med = new Medicamento(textMedicamento.getText(), textCodigoMedicamento.getText());
             novaReceita.setDescricaoMed(textDescricao.getText());
             novaReceita.addMedicamentos(med);
-            consulta.getPaciente().addReceitas(novaReceita);
+            consulta.getPaciente().getListaReceitas().add(novaReceita);
             new TelaRelatorioConsulta(dados, consulta).setVisible(true);
             this.dispose(); 
 

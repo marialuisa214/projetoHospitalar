@@ -14,16 +14,15 @@ public class testeModel {
     Date c = new Date();
     System.out.println(formatador.format(c));
     
-    Paciente paciente = new Paciente("Maria", "123", 'F', "10/12/2001", "nenhuma");
-    Paciente paciente2 = new Paciente("Matheus", "8765", 'M', "10/11/2007", "nenhuma");
-    Paciente paciente3 = new Paciente("Elaine", "2134", 'F', "13/01/2007", "nenhuma");
-    
+    Paciente paciente = new Paciente("Maria", "321312", "23132", 'F', "31/08/2003", "432123", "malalal", "jijsijsioa", "isjiajis", "nenhuma");
+    Paciente paciente2 = new Paciente("Matheus", "321312", "23132", 'F', "31/08/2003", "432123", "malalal", "jijsijsioa", "isjiajis", "nenhuma");
+    Paciente paciente3 = new Paciente("Elaine", "321312", "23132", 'F', "31/08/2003", "432123", "malalal", "jijsijsioa", "isjiajis", "nenhuma");
     
     // Atendente atendente = new Atendente("luana", "1234", 'F', "10/12/2001","luana123", "123");
-    Medico medico = new Medico("carlos", "333", 'M', "06/04/1991", "2121", "malu", "ginicologista");
+    Medico medico = new Medico("DR Carlos", "32121", "222", 'M', "12/12/1981", "telefone", "email", "cidade", "endereço", "usuario", "senha", "oiCRM", "ginecologista");
     Marcada consulta = new Marcada("123", paciente, medico);
 
-    Enfermeiro enfermeiro = new Enfermeiro("Joana", "54323", 'M',"23/04/1987", "Jona", "1212");
+    Enfermeiro enfermeiro = new Enfermeiro("nome", "rg", "cpf", 'F', "03/04/1994", "324232-2322", "email", "cidade", null, "user", "sena");
     System.out.println(consulta.getPaciente().getNome());
     Marcada consulta2 = new Marcada("333", paciente2, medico);
     Marcada consulta3 = new Marcada("457", paciente3, medico);

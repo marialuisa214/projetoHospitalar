@@ -38,9 +38,9 @@ public class TabelaMedico extends AbstractTableModel {
     public Object getValueAt(int linha, int coluna) {
         switch(coluna){
             case 0:
-                return dados.getBancoConsultaMarcadas().get(linha).getDia();
+                return dados.getBancoConsultaMarcadas().get(linha).getData();
             case 1:
-                return dados.getBancoConsultaMarcadas().get(linha).getHorarioInicio();
+                return dados.getBancoConsultaMarcadas().get(linha).getHorario();
             case 2:
                 return dados.getBancoConsultaMarcadas().get(linha).getPaciente().getNome();
             case 3:

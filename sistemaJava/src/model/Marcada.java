@@ -6,11 +6,12 @@ import java.util.Date;
 public class Marcada extends Consulta {
 
     // ATRIBUTOS
-    private String horarioInicio; //ajustar formataçao das horas hein!!
-    private String horarioFim;
-    private String Data;
-    private boolean status;
+    private String data; //ajustar formataçao das horas hein!!
+    private String horario;
+     private boolean status;
     private String descricaoMedica;
+    private SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
+    private Date c;
 
     //CONSTRUTOR
     public Marcada(String codigo, Paciente paciente,  Medico medico) {
@@ -37,18 +38,14 @@ public class Marcada extends Consulta {
 	// 	this.dia = dataBase;
     // }
 
-    public String getHorarioFim() {
-        return horarioFim;
+    public String getHorario() {
+        return horario;
     }
-    public void setHorarioFim(String horarioFim) {
-        this.horarioFim = horarioFim;
+
+    public void setHorario(String hoario) {
+        this.horario = hoario;
     }
-    public String getHorarioInicio() {
-        return horarioInicio;
-    }
-    public void setHorarioInicio(String horarioInicio) {
-        this.horarioInicio = horarioInicio;
-    }
+
     public String getCodigo() {
         return codigo;
     }
@@ -84,6 +81,14 @@ public class Marcada extends Consulta {
 
     public void setDescricaoMedica(String descricaoMedica) {
         this.descricaoMedica = descricaoMedica;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
     }
 }
 
