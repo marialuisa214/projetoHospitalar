@@ -4,26 +4,29 @@ import java.util.ArrayList;
 
 public class Medico extends Funcionario {
 //ATRIBUTOS
-	private static String especialidade;
+	private String especialidade;
+	private String crm;
+	
 	private ArrayList<Agenda> listaAgenda = new ArrayList<>();
-
+	
 
 
 //CONSTRUTOR	
-	public Medico(String nome, String rg, String cpf, char sexo, String dataNascimento, String telefone, String email, String cidade, String endereco, String usuario, String senha, String especialidade){
+	public Medico(String nome, String rg, String cpf, char sexo, String dataNascimento, String telefone, String email, String cidade, String endereco, String usuario, String senha, String crm, String especialidade){
 		super(nome, rg, cpf, sexo, dataNascimento, telefone, email, cidade, endereco, usuario, senha);		 		
-		Medico.especialidade = especialidade;
+		this.crm = crm;
+		this.especialidade = especialidade;
 	}
 	
 //METODOS
-	
+
 	public String getEspecialidade() {
 		return especialidade;
 	}
 	public void setEspecialidade(String especialidade) {
-		Medico.especialidade = especialidade;
+		this.especialidade = especialidade;
 	}
-
+	
 	public ArrayList<Agenda> getAgenda() {
 		return listaAgenda;
 	}
@@ -34,10 +37,17 @@ public class Medico extends Funcionario {
 	public void adicionaAgenda(Agenda agenda){
 		 this.listaAgenda.add(agenda);
 	}
-
+	
+	public String getCrm() {
+		return crm;
+	}
+	
+	public void setCrm(String crm) {
+		this.crm = crm;
+	}
 	//criar receita para o paciente
 	//assinar/confirma receita
 	//atestado médico?
 	
-
+	
 }

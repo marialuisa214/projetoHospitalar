@@ -6,12 +6,12 @@ public class ControleFuncionarios {
 
   // METODOS
   // ADMINISTRADOR
-  public Medico cadastraMedico(String nome, String rg, String cpf, char sexo, String dataNascimento, String telefone, String email, String cidade, String endereco, String usuario, String senha, String especialidade) {
-    return new Medico(nome, rg, cpf, sexo, dataNascimento, telefone, email, cidade, endereco, usuario, senha, especialidade);
+  public Medico cadastraMedico(String nome, String rg, String cpf, char sexo, String dataNascimento, String telefone, String email, String cidade, String endereco, String usuario, String senha, String crm, String especialidade) {
+    return new Medico(nome, rg, cpf, sexo, dataNascimento, telefone, email, cidade, endereco, usuario, senha, crm, especialidade);
   }
 
-  public Enfermeiro cadastraEnfermeiro(String nome, String rg, String cpf, char sexo, String dataNascimento, String telefone, String email, String cidade, String endereco, String usuario, String senha) {
-    return new Enfermeiro(nome, rg, cpf, sexo, dataNascimento, telefone, email, cidade, endereco, usuario, senha);
+  public Enfermeiro cadastraEnfermeiro(String nome, String rg, String cpf, char sexo, String dataNascimento, String telefone, String email, String cidade, String endereco, String usuario, String senha, String corem) {
+    return new Enfermeiro(nome, rg, cpf, sexo, dataNascimento, telefone, email, cidade, endereco, usuario, senha, corem);
   }
 
   public Farmaceutico cadastraFarmaceutico(String nome, String rg, String cpf, char sexo, String dataNascimento, String telefone, String email, String cidade, String endereco, String usuario, String senha, int crf) {
