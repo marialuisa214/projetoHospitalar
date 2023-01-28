@@ -10,9 +10,8 @@ public class Triagem {
     private Enfermeiro enfermeiro;
 
     // CONSTRUTOR
-    public Triagem(String descricao, String gravidade, Entrada entrada) {
-        this.descricao = descricao;
-        this.gravidade = gravidade;
+    public Triagem(Entrada entrada, Enfermeiro enfermeiro) {
+        this.enfermeiro = enfermeiro;
         this.entrada = entrada;
     }
 

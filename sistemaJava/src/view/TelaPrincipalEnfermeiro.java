@@ -1,12 +1,19 @@
 package view;
 
 import control.ControleDados;
-import model.Enfermeiro;
+import model.*;
 
 public class TelaPrincipalEnfermeiro extends javax.swing.JFrame {
 
     public TelaPrincipalEnfermeiro(ControleDados dados, Enfermeiro enfermeiro) {
+        this.enfermeiro  = enfermeiro;
+        this.dados = dados;
+        this.tabelaTriagem = new TabelaTriagem(enfermeiro); 
+        this.tabelaExame = new TabelaExameEnfermeiro(enfermeiro);
         initComponents();
+
+        jTable1.setModel(tabelaTriagem);
+        jTable2.setModel(tabelaExame);
     }
                               
     private void initComponents() {
@@ -29,13 +36,13 @@ public class TelaPrincipalEnfermeiro extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        labelNomeEnfer.setText("Nome do(a) enfermeiro(a):");
+        labelNomeEnfer.setText("Enfermeiro(a):");
 
-        labelNomeEnfermeiro.setText("jLabel7");
+        labelNomeEnfermeiro.setText(enfermeiro.getNome());
 
         labelCoremEnfer.setText("COREM:");
 
-        labelCoremEnfemeiro.setText("jLabel7");
+        labelCoremEnfemeiro.setText(this.enfermeiro.getCrm());
 
         labelTriagem.setText("Triagem:");
 
@@ -182,26 +189,7 @@ public class TelaPrincipalEnfermeiro extends javax.swing.JFrame {
     private void buttonFazerExameActionPerformed(java.awt.event.ActionEvent evt) {                                                 
         
     }                                               
-    public static void main(String args[]) {
-        
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipalEnfermeiro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipalEnfermeiro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipalEnfermeiro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipalEnfermeiro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-       
-    }
+    
 
     // Variables declaration - do not modify                     
     private javax.swing.JButton buttonFazerExame;
@@ -219,5 +207,9 @@ public class TelaPrincipalEnfermeiro extends javax.swing.JFrame {
     private javax.swing.JLabel labelNomeEnfer;
     private javax.swing.JLabel labelNomeEnfermeiro;
     private javax.swing.JLabel labelTriagem;
-    // End of variables declaration                   
+    // End of variables declaration          
+    private ControleDados dados;
+    private Enfermeiro enfermeiro;
+    private TabelaTriagem tabelaTriagem;
+    private TabelaExameEnfermeiro tabelaExame;
 }

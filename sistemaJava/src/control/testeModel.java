@@ -41,6 +41,14 @@ public class testeModel {
     paciente3.getProntuario().getHistoricoExame().add(exame2);
     paciente3.getProntuario().getHistoricoExame().add(exame1);
 
+    Entrada entrada = new Entrada("Muita febre, colicas", paciente3);
+    Triagem triagem = new Triagem(entrada, enfermeiro);
+
+    enfermeiro.getListaTriagem().add(triagem);
+    enfermeiro.getListaExame().add(exame1);
+    enfermeiro.getListaExame().add(exame2);
+
+
 
     ControleDados banco = new ControleDados();
     banco.adicionaMedico(medico);
@@ -50,6 +58,9 @@ public class testeModel {
     banco.getBancoEnfermeiros().add(enfermeiro);
   
     new TelaLogin(banco).setVisible(true);
+
+    // System.out.println(enfermeiro.getListaTriagem().get(0).getEntrada().getDataEntrada());
+
 
    
   }

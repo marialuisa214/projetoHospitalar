@@ -4,6 +4,7 @@ public class Exame {
     //atributos
     private String nomeExame;
     private String data;
+    private String Horario;
     private String codigo;
     private Prontuario prontuario;
     private Funcionario responsavelTecnico;
@@ -15,6 +16,14 @@ public class Exame {
         this.codigo = codigo;
     }
     //métodos 
+
+    public String getHorario() {
+        return Horario;
+    }
+
+    public void setHorario(String horario) {
+        Horario = horario;
+    }
 
     public String getNomeExame() {
         return nomeExame;

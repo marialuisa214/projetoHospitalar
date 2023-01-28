@@ -63,7 +63,7 @@ public abstract class Pessoa {
 	}
 
 	public void calculaIdade() {
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyy");
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 		Date dataBase = null;
 		Date atual = null;
 

@@ -1,14 +1,43 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Enfermeiro extends Funcionario {
+	private String crm;
+	private ArrayList<Triagem> listaTriagem =new ArrayList<>();
+	private ArrayList<Exame> listaExame = new ArrayList<>();
 	
-//CONSTRUTOR	
+	//CONSTRUTOR	
 	public Enfermeiro(String nome, String cpf, char sexo, String dataNascimento, String usuario, String senha){
 		super(nome, cpf, sexo, dataNascimento, usuario, senha); 		
 	}
-//METODO
+
+	//METODO
 	//fazAcompanhamento
 	//faz prontuario
+	public String getCrm() {
+		return crm;
+	}
+
+	public void setCrm(String crm) {
+		this.crm = crm;
+	}
+	public ArrayList<Triagem> getListaTriagem() {
+		return listaTriagem;
+	}
+	public void setListaTriagem(ArrayList<Triagem> listaTriagem) {
+		this.listaTriagem = listaTriagem;
+	}
+
+	public ArrayList<Exame> getListaExame() {
+		return listaExame;
+	}
+
+	public void setListaExame(ArrayList<Exame> listaExame) {
+		this.listaExame = listaExame;
+	}
+
+
 	
 
 }

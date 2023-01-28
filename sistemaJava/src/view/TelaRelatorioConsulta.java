@@ -246,8 +246,8 @@ public class TelaRelatorioConsulta extends javax.swing.JFrame {
     }                                             
 
     private void botaoFinalizaConsultaActionPerformed(java.awt.event.ActionEvent evt) {    
-        if(textDescricao.getText().isEmpty()){
-            JOptionPane.showMessageDialog(null,"Vocé deve preencher todos os campos para Finalizar a Consulta." );
+        
+        if(textDescricao.getText().isEmpty()){    JOptionPane.showMessageDialog(null,"Vocé deve preencher todos os campos para Finalizar a Consulta." );
         } else{ 
             consulta.setDescricaoMedica(textDescricao.getText());
             consulta.setStatus(true);

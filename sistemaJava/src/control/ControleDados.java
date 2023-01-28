@@ -56,6 +56,8 @@ public class ControleDados {
     public void adicionaEnfermeiro(Enfermeiro enfermeiro) {
         this.bancoEnfermeiros.add(enfermeiro);
     }
+//TRIAGEM
+    
 
 
 
