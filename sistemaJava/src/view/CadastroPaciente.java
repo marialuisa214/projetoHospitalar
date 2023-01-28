@@ -1,5 +1,7 @@
 
 package view;
+import javax.swing.JOptionPane;
+
 import control.ControlePaciente;
 
 public class CadastroPaciente extends javax.swing.JFrame {
@@ -281,7 +283,12 @@ public class CadastroPaciente extends javax.swing.JFrame {
 
     private void buttonCadastraPacienteActionPerformed(java.awt.event.ActionEvent evt) {                                                       
       //String nome, String rg, String cpf, char sexo,String dataNascimento, String telefone, String email, String cidade, String endereco, String patologia  
-      listaTodosPacientes.cadastraPaciente(this.inputNome.getText(), this.inputRG.getText(), this.inputCpf.getText(), this.selectSexo, this.inputNascimento.getText(), this.inputTelefone.getText(), this.inputEmail.getText(), this.inputCidadeEstado.getText(), this.inputEndereco.getText(), this.restricoesMedicas.getText());
+      
+        if(inputNome.getText().isEmpty() || inputNome.getText().isEmpty() || inputRG.getText().isEmpty() || inputCpf.getText().isEmpty() || inputNascimento.getText().isEmpty() || inputTelefone.getText().isEmpty() || inputEmail.getText().isEmpty() || inputCidadeEstado.getText().isEmpty() || inputEndereco.getText().isEmpty() || restricoesMedicas.getText().isEmpty()){
+        JOptionPane.showMessageDialog(null,"Você deve preencher todos os campos para finalizar o cadastro." );
+        }
+        else{listaTodosPacientes.cadastraPaciente(this.inputNome.getText(), this.inputRG.getText(), this.inputCpf.getText(), this.selectSexo, this.inputNascimento.getText(), this.inputTelefone.getText(), this.inputEmail.getText(), this.inputCidadeEstado.getText(), this.inputEndereco.getText(), this.restricoesMedicas.getText());}
+      
       this.dispose();
       new TransicaoMetodosAtendente(listaTodosPacientes).setVisible(true);  
     }                                                      

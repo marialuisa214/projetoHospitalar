@@ -1,34 +1,24 @@
 package view;
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 
-/**
- *
- * @author gaubiela
- */
 public class AgendaConsulta extends javax.swing.JFrame {
 
-    /**
-     * Creates new form AgendaConsulta
-     */
     public AgendaConsulta() {
         initComponents();
     }
-                         
+                        
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        choice1 = new java.awt.Choice();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
+        scrollTableConsulta = new javax.swing.JScrollPane();
+        tableConsulta = new javax.swing.JTable();
+        escolheMedico = new java.awt.Choice();
+        buttonMarcaConsulta = new javax.swing.JToggleButton();
+        buttonAlteraConsulta = new javax.swing.JToggleButton();
+        buttonDesmarcaConsulta = new javax.swing.JToggleButton();
+        buttonVoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tableConsulta.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -39,29 +29,37 @@ public class AgendaConsulta extends javax.swing.JFrame {
                 "Horário/Consulta", "Paciente"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        scrollTableConsulta.setViewportView(tableConsulta);
 
-        jToggleButton1.setBackground(new java.awt.Color(153, 153, 153));
-        jToggleButton1.setText("Marcar Consulta");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        buttonMarcaConsulta.setBackground(new java.awt.Color(153, 153, 153));
+        buttonMarcaConsulta.setText("Marcar Consulta");
+        buttonMarcaConsulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                buttonMarcaConsultaActionPerformed(evt);
             }
         });
 
-        jToggleButton2.setBackground(new java.awt.Color(153, 153, 153));
-        jToggleButton2.setText("Alterar Consulta");
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+        buttonAlteraConsulta.setBackground(new java.awt.Color(153, 153, 153));
+        buttonAlteraConsulta.setText("Alterar Consulta");
+        buttonAlteraConsulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
+                buttonAlteraConsultaActionPerformed(evt);
             }
         });
 
-        jToggleButton3.setBackground(new java.awt.Color(153, 153, 153));
-        jToggleButton3.setText("Desmarcar Consulta");
-        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
+        buttonDesmarcaConsulta.setBackground(new java.awt.Color(153, 153, 153));
+        buttonDesmarcaConsulta.setText("Desmarcar Consulta");
+        buttonDesmarcaConsulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton3ActionPerformed(evt);
+                buttonDesmarcaConsultaActionPerformed(evt);
+            }
+        });
+
+        buttonVoltar.setBackground(new java.awt.Color(153, 153, 153));
+        buttonVoltar.setText("Voltar");
+        buttonVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonVoltarActionPerformed(evt);
             }
         });
 
@@ -70,49 +68,56 @@ public class AgendaConsulta extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(46, Short.MAX_VALUE)
+                .addContainerGap(47, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(choice1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonVoltar)
+                    .addComponent(escolheMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(scrollTableConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(35, 35, 35))
+                            .addComponent(buttonMarcaConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonAlteraConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonDesmarcaConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(34, 34, 34))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(choice1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(11, Short.MAX_VALUE)
+                .addComponent(buttonVoltar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(escolheMedico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(scrollTableConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jToggleButton1)
+                        .addComponent(buttonMarcaConsulta)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jToggleButton2)
+                        .addComponent(buttonAlteraConsulta)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jToggleButton3)))
-                .addContainerGap(41, Short.MAX_VALUE))
+                        .addComponent(buttonDesmarcaConsulta)))
+                .addGap(26, 26, 26))
         );
 
         pack();
     }// </editor-fold>                        
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                               
+    private void buttonMarcaConsultaActionPerformed(java.awt.event.ActionEvent evt) {                                                    
         // TODO add your handling code here:
-    }                                              
+    }                                                   
 
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                               
+    private void buttonAlteraConsultaActionPerformed(java.awt.event.ActionEvent evt) {                                                     
         // TODO add your handling code here:
-    }                                              
+    }                                                    
 
-    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                               
+    private void buttonDesmarcaConsultaActionPerformed(java.awt.event.ActionEvent evt) {                                                       
         // TODO add your handling code here:
-    }                                              
+    }                                                      
+
+    private void buttonVoltarActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        this.dispose();
+    }                                            
 
     /**
      * @param args the command line arguments
@@ -150,11 +155,12 @@ public class AgendaConsulta extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify                     
-    private java.awt.Choice choice1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
+    private javax.swing.JToggleButton buttonAlteraConsulta;
+    private javax.swing.JToggleButton buttonDesmarcaConsulta;
+    private javax.swing.JToggleButton buttonMarcaConsulta;
+    private javax.swing.JButton buttonVoltar;
+    private java.awt.Choice escolheMedico;
+    private javax.swing.JScrollPane scrollTableConsulta;
+    private javax.swing.JTable tableConsulta;
     // End of variables declaration                   
 }

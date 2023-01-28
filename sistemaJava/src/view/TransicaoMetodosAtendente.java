@@ -137,8 +137,6 @@ public class TransicaoMetodosAtendente extends javax.swing.JFrame {
     }                                                   
 
     private void fieldBuscaPacienteActionPerformed(java.awt.event.ActionEvent evt) {                                                   
-        // TODO add your handling code here:
-        System.out.println("oi");
         this.listaPacientes = new JList<>(this.listaPaciente.listaNomePacientes());
     }                                                  
 
@@ -152,11 +150,11 @@ public class TransicaoMetodosAtendente extends javax.swing.JFrame {
     }                                                  
 
     private void buttonAgendaConsultaActionPerformed(java.awt.event.ActionEvent evt) {                                                     
-        // TODO add your handling code here:
+        new AgendaConsulta().setVisible(true);
     }                                                    
 
     private void buttonAgendaExameActionPerformed(java.awt.event.ActionEvent evt) {                                                  
-        // TODO add your handling code here:
+        new AgendaExame().setVisible(true);
     }                                                 
 
     /**

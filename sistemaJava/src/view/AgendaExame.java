@@ -5,26 +5,19 @@ public class AgendaExame extends javax.swing.JFrame {
     public AgendaExame() {
         initComponents();
     }
-                       
+                          
     private void initComponents() {
 
-        jToggleButton3 = new javax.swing.JToggleButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
+        scrollTableExame = new javax.swing.JScrollPane();
+        tableExame = new javax.swing.JTable();
+        buttonMarcaExame = new javax.swing.JToggleButton();
+        buttonAlteraExame = new javax.swing.JToggleButton();
+        buttonDesmarcarConsulta = new javax.swing.JToggleButton();
+        buttonVoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jToggleButton3.setBackground(new java.awt.Color(153, 153, 153));
-        jToggleButton3.setText("Desmarcar Consulta");
-        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton3ActionPerformed(evt);
-            }
-        });
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tableExame.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -35,21 +28,37 @@ public class AgendaExame extends javax.swing.JFrame {
                 "Horário/Consulta", "Paciente"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        scrollTableExame.setViewportView(tableExame);
 
-        jToggleButton1.setBackground(new java.awt.Color(153, 153, 153));
-        jToggleButton1.setText("Marcar Consulta");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        buttonMarcaExame.setBackground(new java.awt.Color(153, 153, 153));
+        buttonMarcaExame.setText("Marcar Consulta");
+        buttonMarcaExame.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                buttonMarcaExameActionPerformed(evt);
             }
         });
 
-        jToggleButton2.setBackground(new java.awt.Color(153, 153, 153));
-        jToggleButton2.setText("Alterar Consulta");
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+        buttonAlteraExame.setBackground(new java.awt.Color(153, 153, 153));
+        buttonAlteraExame.setText("Alterar Consulta");
+        buttonAlteraExame.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
+                buttonAlteraExameActionPerformed(evt);
+            }
+        });
+
+        buttonDesmarcarConsulta.setBackground(new java.awt.Color(153, 153, 153));
+        buttonDesmarcarConsulta.setText("Desmarcar Consulta");
+        buttonDesmarcarConsulta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonDesmarcarConsultaActionPerformed(evt);
+            }
+        });
+
+        buttonVoltar.setBackground(new java.awt.Color(153, 153, 153));
+        buttonVoltar.setText("Voltar");
+        buttonVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonVoltarActionPerformed(evt);
             }
         });
 
@@ -59,53 +68,55 @@ public class AgendaExame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(28, 28, 28)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(buttonVoltar)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(scrollTableExame, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(buttonMarcaExame, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonAlteraExame, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonDesmarcarConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(64, Short.MAX_VALUE)
+                .addContainerGap(23, Short.MAX_VALUE)
+                .addComponent(buttonVoltar)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(scrollTableExame, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jToggleButton1)
+                        .addComponent(buttonMarcaExame)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jToggleButton2)
+                        .addComponent(buttonAlteraExame)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jToggleButton3)))
+                        .addComponent(buttonDesmarcarConsulta)))
                 .addGap(31, 31, 31))
         );
 
         pack();
     }// </editor-fold>                        
 
-    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                               
+    private void buttonDesmarcarConsultaActionPerformed(java.awt.event.ActionEvent evt) {                                                        
         // TODO add your handling code here:
-    }                                              
+    }                                                       
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                               
+    private void buttonMarcaExameActionPerformed(java.awt.event.ActionEvent evt) {                                                 
         // TODO add your handling code here:
-    }                                              
+    }                                                
 
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                               
+    private void buttonAlteraExameActionPerformed(java.awt.event.ActionEvent evt) {                                                  
         // TODO add your handling code here:
-    }                                              
+    }                                                 
 
-    /**
-     * @param args the command line arguments
-     */
+    private void buttonVoltarActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        this.dispose();
+    }                                            
+
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -133,11 +144,11 @@ public class AgendaExame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify                     
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
+    private javax.swing.JToggleButton buttonAlteraExame;
+    private javax.swing.JToggleButton buttonDesmarcarConsulta;
+    private javax.swing.JToggleButton buttonMarcaExame;
+    private javax.swing.JButton buttonVoltar;
+    private javax.swing.JScrollPane scrollTableExame;
+    private javax.swing.JTable tableExame;
     // End of variables declaration                   
 }
-
