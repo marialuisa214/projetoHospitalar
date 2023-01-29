@@ -34,15 +34,15 @@ public class ControleDados {
 
 
     //ENFERMEIROS
-    //Enfermeiro enfermeiro = new Enfermeiro("Milena Jaqueline Galvão", "49.657.617-3", "865.167.181-48", "F", "08/01/1994", "(61) 98484-8540", "milena_galvao@utbr.com.br", "Brasília-DF", "Rua Deodato Louly", "5566", "349@376", "777555");
+    Enfermeiro enfermeiro = new Enfermeiro("Milena Jaqueline Galvão", "49.657.617-3", "865.167.181-48", 'F', "08/01/1994", "(61) 98484-8540", "milena_galvao@utbr.com.br", "Brasília-DF", "Rua Deodato Louly", "5566", "349@376", "777555");
 
-    //Enfermeiro enfermeiro1 = new Enfermeiro("Osvaldo Alexandre Baptista", "21.209.406-3", "635.055.521-00", "M", "04/01/1994", "(61) 98156-5943", "osvaldo-baptista80@openlink.com.br", "Brasília-DF", "Quadra CLS 404 Bloco A", "5544", "129@491", "333666");
+    Enfermeiro enfermeiro1 = new Enfermeiro("Osvaldo Alexandre Baptista", "21.209.406-3", "635.055.521-00", 'M', "04/01/1994", "(61) 98156-5943", "osvaldo-baptista80@openlink.com.br", "Brasília-DF", "Quadra CLS 404 Bloco A", "5544", "129@491", "333666");
 
 
     //ENTRADAS
-    Entrada entrada = new Entrada(null, "Estável", paciente3);
+    Entrada entrada = new Entrada("Estável", paciente3);
     
-    Entrada entrada1 = new Entrada(null, "Estável", paciente2);
+    Entrada entrada1 = new Entrada("Estável", paciente2);
     
 
     //TRIAGENS
@@ -54,7 +54,7 @@ public class ControleDados {
     //CONSULTAS MARCADAS
     Consulta consulta = new Marcada("4444", paciente, medico);
 
-    Consulta consulta1 = new Marcada("3333", paciente1, medico1);
+    Consulta consulta1 = new Marcada("3333", paciente, medico1);
 
     Consulta consulta2 = new Marcada("5555", paciente2, medico2);
 
@@ -65,12 +65,111 @@ public class ControleDados {
     Consulta emergencia1 = new Emergencia("6565", paciente2, medico1, "02", triagem1);
 
     //EXAMES
-    Exame exame = new Exame("Raio-x", "111", medico);
+    Exame exame = new Exame("Raio-x", "111", enfermeiro);
 
-    Exame exame1 = new Exame("Colonoscopia", "222", medico);
+    Exame exame1 = new Exame("Colonoscopia", "222", enfermeiro1);
 
-    Exame exame2 = new Exame("Exame de sangue", "333", medico);
+    Exame exame2 = new Exame("Exame de sangue", "333", enfermeiro1);
 
+    Exame exame3 = new Exame("Exame de sangue", "444", enfermeiro);
+
+
+    //PRONTUARIOS
+    paciente.getProntuario().getHistoricoConsultas().add(consulta);
+    paciente.getProntuario().getHistoricoConsultas().add(consulta1);
+    paciente.getProntuario().getHistoricoConsultas().add(emergencia);
+    paciente.getProntuario().getHistoricoExame().add(exame3);
+    paciente1.getProntuario().getHistoricoConsultas().add(consulta2);
+    paciente1.getProntuario().getHistoricoExame().add(exame);
+    paciente1.getProntuario().getHistoricoConsultas().add(emergencia1);
+    paciente2.getProntuario().getHistoricoExame().add(exame2);
+    paciente3.getProntuario().getHistoricoExame().add(exame1);
+
+
+    //MEDICAMENTOS
+    Medicamento medicamento = new Medicamento("Cloridrato de Sertralina", "001", "Geolab");
+
+    Medicamento medicamento1 = new Medicamento("Hemitartarato de Zolpidem", "002", "Pfarma");
+
+    Medicamento medicamento2 = new Medicamento("Paracetamol", "003", "Globo");
+
+    Medicamento medicamento3 = new Medicamento("Neosaldina", "004", "Hypera Pharma");
+
+    Medicamento medicamento4 = new Medicamento("Doril", "005", "Cosmed");
+
+    Medicamento medicamento5 = new Medicamento("Lacto-Purga", "006", "Hypera Pharma");
+
+    Medicamento medicamento6 = new Medicamento("Ivermectina", "007", "Vitamedic");
+
+    Medicamento medicamento7 = new Medicamento("Buscopan", "008", "Hypera Pharma");
+
+    Medicamento medicamento8 = new Medicamento("Neo Soro", "009", "Neo Química");
+
+    Medicamento medicamento9 = new Medicamento("Torsilax", "010", "Neo Química");
+
+    Medicamento medicamento10 = new Medicamento("Poslov", "011", "Levonorgestrel");
+
+
+    //RECEITAS
+    Receita receita = new Receita();
+    // receita.setDataPedido();
+    // receita.setDataEntrega();
+    receita.setUnidade("30 comprimidos");
+    receita.setDescricaoMed("Para depressão e coisas para baixo");
+    receita.getMedicamentos().add(medicamento);
+    receita.setPosologia("Sertralina de 8 em 8 horas");
+    receita.setAssinatura(medico.getNome());
+
+    Receita receita1 = new Receita();
+    // receita.setDataPedido();
+    // receita.setDataEntrega();
+    receita1.setUnidade("20 comprimidos");
+    receita1.setDescricaoMed("Para insônia. Deitar imediatamente após ingerir o medicamento.");
+    receita1.getMedicamentos().add(medicamento1);
+    receita1.setPosologia("Uma comprimido toda noite.");
+    receita1.setAssinatura(medico1.getNome());
+
+    Receita receita2 = new Receita();
+     // receita.setDataPedido();
+    // receita.setDataEntrega();
+    receita2.setUnidade("20 comprimidos");
+    receita2.setDescricaoMed("Sempre que necessário.");
+    receita2.getMedicamentos().add(medicamento2);
+    receita2.getMedicamentos().add(medicamento3);
+    receita2.getMedicamentos().add(medicamento4);
+    receita2.setPosologia("8 em 8 horas.");
+    receita2.setAssinatura(medico1.getNome());
+
+    Receita receita3 = new Receita();
+     // receita.setDataPedido();
+    // receita.setDataEntrega();
+    receita3.setUnidade("15 comprimidos");
+    receita3.setDescricaoMed("Sempre que necessário.");
+    receita3.getMedicamentos().add(medicamento5);
+    receita3.getMedicamentos().add(medicamento6);
+    receita3.getMedicamentos().add(medicamento7);
+    receita3.setPosologia("8 em 8 horas.");
+    receita3.setAssinatura(medico1.getNome());
+
+    Receita receita4 = new Receita();
+     // receita.setDataPedido();
+    // receita.setDataEntrega();
+    receita4.setUnidade("15 comprimidos de cada medicamento");
+    receita4.setDescricaoMed("Sempre que necessário.");
+    receita4.getMedicamentos().add(medicamento8);
+    receita4.getMedicamentos().add(medicamento9);
+    receita4.setPosologia("12 em 12 horas.");
+    receita4.setAssinatura(medico2.getNome());
+
+    Receita receita5 = new Receita();
+     // receita.setDataPedido();
+    // receita.setDataEntrega();
+    receita5.setUnidade("1 comprimido");
+    receita5.setDescricaoMed("...");
+    receita5.getMedicamentos().add(medicamento10);;
+    receita5.setPosologia("Dose única.");
+    receita5.setAssinatura(medico2.getNome());
+    
     // Marcada consulta = new Marcada("sdfg","16:00", "16:22");
 
     // Agenda agenda = new Agenda();

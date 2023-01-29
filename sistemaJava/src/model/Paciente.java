@@ -1,9 +1,12 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Paciente extends Pessoa {
 
 //ATRIBUTOS	
 	private String patologia; //cormobidade, restrição médica
+	private ArrayList<Receita> listaReceitas = new ArrayList<>();
 	private Prontuario prontuario;
 	
 	//CONSTRUTOR	
@@ -63,6 +66,13 @@ public Prontuario getProntuario() {
 
 public void setProntuario(Prontuario prontuario) {
 	this.prontuario = prontuario;
+}
+public ArrayList<Receita> getListaReceitas() {
+	return listaReceitas;
+}
+
+public void setListaReceitas(ArrayList<Receita> listaReceitas) {
+	this.listaReceitas = listaReceitas;
 }
 
 }

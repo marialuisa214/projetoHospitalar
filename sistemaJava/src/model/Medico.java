@@ -19,6 +19,49 @@ public class Medico extends Funcionario {
 	}
 	
 //METODOS
+public String getNome() {
+	return nome;
+}
+
+public void setNome(String nome) {
+	this.nome = nome;
+}
+
+public String getRg() {
+	return rg;
+}
+
+public void setRg(String rg) {
+	this.rg = rg;
+}
+
+public String getCpf() {
+	return cpf;
+}
+
+public void setCpf(String cpf) {
+	this.cpf = cpf;
+}
+
+public char getSexo() {
+	return sexo;
+}
+
+public void setSexo(char sexo) {
+	this.sexo = sexo;
+}
+
+public long getIdade() {
+	return idade;
+}
+
+public void setIdade(long idade) {
+	this.idade = idade;
+}
+
+public String getDataNascimento() {
+	return dataNascimento;
+}
 
 	public String getEspecialidade() {
 		return especialidade;
