@@ -31,8 +31,8 @@ public class testeModel {
     consultafeita.setDescricaoMedica("muita daiarreia, Todo cagado");
     // consultafeita.setDia("12/02/2023");
 
-    Exame exame1 = new Exame("tomografia", "211");
-    Exame exame2 = new Exame("colonoscopia", "421");
+    Exame exame1 = new Exame("tomografia", "211", paciente3);
+    Exame exame2 = new Exame("colonoscopia", "421", paciente3);
 
     paciente3.getProntuario().getHistoricoConsultasMarcadas().add(consulta3);
     paciente3.getProntuario().getHistoricoConsultasMarcadas().add(consultafeita);

@@ -12,6 +12,7 @@ public class Marcada extends Consulta {
     private String descricaoMedica;
     private SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
     private Date c;
+    
 
     //CONSTRUTOR
     public Marcada(String codigo, Paciente paciente,  Medico medico) {

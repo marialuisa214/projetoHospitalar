@@ -144,7 +144,7 @@ public class TelaExame extends javax.swing.JFrame {
     }            
     
     private void botaoSolicitaActionPerformed(java.awt.event.ActionEvent evt) {   
-        Exame exame = new Exame(textExame.getText(), textCodigo.getText());
+        Exame exame = new Exame(textExame.getText(), textCodigo.getText(), paciente);
         
          Solicitacao novaSolicitacao = new Solicitacao();
          novaSolicitacao.setMedico(medico);

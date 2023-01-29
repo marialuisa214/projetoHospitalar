@@ -1,5 +1,7 @@
 package view;
 
+import javax.swing.JOptionPane;
+
 import control.ControleDados;
 import model.*;
 
@@ -99,6 +101,11 @@ public class TelaProntuario extends javax.swing.JFrame {
         });
 
         botaoDetalhesExame.setText("Mais Detalhes");
+        botaoDetalhesExame.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoDetalhesExameActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -187,18 +194,28 @@ public class TelaProntuario extends javax.swing.JFrame {
         this.dispose();
     }                                           
 
-    private void botaoDetalhesConsultaActionPerformed(java.awt.event.ActionEvent evt) {                                                      
+    private void botaoDetalhesConsultaActionPerformed(java.awt.event.ActionEvent evt) { 
+        if(tabelaHistConsulta.getSelectedRow() != -1 ){
+            Marcada consulta = tabela1.selecionaItem(tabelaHistConsulta.getSelectedRow());
+            new TelaDetalhesConsulta(consulta, dados,  consulta.getPaciente().getProntuario()).setVisible(true);
+            this.dispose();
+        }else{
+            JOptionPane.showMessageDialog(null, "Selecione uma consulta antes de ir para a proxima página!");
+        }
         
-    }                                                     
+    }                              
+    
+    private void botaoDetalhesExameActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+        if(tabelaHistoExame.getSelectedRow() != -1 ){
+            Exame exame = tabela2.selecionaItem(tabelaHistoExame.getSelectedRow());
+            new TelaDetalhesExame(exame, consulta, dados).setVisible(true);
+            this.dispose();
+        }else{
+            JOptionPane.showMessageDialog(null, "Selecione uma consulta antes de ir para a proxima página!");
+        }
+    }
 
-    // public static void main(String args[]) {
-       
-    //     java.awt.EventQueue.invokeLater(new Runnable() {
-    //         public void run() {
-    //             new TelaProntuario().setVisible(true);
-    //         }
-    //     });
-    // }
+    
 
     // Variables declaration - do not modify                     
     private javax.swing.JButton botaoDetalhesConsulta;

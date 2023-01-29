@@ -6,16 +6,25 @@ public class Exame {
     private String data;
     private String Horario;
     private String codigo;
-    private Prontuario prontuario;
+    private Paciente paciente;
     private Funcionario responsavelTecnico;
     private Agenda agenda;
+    private String Resultado;
     
     //construtor
-    public Exame(String nomeExame, String codigo){
+    public Exame(String nomeExame, String codigo, Paciente paciente){
         this.nomeExame = nomeExame;
         this.codigo = codigo;
+        this.paciente = paciente;
     }
     //métodos 
+    public Paciente getPaciente() {
+		return paciente;
+	}
+
+	public void setPaciente(Paciente paciente) {
+		this.paciente = paciente;
+	}
 
     public String getHorario() {
         return Horario;
@@ -52,16 +61,19 @@ public class Exame {
     public void setAgenda(Agenda agenda) {
         this.agenda = agenda;
     }
-    
-    public Prontuario getProntuario() {
-        return prontuario;
-    }
 
     public String getData() {
         return data;
     }
     public void setData(String data) {
         this.data = data;
+    }
+
+    public String getResultado() {
+        return Resultado;
+    }
+    public void setResultado(String resultado) {
+        Resultado = resultado;
     }
 
 
