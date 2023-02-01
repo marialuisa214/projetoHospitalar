@@ -2,7 +2,6 @@ package view;
 
 public class TelaTriagemEnfermeiro extends javax.swing.JFrame {
     
-
 public TelaTriagemEnfermeiro() {
     initComponents();
 }                         
@@ -186,10 +185,7 @@ public TelaTriagemEnfermeiro() {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(TelaTriagemEnfermeiro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
 
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new TelaTriagemEnfermeiro().setVisible(true);
