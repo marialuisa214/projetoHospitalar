@@ -3,27 +3,20 @@ package model;
 public class Triagem {
 
     // ATRIBUTOS
-    private Paciente pacienteVinculado;
     private String descricao;
     private String gravidade;
     private Entrada entrada;
     private Enfermeiro enfermeiro;
 
+
     // CONSTRUTOR
     public Triagem(Entrada entrada, Enfermeiro enfermeiro) {
         this.enfermeiro = enfermeiro;
         this.entrada = entrada;
+        System.out.println(this.entrada.getPacienteVinculado().getNome());
     }
 
     // METODOS
-    public Paciente getPacienteVinculado() {
-        return pacienteVinculado;
-    }
-
-    public void setPacienteVinculado(Paciente pacienteVinculado) {
-        this.pacienteVinculado = pacienteVinculado;
-    }
-
     public Entrada getEntrada() {
         return entrada;
     }
@@ -55,6 +48,8 @@ public class Triagem {
     public void setEnfermeiro(Enfermeiro enfermeiro) {
         this.enfermeiro = enfermeiro;
     }
+
+   
 
     // public void cadastraProntuario(Float altura, Float peso, String acompanhamento) {
     //     // quando o paciente ainda não possui prontuario preenchido:

@@ -12,7 +12,7 @@ public class TelaPrincipalMedico extends javax.swing.JFrame {
     public TelaPrincipalMedico(ControleDados controle, Medico m) {
         this.medico = m;
         this.controle = controle;
-        this.tabela = new TabelaMedico(controle); 
+        this.tabela = new TabelaMedico(m); 
         initComponents();
 
         tabelaConsultas.setModel(tabela);

@@ -12,13 +12,14 @@ public class TabelaExameEnfermeiro extends AbstractTableModel {
         this.enfermeiro = enfermeiro;
     }
 
+
     public String getColumnName(int coluna){
         return colunas[coluna];
     }
     @Override
 //    quantidade de linhas
     public int getRowCount() {
-        return enfermeiro.getListaTriagem().size();
+        return enfermeiro.getListaExame().size();
     }
 
     @Override
@@ -39,8 +40,8 @@ public class TabelaExameEnfermeiro extends AbstractTableModel {
         return null;
     }
 
-    public void addRow(Exame cm){
-        this.enfermeiro.getListaExame().add(cm);
+    public void addRow(Exame exame){
+        this.enfermeiro.getListaExame().add(exame);
         this.fireTableDataChanged();
     }
     

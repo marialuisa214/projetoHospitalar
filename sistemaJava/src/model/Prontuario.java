@@ -15,6 +15,7 @@ public class Prontuario {
 	// private float dataDeInicioProntuario; -> inserir formatação de data!! e
 	// colocar ela no construtor
 	private ArrayList<Marcada> historicoConsultasMarcadas = new ArrayList<>();
+	private ArrayList<Emergencia> historicoConsultasEmergencia = new ArrayList<>();
 	// private ArrayList<Emergencia> historicoConsultasEmergencia = new ArrayList<>();
 	private ArrayList<Exame> historicoExame =  new ArrayList<>();
 	//private float dataDeInicioProntuario; -> inserir formatação de data!! e colocar ela no construtor
@@ -83,6 +84,14 @@ public class Prontuario {
 
 	public void setHistoricoExame(Exame exame) {
 		historicoExame.add(exame);
+	}
+
+	public ArrayList<Emergencia> getHistoricoConsultasEmergencia() {
+		return historicoConsultasEmergencia;
+	}
+
+	public void setHistoricoConsultasEmergencia(ArrayList<Emergencia> historicoConsultasEmergencia) {
+		this.historicoConsultasEmergencia = historicoConsultasEmergencia;
 	}
 
 	// public ArrayList<Consulta> getHistoricoConsultas() {

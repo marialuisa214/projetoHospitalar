@@ -1,5 +1,7 @@
 package view;
 
+import javax.swing.JOptionPane;
+
 import control.ControleDados;
 import model.*;
 
@@ -8,7 +10,7 @@ public class TelaPrincipalEnfermeiro extends javax.swing.JFrame {
     public TelaPrincipalEnfermeiro(ControleDados dados, Enfermeiro enfermeiro) {
         this.enfermeiro  = enfermeiro;
         this.dados = dados;
-        this.tabelaTriagem = new TabelaTriagem(enfermeiro); 
+        this.tabelaTriagem = new TabelaTriagem(dados); 
         this.tabelaExame = new TabelaExameEnfermeiro(enfermeiro);
         initComponents();
 
@@ -42,7 +44,7 @@ public class TelaPrincipalEnfermeiro extends javax.swing.JFrame {
 
         labelCoremEnfer.setText("COREM:");
 
-        labelCoremEnfemeiro.setText(this.enfermeiro.getCrm());
+        labelCoremEnfemeiro.setText(this.enfermeiro.getCorem());
 
         labelTriagem.setText("Triagem:");
 
@@ -178,11 +180,21 @@ public class TelaPrincipalEnfermeiro extends javax.swing.JFrame {
         // </editor-fold>
     }                      
 
-    private void buttonVoltarActionPerformed(java.awt.event.ActionEvent evt) {                                             
+    private void buttonVoltarActionPerformed(java.awt.event.ActionEvent evt) {  
+        new TelaLogin(dados).setVisible(true);
+        this.dispose();                                           
         
     }                                            
 
-    private void buttonFazerTriagemActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+    private void buttonFazerTriagemActionPerformed(java.awt.event.ActionEvent evt) {  
+        if(jTable1.getSelectedRow() != -1 ){
+
+            Entrada e= tabelaTriagem.selecionaItem(jTable1.getSelectedRow());
+            new TelaTriagemEnfermeiro(dados, e, enfermeiro).setVisible(true);                                               
+            this.dispose();
+        }else{
+            JOptionPane.showMessageDialog(null, "Selecione uma triagem antes de ir para a proxima página!");
+        }
         
     }                                                  
 

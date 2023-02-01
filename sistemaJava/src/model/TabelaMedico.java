@@ -2,17 +2,17 @@ package model;
 
 
 import javax.swing.table.AbstractTableModel;
-import control.*;
+
 
 public class TabelaMedico extends AbstractTableModel {
 
-    private ControleDados dados;
+    private Medico medico;
     private String[] colunas =  {"Dia", "Horário", "Paciente", "Código" }; 
 
 
 //CONSTRUTOR
-    public TabelaMedico(ControleDados dados){
-        this.dados = dados;  
+    public TabelaMedico(Medico medico){
+        this.medico = medico;  
     }
 
     public String getColumnName(int coluna){
@@ -23,7 +23,7 @@ public class TabelaMedico extends AbstractTableModel {
     @Override
 //    quantidade de linhas
     public int getRowCount() {
-        return dados.getBancoConsultaMarcadas().size();
+        return medico.getListConsultasPendentes().size();
     
     }
 
@@ -38,25 +38,25 @@ public class TabelaMedico extends AbstractTableModel {
     public Object getValueAt(int linha, int coluna) {
         switch(coluna){
             case 0:
-                return dados.getBancoConsultaMarcadas().get(linha).getData();
+                return medico.getListConsultasPendentes().get(linha).getData();
             case 1:
-                return dados.getBancoConsultaMarcadas().get(linha).getHorario();
+                return medico.getListConsultasPendentes().get(linha).getHorario();
             case 2:
-                return dados.getBancoConsultaMarcadas().get(linha).getPaciente().getNome();
+                return medico.getListConsultasPendentes().get(linha).getPaciente().getNome();
             case 3:
-                return dados.getBancoConsultaMarcadas().get(linha).getCodigo();
+                return medico.getListConsultasPendentes().get(linha).getCodigo();
         }
 
         return null;
     }
 
     public void addRow(Marcada cm){
-        this.dados.adicionaConsulta(cm);;
+        this.medico.getListConsultasPendentes().add(cm);;
         this.fireTableDataChanged();
     }
     
     public Marcada selecionaItem(int linha){
-        return this.dados.getBancoConsultaMarcadas().get(linha);
+        return this.medico.getListConsultasPendentes().get(linha);
     }
 
 }

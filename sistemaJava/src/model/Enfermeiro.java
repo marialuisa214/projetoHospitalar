@@ -3,25 +3,28 @@ package model;
 import java.util.ArrayList;
 
 public class Enfermeiro extends Funcionario {
-	private String crm;
+	private String corem;
+	
+
 	private ArrayList<Triagem> listaTriagem =new ArrayList<>();
 	private ArrayList<Exame> listaExame = new ArrayList<>();
 	
 	//CONSTRUTOR	
-	public Enfermeiro(String nome, String rg, String cpf, char sexo, String dataNascimento, String telefone, String email, String cidade, String endereco, String usuario, String senha){
+	public Enfermeiro(String nome, String rg, String cpf, char sexo, String dataNascimento, String telefone, String email, String cidade, String endereco, String usuario, String senha, String corem){
 		super(nome, rg, cpf, sexo, dataNascimento, telefone, email, cidade, endereco, usuario, senha);	
+		this.corem = corem;
 	}
 
 	//METODO
-	//fazAcompanhamento
-	//faz prontuario
-	public String getCrm() {
-		return crm;
+
+	public String getCorem() {
+		return corem;
 	}
 
-	public void setCrm(String crm) {
-		this.crm = crm;
+	public void setCorem(String corem) {
+		this.corem = corem;
 	}
+	
 	public ArrayList<Triagem> getListaTriagem() {
 		return listaTriagem;
 	}

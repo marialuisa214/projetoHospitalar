@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import model.*;
 
 public class ControleDados {
-//MEDICO
+//MEDICO NORMAL
     ArrayList<Medico> bancoMedicos  = new ArrayList<>();
     
     public ArrayList<Medico> getBancoMedicos() {
@@ -15,6 +15,13 @@ public class ControleDados {
         this.bancoMedicos.add(novoMedico);
     }
 
+//MEDICO PLANTAO-emergencia
+ArrayList<Medico> bancoMedicosPlantao  = new ArrayList<>();
+    
+public ArrayList<Medico> getBancoMedicosPlantao() {
+    return bancoMedicosPlantao;
+}
+
 //CONSULTA MARCADA
     ArrayList<Marcada> bancoConsultaMarcadas  = new ArrayList<>();
     
@@ -23,6 +30,13 @@ public class ControleDados {
     }
     public void adicionaConsulta(Marcada novaConsultaMarcada) {
         this.bancoConsultaMarcadas.add(novaConsultaMarcada);
+    }
+
+//CONSULTAS DE EMERGENCIA
+    ArrayList<Emergencia> bancoConsultaEmergencia  = new ArrayList<>();
+    
+    public ArrayList<Emergencia> getBancoConsultaEmergencias() {
+        return bancoConsultaEmergencia;
     }
 
 //PACIENTES
@@ -37,6 +51,9 @@ public class ControleDados {
     
 //LISTA DE SOLICITAÇOES MEDICO P/ ATENDENTE
     // nova classe???
+
+
+//
 
 //LISTA SOLICITACOES
     ArrayList<Solicitacao> bancoSolicitacaos = new ArrayList<>();
@@ -56,7 +73,23 @@ public class ControleDados {
     public void adicionaEnfermeiro(Enfermeiro enfermeiro) {
         this.bancoEnfermeiros.add(enfermeiro);
     }
-//TRIAGEM
+//Triagem
+    ArrayList<Triagem> bancoTriagem = new ArrayList<>();
+
+    public ArrayList<Triagem> getBancoTriagem() {
+        return bancoTriagem;
+    }
+//ENTRADAS
+ArrayList<Entrada> bancoEntradas = new ArrayList<>();
+
+public ArrayList<Entrada> getaBancoEntradas() {
+    return bancoEntradas;
+}
+    
+
+
+
+    
     
 
 

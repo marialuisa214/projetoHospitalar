@@ -6,7 +6,8 @@ public class Medico extends Funcionario {
 //ATRIBUTOS
 	private String especialidade;
 	private String crm;
-	private ArrayList<Agenda> listaAgenda = new ArrayList<>();
+	// private ArrayList<Agenda> listaAgenda = new ArrayList<>();
+	private ArrayList<Marcada> listConsultasPendentes = new ArrayList<>();
 
 
 
@@ -28,16 +29,16 @@ public Medico(String nome, String rg, String cpf, char sexo, String dataNascimen
 		this.especialidade = especialidade;
 	}
 
-	public ArrayList<Agenda> getAgenda() {
-		return listaAgenda;
-	}
-	public void setAgenda(ArrayList<Agenda> agenda) {
-		this.listaAgenda = agenda;
-	}
+	// public ArrayList<Agenda> getAgenda() {
+	// 	return listaAgenda;
+	// }
+	// public void setAgenda(ArrayList<Agenda> agenda) {
+	// 	this.listaAgenda = agenda;
+	// }
 	
-	public void adicionaAgenda(Agenda agenda){
-		 this.listaAgenda.add(agenda);
-	}
+	// public void adicionaAgenda(Agenda agenda){
+	// 	 this.listaAgenda.add(agenda);
+	// }
 
 	public String getCrm() {
 		return crm;
@@ -45,6 +46,16 @@ public Medico(String nome, String rg, String cpf, char sexo, String dataNascimen
 
 	public void setCrm(String crm) {
 		this.crm = crm;
+	}
+
+	public ArrayList<Marcada> getListConsultasPendentes() {
+		return listConsultasPendentes;
+	}
+
+
+
+	public void setListConsultasPendentes(ArrayList<Marcada> listConsultasPendentes) {
+		this.listConsultasPendentes = listConsultasPendentes;
 	}
 
 	//criar receita para o paciente

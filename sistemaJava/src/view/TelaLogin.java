@@ -22,8 +22,13 @@ public class TelaLogin extends javax.swing.JFrame {
         radioAtendente = new javax.swing.JRadioButton();
         radioMedico = new javax.swing.JRadioButton();
         radioEnfermeiro = new javax.swing.JRadioButton();
-
         controle = new ControleDados();
+        groupButton = new javax.swing.ButtonGroup();
+
+        groupButton.add(radioMedico);
+        groupButton.add(radioEnfermeiro);
+        groupButton.add(radioAdm);
+        groupButton.add(radioAtendente);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("frameLogin"); // NOI18N
@@ -175,6 +180,8 @@ public class TelaLogin extends javax.swing.JFrame {
             }
             
         
+        } else{
+            
         }
         
         
@@ -199,6 +206,7 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JRadioButton radioEnfermeiro;
     private javax.swing.JRadioButton radioMedico;
     private javax.swing.JTextField textUsuario;
+    private javax.swing.ButtonGroup groupButton;
     // End of variables declaration     
     private ControleDados controle;
 

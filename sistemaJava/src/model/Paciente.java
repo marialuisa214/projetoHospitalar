@@ -75,4 +75,5 @@ public void setListaReceitas(ArrayList<Receita> listaReceitas) {
 	this.listaReceitas = listaReceitas;
 }
 
+
 }

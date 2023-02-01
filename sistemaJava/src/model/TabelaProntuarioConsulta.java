@@ -7,27 +7,32 @@ public class TabelaProntuarioConsulta extends AbstractTableModel {
     private Prontuario prontuario;
     private String[] colunas = {"DATA", "CÓDIGO", "DESCRIÇÃO"};
 
-//CONSTRUTOR
+
+    //CONSTRUTOR
     public TabelaProntuarioConsulta(Prontuario p ){
         this.prontuario = p;
 
     }
 
-    @Override
-    public int getColumnCount() {
-            return prontuario.getHistoricoConsultasMarcadas().size();
-    }
-    
     public String getColumnName(int coluna){
         return colunas[coluna];
     }
 
     @Override
+//    quantidade de linhas
     public int getRowCount() {
+        return prontuario.getHistoricoConsultasMarcadas().size();
+    
+    }
+
+    @Override
+//    quantidade de colunas
+    public int getColumnCount() { 
         return colunas.length;
     }
 
     @Override
+//    seleciona os valores da tabela
     public Object getValueAt(int linha, int coluna) {
         switch(coluna){
             case 0:
@@ -40,7 +45,7 @@ public class TabelaProntuarioConsulta extends AbstractTableModel {
 
         return null;
     }
-
+    
     public void addRow(Marcada cm){
         this.prontuario.getHistoricoConsultasMarcadas().add(cm);;
         this.fireTableDataChanged();

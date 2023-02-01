@@ -15,10 +15,9 @@ public abstract class Consulta {
     
 
     //CONSTRUTOR
-    public Consulta(String codigo, Paciente paciente, Medico medico) {
+    public Consulta(String codigo, Paciente paciente) {
         this.codigo = codigo;
         this.paciente = paciente;
-        this.medico = medico;
     }
 
     //METODOS

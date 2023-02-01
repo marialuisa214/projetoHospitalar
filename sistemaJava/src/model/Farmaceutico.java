@@ -1,11 +1,12 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Farmaceutico extends Funcionario {
 //ATRIBUTOS
 	private int crf;
-	
-	
-//CONSTRUTOR
+
+	//CONSTRUTOR
 	public Farmaceutico(String nome, String rg, String cpf, char sexo, String dataNascimento, String telefone, String email, String cidade, String endereco, String usuario, String senha, int crf){
 		super(nome, rg, cpf, sexo, dataNascimento, telefone, email, cidade, endereco, usuario, senha);				
 		this.crf = crf;
@@ -18,5 +19,6 @@ public class Farmaceutico extends Funcionario {
 	public void setCrf(int crf) {
 		this.crf = crf;
 	}
+
 
 }

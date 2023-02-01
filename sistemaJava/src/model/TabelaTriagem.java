@@ -2,15 +2,17 @@ package model;
 
 import javax.swing.table.AbstractTableModel;
 
+import control.ControleDados;
+
 
 public class TabelaTriagem extends AbstractTableModel {
-    private Enfermeiro enfermeiro;
+    private ControleDados dados;
     private String[] colunas =  { "Horario de Entrada",  "Paciente", "Situação" };
 
 
     //CONSTRUTOR
-    public TabelaTriagem(Enfermeiro enfermeiro){
-        this.enfermeiro = enfermeiro;
+    public TabelaTriagem(ControleDados dados){
+        this.dados = dados;
     }
 
 
@@ -21,7 +23,7 @@ public class TabelaTriagem extends AbstractTableModel {
     @Override
 //    quantidade de linhas
     public int getRowCount() {
-        return enfermeiro.getListaTriagem().size();
+        return dados.getaBancoEntradas().size();
     }
 
     @Override
@@ -34,22 +36,22 @@ public class TabelaTriagem extends AbstractTableModel {
     public Object getValueAt(int linha, int coluna) {
         switch(coluna){
             case 0:
-                return enfermeiro.getListaTriagem().get(linha).getEntrada().getDataEntrada();
+                return dados.getaBancoEntradas().get(linha).getDataEntrada();
             case 1:
-                return enfermeiro.getListaTriagem().get(linha).getEntrada().getPacienteVinculado().getNome();
+                return dados.getaBancoEntradas().get(linha).getPacienteVinculado().getNome();
             case 2:
-                return enfermeiro.getListaTriagem().get(linha).getEntrada().getSituacaoPaciente();
+                return dados.getaBancoEntradas().get(linha).getSituacaoPaciente();
         }
 
         return null;
     }
 
-    public void addRow(Triagem cm){
-        this.enfermeiro.getListaTriagem().add(cm);
+    public void addRow(Entrada e){
+        this.dados.getaBancoEntradas().add(e);
         this.fireTableDataChanged();
     }
     
-    public Triagem selecionaItem(int linha){
-        return this.enfermeiro.getListaTriagem().get(linha);
+    public Entrada selecionaItem(int linha){
+        return this.dados.getaBancoEntradas().get(linha);
     }
 }
