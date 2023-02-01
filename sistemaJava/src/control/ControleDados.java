@@ -12,7 +12,7 @@ public class ControleDados {
     //PACIENTES
     Paciente paciente = new Paciente("Maria Alves Correa", "3.620.107", "760.454.203-30", 'F', "10/10/2001", "4002-8922", "mariamaria@gmail.com", "Brasilia-DF", "Bairro do Limoeiro, 203", "Alérgica a camarão");
 
-    Paciente paciente1 = new Paciente("Gabriela Alves Martins", "3.234.100", "760.333.205-66", 'F', "27/11/2002", "3321-8181", "Brasilia-DF", "Bairro do Maracujá, 702", "Bairro do Maracujá, 702", "Alérgica a sabão");
+    Paciente paciente1 = new Paciente("Gabriela Alves Martins", "3.234.100", "760.333.205-66", 'F', "27/11/2002", "3321-8181", "Brasilia-DF", "Brasília-DF", "Bairro do Maracujá, 702", "Alérgica a sabão");
 
     Paciente paciente2 = new Paciente("Marina Márcia Nakagomi", "2.555.100", "345.322.555-09", 'F', "04/02/2000", "3321-8181", "MarinaLula2023@gmail.com", "Bairro do Maracujá, 702", "Bairro da Goiaba, 222", "Intolerante a Lactose");
 
@@ -46,7 +46,7 @@ public class ControleDados {
     
 
     //TRIAGENS
-    Triagem triagem = new Triagem("Garganta inflamada", "verde", entrada);
+    Triagem triagem = new Triagem("Garganta inflamada", "Verde", entrada);
     
     Triagem triagem1 = new Triagem("Fratura exposta", "Vermelha", entrada1);
 

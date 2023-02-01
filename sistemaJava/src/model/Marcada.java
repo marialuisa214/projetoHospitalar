@@ -8,7 +8,7 @@ public class Marcada extends Consulta {
     // ATRIBUTOS
     private String data; //ajustar formataçao das horas hein!!
     private String horario;
-     private boolean status;
+    private boolean status;
     private String descricaoMedica;
     private SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
     private Date c;
