@@ -1,12 +1,12 @@
 package control;
 
 import model.*;
-import view.TransicaoMetodosAtendente;
+import view.TelaPrincipalAtendente;
 
 public class ControleDados {
   public static void main(String[] args){
     ControlePaciente pacientes = new ControlePaciente();
-    TransicaoMetodosAtendente telaInicial = new TransicaoMetodosAtendente(pacientes); telaInicial.setVisible(true);
+   TelaPrincipalAtendente telaInicial = new TelaPrincipalAtendente(pacientes); telaInicial.setVisible(true);
 
 
     //PACIENTES

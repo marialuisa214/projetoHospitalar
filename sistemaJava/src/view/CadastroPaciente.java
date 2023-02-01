@@ -290,7 +290,7 @@ public class CadastroPaciente extends javax.swing.JFrame {
         else{listaTodosPacientes.cadastraPaciente(this.inputNome.getText(), this.inputRG.getText(), this.inputCpf.getText(), this.selectSexo, this.inputNascimento.getText(), this.inputTelefone.getText(), this.inputEmail.getText(), this.inputCidadeEstado.getText(), this.inputEndereco.getText(), this.restricoesMedicas.getText());}
       
       this.dispose();
-      new TransicaoMetodosAtendente(listaTodosPacientes).setVisible(true);  
+      new TelaPrincipalAtendente(listaTodosPacientes).setVisible(true);  
     }                                                      
 
     private void inputEnderecoActionPerformed(java.awt.event.ActionEvent evt) {                                              
@@ -311,7 +311,7 @@ public class CadastroPaciente extends javax.swing.JFrame {
 
     private void buttonVoltarActionPerformed(java.awt.event.ActionEvent evt) {                                             
         this.dispose();
-        new TransicaoMetodosAtendente(listaTodosPacientes).setVisible(true);
+        new TelaPrincipalAtendente(listaTodosPacientes).setVisible(true);
     }                                            
 
     /**
