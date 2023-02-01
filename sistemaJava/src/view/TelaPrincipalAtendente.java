@@ -1,13 +1,10 @@
 package view;
 
-import javax.swing.JList;
-
 import control.ControlePaciente;
 
 public class TelaPrincipalAtendente extends javax.swing.JFrame {
 
     private ControlePaciente listaPaciente;
-    private JList listaPacientes;
     public TelaPrincipalAtendente(ControlePaciente pacientes) {
         this.listaPaciente = pacientes;
         initComponents();
@@ -159,7 +156,7 @@ public class TelaPrincipalAtendente extends javax.swing.JFrame {
     }                                                   
 
     private void fieldBuscaPacienteActionPerformed(java.awt.event.ActionEvent evt) {                                                   
-        this.listaPacientes = new JList<>(this.listaPaciente.listaNomePacientes());
+
     }                                                  
 
     private void buttonCadastraPacienteActionPerformed(java.awt.event.ActionEvent evt) {                                                       
@@ -177,7 +174,7 @@ public class TelaPrincipalAtendente extends javax.swing.JFrame {
 
     private void buttonAgendaExameActionPerformed(java.awt.event.ActionEvent evt) {                                                  
         new AgendaExame().setVisible(true);
-    }          
+    }                                                  
 
     public static void main(String args[]) {
 
