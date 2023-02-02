@@ -28,10 +28,20 @@ public class testeModel {
     Paciente paciente19 = new Paciente("Mariana de Oliveira Gonçalves","3.759.789","041.774.606-03",'F',"07/04/2005","3388-9961","marianagonçalves@gmail.com","Taguatinga Norte","QNL 2","Fibrose cística");
     
     Atendente atendente = new Atendente("luana", "1234", 'F', "10/12/2001","luana123", "123");
-    Medico medico = new Medico("carlos", "333", 'M', "06/04/1991", "2121", "malu", "ginicologista");
-    Marcada consulta = new Marcada("sdfg","16:00", "16:22");
-
-
+   
+    //Medico medico = new Medico(String nome, String rg, String cpf, char sexo, String dataNascimento, String telefone, String email, String cidade, String endereco, String usuario, String senha, String crm, String especialidade){
+      Medico medico = new Medico("Maria Luisa Alves","3.579.321", "047.321.499-00", 'F', "10/12/2001", "(61)98745-3216", "maria_luisa_rodrigues@gmail.com", "Park Way", "Quadra 1", "malu", "1012", "DF101201","Clíco Geral");
+      Medico medico1 = new Medico("Gabriela Silva Alves","3.789.123", "045.552.489-01", 'F', "27/11/2001", "(61)98677-3574", "gabriela_alves@gmail.com", "Riacho Fundo 2", "Quadra 7", "gabi", "2711", "DF271101","Clíco Geral");
+      Medico medico2 = new Medico("Marina Márcia Costa de Souza","3.354.659", "047.189.498-01", 'F', "13/11/2000", "(61)99567-1918", "marina_souza@gmail.com", "Guará 2", "Quadra 28", "mari", "1311", "DF131100","Clíco Geral");
+      Medico medico3 = new Medico("Júlia Stefanie Santos Mendonça","3.326.759", "046.332.579-02", 'F', "05/08/2000", "(61)98381-5974", "julia_mendonca@gmail.com", "Riacho Fundo 1", "Quadra 6", "juli", "0508", "DF050800","Pedriátra");
+      Medico medico4 = new Medico("Marcos Aurélio Araújo","3.469.332", "048.155.467-00", 'M', "10/02/1995", "(61)99661-3554", "marcos_araujo@gmail.com", "Park Way", "Gama 3", "marc", "1002", "DF100295","Pediátra");
+      Medico medico5 = new Medico("Maria Catarina Miranda Barcelos","3.023.123", "045.552.489-01", 'F', "27/08/1998", "(61)99569-3257", "maria_catarina_barcelos@gmail.com", "Gama", "Quadra 7", "mari", "2708", "DF271898","Cardiologista");
+      Medico medico6 = new Medico("Gabriel Sucupira de Oliveira","3.708.367", "048.367.489-02", 'M', "26/09/1999", "(61)98845-2376", "gabriel_oliveira@gmail.com", "Park Way", "Quadra 7", "gabr", "2609", "DF260999","Geriatria");
+      Medico medico7 = new Medico("Rafael dos Santos Nascimento","3.788.897", "049.572.400-01", 'M', "22/10/1994", "(61)98569-1374", "rafael_nascimento@gmail.com", "Guará 2", "Quadra 17", "rafa", "2210", "DF221094","Pneumologista");
+      Medico medico8 = new Medico("Pedro Henrique de Sousa Silva","3.770.321", "050.232.489-01", 'M', "26/11/1992", "(61)98778-3234", "pedro_silva@gmail.com", "Guará 2", "Quadra 21", "pedr", "2611", "DF261192","Dermatologista");
+      Medico medico9 = new Medico("Augusto de Souza Pereira","3.776.123", "045.567.499-00", 'M', "06/03/1990", "(61)99597-3211", "augusto_pereira@gmail.com", "Guará 1", "Quadra 7", "augu", "20603", "DF060300","Mastologista");
+      
+      Marcada consulta = new Marcada("sdfg","16:00", "16:22");
     Agenda agenda = new Agenda();
     agenda.setMedico(medico);
     agenda.setHorarioInicio("12/02/2023 14:30");

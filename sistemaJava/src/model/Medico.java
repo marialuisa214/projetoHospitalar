@@ -2,20 +2,24 @@ package model;
 
 import java.util.ArrayList;
 
+
 public class Medico extends Funcionario {
 //ATRIBUTOS
+	private String crm;
 	private String especialidade;
 	private ArrayList<Agenda> listaAgenda = new ArrayList<>();
 
 
 
-//CONSTRUTOR	
-	public Medico(String nome, String cpf, char sexo, String dataNascimento, String usuario, String senha, String especialidade){
-		super(nome, cpf, sexo, dataNascimento, usuario, senha); 		 		
-		this.especialidade = especialidade;
-	}
 
+//CONSTRUTOR	
+
+	public Medico(String nome, String rg, String cpf, char sexo, String dataNascimento, String telefone, String email, String cidade, String endereco, String usuario, String senha, String crm, String especialidade){
+		super(nome, cpf, sexo, dataNascimento, usuario, senha); 
+		this.crm = crm;		 		
+		this.especialidade = especialidade;
 	
+	}
 	
 //METODOS
 	

@@ -7,8 +7,9 @@ public class Administrador extends Funcionario{
 	
 	
 	//CONSTRUTOR
+	
 	public Administrador(String nome, String cpf, char sexo, String dataNascimento, String usuario, String senha){
-		super(nome, cpf, sexo, dataNascimento, usuario, senha); 		
+			super(nome, cpf, sexo, dataNascimento, usuario, senha);		
 	}
 	
 	//METODOS
