@@ -83,6 +83,14 @@ public class TelaTriagemEnfermeiro extends javax.swing.JFrame {
             });
     
             buttonGerarProntuario.setText("Gerar prontuário");
+
+            
+            Boolean a = true;
+            if(this.paciente.getProntuario().getValidado().equals(a)){
+                buttonGerarProntuario.setVisible(false);
+
+            }
+            
     
             buttonEnviarConsulta.setText("Enviar para consulta");
             buttonEnviarConsulta.addActionListener(new java.awt.event.ActionListener() {
@@ -191,7 +199,7 @@ public class TelaTriagemEnfermeiro extends javax.swing.JFrame {
         }     
         
         private void buttonGerarProntuarioActionPerformed(java.awt.event.ActionEvent evt) {                                             
-            new TelaAtualizaProntuario().setVisible(true);
+            new TelaAtualizaProntuario(this.paciente, this.dados, this.enfermeiro, this.entrada).setVisible(true);
             this.dispose();
         } 
     

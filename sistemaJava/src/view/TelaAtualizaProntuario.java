@@ -1,5 +1,7 @@
 package view;
 
+import javax.swing.JOptionPane;
+
 import control.ControleDados;
 import model.Enfermeiro;
 import model.Entrada;
@@ -155,14 +157,21 @@ public class TelaAtualizaProntuario extends javax.swing.JFrame {
     }// </editor-fold>                   
 
     private void buttonEnviarProntuarioActionPerformed(java.awt.event.ActionEvent evt) {  
-        // if(){
+        if(TestFieldAlturaPaciente.getText().isEmpty()  || TextFieldPesoPaciente.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "erro");
 
-        // }                                                     
+        } else{
+            this.paciente.getProntuario().setPeso(TextFieldPesoPaciente.getText());
+            this.paciente.getProntuario().setAltura(TestFieldAlturaPaciente.getText());
+            new TelaTriagemEnfermeiro(dados, entrada, enfermeiro).setVisible(true);
+            this.dispose();
+        }                  
         
     }                                                      
 
     private void buttonVoltarActionPerformed(java.awt.event.ActionEvent evt) {                                             
-        new TelaTriagemEnfermeiro(dados, null, enfermeiro);
+        new TelaTriagemEnfermeiro(dados, entrada, enfermeiro).setVisible(true);
+        this.dispose();
     }                                            
 
     // Variables declaration - do not modify                     
