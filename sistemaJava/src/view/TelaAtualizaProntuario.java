@@ -152,7 +152,7 @@ public class TelaAtualizaProntuario extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>                        
+    }// </editor-fold>                   
 
     private void buttonEnviarProntuarioActionPerformed(java.awt.event.ActionEvent evt) {  
         // if(){
