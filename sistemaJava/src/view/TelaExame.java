@@ -150,7 +150,7 @@ public class TelaExame extends javax.swing.JFrame {
          novaSolicitacao.setMedico(medico);
          novaSolicitacao.solicitaExame(exame);
         
-        dados.adicionaSolicitacao(novaSolicitacao);
+        // dados.adicionaSolicitacao(novaSolicitacao);
         new TelaRelatorioConsulta(dados, consulta).setVisible(true);;
         this.dispose();
     } 

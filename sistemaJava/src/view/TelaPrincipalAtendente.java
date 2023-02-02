@@ -192,7 +192,8 @@ public class TelaPrincipalAtendente extends javax.swing.JFrame {
     }                                                      
 
     private void buttonSolicitaçõesActionPerformed(java.awt.event.ActionEvent evt) {   
-        // new TelaSolicitacoesAtendente().setVisible(true);
+        new TelaSolicitacoesAtendente().setVisible(true);
+        this.dispose();
 
         
     }                                                  

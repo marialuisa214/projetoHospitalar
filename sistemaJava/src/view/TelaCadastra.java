@@ -398,7 +398,7 @@ public class TelaCadastra extends javax.swing.JFrame {
                                           
 
     private void botaoFinalizaActionPerformed(java.awt.event.ActionEvent evt) {                                              
-        // TODO add your handling code here:
+        // cria o funcionario a parti dos dados inseridos, conferindo o valor do radio
     }  
 
 
