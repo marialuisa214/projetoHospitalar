@@ -27,8 +27,8 @@ public class ControleFuncionarios {
   }
 
   // ATENDENTE
-  public Paciente cadastraPaciente(String nome, String cpf, char sexo, String dataNascimento, String patologia) {
-    return new Paciente(nome, cpf, sexo, dataNascimento, patologia);
+  public Paciente cadastraPaciente(String nome, String rg, String cpf, char sexo, String dataNascimento, String telefone, String email, String cidade, String endereco, String patologia){
+    return new Paciente(nome, rg, cpf, sexo, dataNascimento, telefone, email, cidade, endereco, patologia);
   }
 
 }

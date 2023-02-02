@@ -7,7 +7,8 @@ public class Paciente extends Pessoa {
 	private Prontuario prontuario;
 	
 //CONSTRUTOR	
-	public Paciente(String nome, String cpf, char sexo, String dataNascimento, String patologia){
+	public Paciente(String nome, String rg, String cpf, char sexo, String dataNascimento, String telefone, String email, String cidade, String endereco, String patologia){
+		
 		super(nome, cpf, sexo, dataNascimento);
 		this.patologia = patologia; 
 		this.prontuario = new Prontuario();
