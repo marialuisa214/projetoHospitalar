@@ -136,14 +136,15 @@ public class TelaLogin extends javax.swing.JFrame {
                     if(textUsuario.getText().equals(m.getUsuario()) && passwordSenha.getText().equals(m.getSenha())){
                         new TelaPrincipalMedico(controle, m).setVisible(true);
                         this.dispose();
-                    }
+                      }
+
+                    else{
+                        JOptionPane.showMessageDialog(rootPane, "Usuário e/ou senha incorretos.");
+                     }
+
                     if(textUsuario.getText().isEmpty() || passwordSenha.getText().isEmpty()){
                         JOptionPane.showMessageDialog(rootPane, "Você deve preencher um usuário e senha");
                     }
-                    else{
-                        JOptionPane.showMessageDialog(rootPane, "Usuário e/ou senha incorretos.");
-                    }
-                    System.out.print(m.getUsuario());
                 }
                 
             
@@ -154,11 +155,13 @@ public class TelaLogin extends javax.swing.JFrame {
                         this.dispose();
                         
                     }
-                    if(textUsuario.getText().isEmpty() || passwordSenha.getText().isEmpty()){
-                        JOptionPane.showMessageDialog(rootPane, "Você deve preencher um usuário e senha");
-                    }
+                    
                     else{
                         JOptionPane.showMessageDialog(rootPane, "Usuário e/ou senha incorretos.");
+                    }
+
+                    if(textUsuario.getText().isEmpty() || passwordSenha.getText().isEmpty()){
+                        JOptionPane.showMessageDialog(rootPane, "Você deve preencher um usuário e senha");
                     }
                 }
 
@@ -168,11 +171,13 @@ public class TelaLogin extends javax.swing.JFrame {
                         new TelaPrincipalAtendente(controle, atendente).setVisible(true);
                         this.dispose();
                     }
-                    if(textUsuario.getText().isEmpty() || passwordSenha.getText().isEmpty()){
-                        JOptionPane.showMessageDialog(rootPane, "Você deve preencher um usuário e senha");
-                    }
+
                     else{
                         JOptionPane.showMessageDialog(rootPane, "Usuário e/ou senha incorretos.");
+                    }
+
+                    if(textUsuario.getText().isEmpty() || passwordSenha.getText().isEmpty()){
+                        JOptionPane.showMessageDialog(rootPane, "Você deve preencher um usuário e senha");
                     }
                 }
             
@@ -182,11 +187,13 @@ public class TelaLogin extends javax.swing.JFrame {
                         new TelaPrincipalEnfermeiro(controle, e).setVisible(true);
                         this.dispose();
                     }
-                    if(textUsuario.getText().isEmpty() || passwordSenha.getText().isEmpty()){
-                        JOptionPane.showMessageDialog(rootPane, "Você deve preencher um usuário e senha");
-                    }
+
                     else{
                         JOptionPane.showMessageDialog(rootPane, "Usuário e/ou senha incorretos.");
+                    }
+
+                    if(textUsuario.getText().isEmpty() || passwordSenha.getText().isEmpty()){
+                        JOptionPane.showMessageDialog(rootPane, "Você deve preencher um usuário e senha");
                     }
                 }
                 
@@ -201,9 +208,6 @@ public class TelaLogin extends javax.swing.JFrame {
         // }
         
     }                                           
-
-    
-    
 
     // Variables declaration - do not modify                     
     private javax.swing.JButton botaoEntrar;
@@ -220,6 +224,4 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.ButtonGroup groupButton;
     // End of variables declaration     
     private ControleDados controle;
-
-    
 }
