@@ -27,9 +27,14 @@ public class testeModel {
     Paciente paciente18 = new Paciente("Maria Fernanda Ribeiro de Oliveira","3.579.426","044.574.654-03",'F',"08/09/1999","3367-1579","mariafernandaoliveira@gmail.com","Taguatinga Norte","QNL 2","Diabetes tipo 2");
     Paciente paciente19 = new Paciente("Mariana de Oliveira Gonçalves","3.759.789","041.774.606-03",'F',"07/04/2005","3388-9961","marianagonçalves@gmail.com","Taguatinga Norte","QNL 2","Fibrose cística");
     
-    Atendente atendente = new Atendente("luana", "1234", 'F', "10/12/2001","luana123", "123");
-   
-    //Medico medico = new Medico(String nome, String rg, String cpf, char sexo, String dataNascimento, String telefone, String email, String cidade, String endereco, String usuario, String senha, String crm, String especialidade){
+    //Atendente atendente = new Atendente(String nome, String rg, String cpf, char sexo, String dataNascimento, String telefone, String email, String cidade, String endereco, String usuario, String senha)
+    Atendente atendente = new Atendente("Lorrane Lorena de Oliveira Ribeiro", "3.567.324","047.657.459.00",'F',"10/11/1995","(61)99185-7674", "lorraneLOribeiro@gmail.com","Gama","Quadra 12","lorrane" ,"1011");
+    Atendente atendente1 = new Atendente("Laryssa Brito Tavares", "3.559.123","048.657.154.00",'F',"17/08/1997","(61)98759-7245", "laryssaBTavares@gmail.com","Guará 1","Quadra 7","laryssa" ,"1708");
+    Atendente atendente2 = new Atendente("Beatriz Moreira do Nascimento", "3.466.324","047.032.477.01",'F',"08/11/1995","(61)97592-7677", "beatrizMNascimento@gmail.com","Gama","Quadra 07","beatriz" ,"0811");
+    Atendente atendente3 = new Atendente("Emanuel Augusto dos Anjos", "3.570.897","047.765.657.02",'M',"10/11/1995","(61)99745-7678", "emanuelAAnjos@gmail.com","Guará 2","Quadra 15","emanuel" ,"1011");
+    Atendente atendente4 = new Atendente("Jorge Evangelista Santana", "3.597.367","047.432.957.00",'M',"05/09/1992","(61)98745-3567", "jorgeESantana@gmail.com","Valparaíso-GO","Avenida das Castanheiras","ljorge" ,"0509");
+
+    //Medico medico = new Medico(String nome, String rg, String cpf, char sexo, String dataNascimento, String telefone, String email, String cidade, String endereco, String usuario, String senha, String crm, String especialidade)
       Medico medico = new Medico("Maria Luisa Alves","3.579.321", "047.321.499-00", 'F', "10/12/2001", "(61)98745-3216", "maria_luisa_rodrigues@gmail.com", "Park Way", "Quadra 1", "malu", "1012", "DF101201","Clíco Geral");
       Medico medico1 = new Medico("Gabriela Silva Alves","3.789.123", "045.552.489-01", 'F', "27/11/2001", "(61)98677-3574", "gabriela_alves@gmail.com", "Riacho Fundo 2", "Quadra 7", "gabi", "2711", "DF271101","Clíco Geral");
       Medico medico2 = new Medico("Marina Márcia Costa de Souza","3.354.659", "047.189.498-01", 'F', "13/11/2000", "(61)99567-1918", "marina_souza@gmail.com", "Guará 2", "Quadra 28", "mari", "1311", "DF131100","Clíco Geral");
