@@ -2,9 +2,6 @@ package view;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import javax.swing.JList;
-
 import control.*;
 import model.Atendente;
 

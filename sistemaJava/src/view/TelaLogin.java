@@ -130,59 +130,75 @@ public class TelaLogin extends javax.swing.JFrame {
 
     private void botaoEntrarActionPerformed(java.awt.event.ActionEvent evt) {                                            
         
-        if(radioMedico.isSelected()){
-            for(Medico m : this.controle.getBancoMedicos()){
-                if(textUsuario.getText().equals(m.getUsuario()) && passwordSenha.getText().equals(m.getSenha())){
-                    new TelaPrincipalMedico(controle, m).setVisible(true);
-                    this.dispose();
+        if(radioAdm.isSelected() || radioAtendente.isSelected() || radioMedico.isSelected() || radioEnfermeiro.isSelected() ){
+            if(radioMedico.isSelected()){
+                for(Medico m : this.controle.getBancoMedicos()){
+                    if(textUsuario.getText().equals(m.getUsuario()) && passwordSenha.getText().equals(m.getSenha())){
+                        new TelaPrincipalMedico(controle, m).setVisible(true);
+                        this.dispose();
+                    }
+                    if(textUsuario.getText().isEmpty() || passwordSenha.getText().isEmpty()){
+                        JOptionPane.showMessageDialog(rootPane, "Você deve preencher um usuário e senha");
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(rootPane, "Usuário e/ou senha incorretos.");
+                    }
+                    System.out.print(m.getUsuario());
                 }
-                else{
-                    JOptionPane.showMessageDialog(rootPane, "Usuário e/ou senha incorretos.");
-                }
-                System.out.print(m.getUsuario());
-            }
+                
             
-        
-        }else if(radioAdm.isSelected()){
-            for(Administrador administrador: this.controle.getBancoAdministradores()){
-                if(textUsuario.getText().equals(administrador.getUsuario()) && passwordSenha.getText().equals(administrador.getSenha())){
-                    new TelaPrincipalAdministrador(controle, administrador).setVisible(true);
-                    this.dispose();
-                    
+            }else if(radioAdm.isSelected()){
+                for(Administrador administrador: this.controle.getBancoAdministradores()){
+                    if(textUsuario.getText().equals(administrador.getUsuario()) && passwordSenha.getText().equals(administrador.getSenha())){
+                        new TelaPrincipalAdministrador(controle, administrador).setVisible(true);
+                        this.dispose();
+                        
+                    }
+                    if(textUsuario.getText().isEmpty() || passwordSenha.getText().isEmpty()){
+                        JOptionPane.showMessageDialog(rootPane, "Você deve preencher um usuário e senha");
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(rootPane, "Usuário e/ou senha incorretos.");
+                    }
                 }
-                else{
-                    JOptionPane.showMessageDialog(rootPane, "Usuário e/ou senha incorretos.");
-                }
-            }
 
-        }else if(radioAtendente.isSelected()){
-            for(Atendente atendente: this.controle.getaBancoAtendente()){
-                if(textUsuario.getText().equals(atendente.getUsuario()) && passwordSenha.getText().equals(atendente.getSenha())){
-                    new TelaPrincipalAtendente(controle, atendente).setVisible(true);
-                    this.dispose();
+            }else if(radioAtendente.isSelected()){
+                for(Atendente atendente: this.controle.getaBancoAtendente()){
+                    if(textUsuario.getText().equals(atendente.getUsuario()) && passwordSenha.getText().equals(atendente.getSenha())){
+                        new TelaPrincipalAtendente(controle, atendente).setVisible(true);
+                        this.dispose();
+                    }
+                    if(textUsuario.getText().isEmpty() || passwordSenha.getText().isEmpty()){
+                        JOptionPane.showMessageDialog(rootPane, "Você deve preencher um usuário e senha");
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(rootPane, "Usuário e/ou senha incorretos.");
+                    }
                 }
-                else{
-                    JOptionPane.showMessageDialog(rootPane, "Usuário e/ou senha incorretos.");
-                }
-            }
-         
-        }else if(radioEnfermeiro.isSelected()){
-            for(Enfermeiro e: this.controle.getBancoEnfermeiros()){
-                if(textUsuario.getText().equals(e.getUsuario()) && passwordSenha.getText().equals(e.getSenha())){
-                    new TelaPrincipalEnfermeiro(controle, e).setVisible(true);
-                    this.dispose();
-                }
-                else{
-                    JOptionPane.showMessageDialog(rootPane, "Usuário e/ou senha incorretos.");
-                }
-            }
             
-        
-        } 
-
-        if(textUsuario.getText().isEmpty() || passwordSenha.getText().isEmpty()){
-            JOptionPane.showMessageDialog(rootPane, "Você deve preencher um usuário e senha");
+            }else if(radioEnfermeiro.isSelected()){
+                for(Enfermeiro e: this.controle.getBancoEnfermeiros()){
+                    if(textUsuario.getText().equals(e.getUsuario()) && passwordSenha.getText().equals(e.getSenha())){
+                        new TelaPrincipalEnfermeiro(controle, e).setVisible(true);
+                        this.dispose();
+                    }
+                    if(textUsuario.getText().isEmpty() || passwordSenha.getText().isEmpty()){
+                        JOptionPane.showMessageDialog(rootPane, "Você deve preencher um usuário e senha");
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(rootPane, "Usuário e/ou senha incorretos.");
+                    }
+                }
+                
+            
+            } 
         }
+        else{
+            JOptionPane.showMessageDialog(rootPane, "Você deve selecionar um tipo de usuário.");
+        }
+        // if(textUsuario.getText().isEmpty() || passwordSenha.getText().isEmpty()){
+        //     JOptionPane.showMessageDialog(rootPane, "Você deve preencher um usuário e senha");
+        // }
         
     }                                           
 
