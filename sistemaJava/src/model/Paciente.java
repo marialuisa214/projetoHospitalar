@@ -74,5 +74,4 @@ public ArrayList<Receita> getListaReceitas() {
 public void setListaReceitas(ArrayList<Receita> listaReceitas) {
 	this.listaReceitas = listaReceitas;
 }
-
 }
