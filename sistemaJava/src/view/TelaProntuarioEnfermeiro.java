@@ -2,10 +2,10 @@ package view;
 
 public class TelaProntuarioEnfermeiro extends javax.swing.JFrame {
 
-    public TelaProntuarioEnfermeiro() {
-        initComponents();
-    }
-                        
+        public TelaProntuarioEnfermeiro() {
+            initComponents();
+        }
+                              
         private void initComponents() {
     
             labelNomeEnfer = new javax.swing.JLabel();
@@ -108,11 +108,11 @@ public class TelaProntuarioEnfermeiro extends javax.swing.JFrame {
                                         .addGroup(layout.createSequentialGroup()
                                             .addComponent(labelPesoPac)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(TextFieldPesoPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(TextFieldPesoPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(layout.createSequentialGroup()
                                             .addComponent(labelAlturaPac)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(TestFieldAlturaPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(TestFieldAlturaPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGap(0, 0, Short.MAX_VALUE)))))
                     .addContainerGap())
             );
@@ -156,7 +156,7 @@ public class TelaProntuarioEnfermeiro extends javax.swing.JFrame {
         }// </editor-fold>                        
     
         private void buttonEnviarProntuarioActionPerformed(java.awt.event.ActionEvent evt) {                                                       
-           
+            
         }                                                      
     
         private void buttonVoltarActionPerformed(java.awt.event.ActionEvent evt) {                                             
@@ -171,7 +171,8 @@ public class TelaProntuarioEnfermeiro extends javax.swing.JFrame {
             
         }                                                     
     
-              public static void main(String args[]) {
+        
+        public static void main(String args[]) {
            
             try {
                 for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -189,7 +190,7 @@ public class TelaProntuarioEnfermeiro extends javax.swing.JFrame {
             } catch (javax.swing.UnsupportedLookAndFeelException ex) {
                 java.util.logging.Logger.getLogger(TelaProntuarioEnfermeiro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
             }
-          
+    
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
                     new TelaProntuarioEnfermeiro().setVisible(true);
@@ -215,3 +216,4 @@ public class TelaProntuarioEnfermeiro extends javax.swing.JFrame {
         private javax.swing.JLabel labelPesoPac;
         // End of variables declaration                   
     }
+    
