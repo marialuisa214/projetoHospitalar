@@ -27,7 +27,7 @@ public class testeModel {
     // //MEDICOS
      Medico medico = new Medico("Yasmin Sebastiana da Luz", "12.432.934-2", "923.451.331-20", 'F', "09/01/1996", "(61) 99971-3942", "yasmin_sebastiana_daluz@eberlin.agr.br", "Brasília-DF", "Quadra Quadra 1 Comércio Local 7", "6775", "1212", "000222", "Ginecologista");
 
-     Medico medico1 = new Medico("Oliver Paulo da Paz", "12.432.934-2", "335.573.791-75", 'M', "24/01/1996", "(61) 98232-5528", "oliver_paulo_dapaz@vol.com.br", "Brasília-DF", "Quadra CNB 3", "7689", "567@198","777444", "Clínico Geral");
+     Medico medico1 = new Medico("Oliver Paulo da Paz", "12.432.934-2", "335.573.791-75", 'M', "24/01/1996", "(61) 98232-5528", "oliver_paulo_dapaz@vol.com.br", "Brasília-DF", "Quadra CNB 3", "7689", "1313","777444", "Clínico Geral");
 
      Medico medico2 = new Medico("Cláudio Caio Carvalho", "12.476.152-5", "928.773.491-79", 'M', "25/01/1996", "(61) 98232-5528", "claudio_caio_carvalho@bassanpeixoto.adv.br", "Brasília-DF", "Quadra 103 Conjunto 2", "5674", "501@109","555333", "Clínico Geral");
 
