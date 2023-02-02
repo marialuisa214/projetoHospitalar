@@ -167,12 +167,21 @@ public class TelaLogin extends javax.swing.JFrame {
 
          
         }else if(radioAtendente.isSelected()){
+            for(Atendente atendente: this.controle.getaBancoAtendente()){
+                if(textUsuario.getText().equals(atendente.getUsuario()) && passwordSenha.getText().equals(atendente.getSenha())){
+                    
+                    
+                    new TelaPrincipalAtendente(controle, atendente).setVisible(true);
+                    this.dispose();
+                }
+            }
+
          
         }else if(radioEnfermeiro.isSelected()){
             for(Enfermeiro e: this.controle.getBancoEnfermeiros()){
                 if(textUsuario.getText().equals(e.getUsuario()) && passwordSenha.getText().equals(e.getSenha())){
                     
-                    System.out.print("passei aqui");
+                    
                     new TelaPrincipalEnfermeiro(controle, e).setVisible(true);
                     this.dispose();
                 }
@@ -181,7 +190,7 @@ public class TelaLogin extends javax.swing.JFrame {
             
         
         } else{
-            
+
         }
         
         

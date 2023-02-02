@@ -48,12 +48,7 @@ public ArrayList<Medico> getBancoMedicosPlantao() {
     public void adicionaPacientes(Paciente paciente) {
         this.bancoPacientes.add(paciente);
     }
-    
-//LISTA DE SOLICITAÇOES MEDICO P/ ATENDENTE
-    // nova classe???
 
-
-//
 
 //LISTA SOLICITACOES
     ArrayList<Solicitacao> bancoSolicitacaos = new ArrayList<>();
@@ -80,11 +75,26 @@ public ArrayList<Medico> getBancoMedicosPlantao() {
         return bancoTriagem;
     }
 //ENTRADAS
-ArrayList<Entrada> bancoEntradas = new ArrayList<>();
+    ArrayList<Entrada> bancoEntradas = new ArrayList<>();
 
-public ArrayList<Entrada> getaBancoEntradas() {
-    return bancoEntradas;
-}
+    public ArrayList<Entrada> getaBancoEntradas() {
+        
+        return bancoEntradas;
+    }
+
+// Atendente
+    ArrayList<Atendente> bancoAtendentes =  new ArrayList<>();
+    public ArrayList<Atendente> getaBancoAtendente() {
+        return bancoAtendentes;
+    }
+
+//EXAMES
+    ArrayList<Exame> bancoExames = new ArrayList<>();
+
+    public ArrayList<Exame> getBancoExames() {
+        return bancoExames;
+    }
+
     
 
 

@@ -43,7 +43,6 @@ public class TelaRelatorioConsulta extends javax.swing.JFrame {
 
         botaoVoltarMedico.setBackground(new java.awt.Color(204, 153, 255));
         botaoVoltarMedico.setFont(new java.awt.Font("Gujarati MT", 1, 13)); // NOI18N
-        botaoVoltarMedico.setForeground(new java.awt.Color(255, 255, 255));
         botaoVoltarMedico.setText("Voltar");
         botaoVoltarMedico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -252,8 +251,8 @@ public class TelaRelatorioConsulta extends javax.swing.JFrame {
         } else{ 
             consulta.setDescricaoMedica(textDescricao.getText());
             consulta.setStatus(true);
-            // Marcada m = consulta;
-
+            consulta.getMedico().getListConsultasPendentes().remove(consulta);
+            
             new TelaPrincipalMedico(dados, consulta.getMedico()).setVisible(true);
             this.dispose();
 

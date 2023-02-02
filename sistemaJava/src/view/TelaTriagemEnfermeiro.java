@@ -97,6 +97,12 @@ public class TelaTriagemEnfermeiro extends javax.swing.JFrame {
                     buttonVoltarActionPerformed(evt);
                 }
             });
+
+            buttonGerarProntuario.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    buttonGerarProntuarioActionPerformed(evt);
+                }
+            });
     
             javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
             getContentPane().setLayout(layout);
@@ -182,7 +188,12 @@ public class TelaTriagemEnfermeiro extends javax.swing.JFrame {
         private void buttonVoltarActionPerformed(java.awt.event.ActionEvent evt) {                                             
             new TelaPrincipalEnfermeiro(dados, enfermeiro).setVisible(true);
             this.dispose();
-        }                                            
+        }     
+        
+        private void buttonGerarProntuarioActionPerformed(java.awt.event.ActionEvent evt) {                                             
+            new TelaAtualizaProntuario().setVisible(true);
+            this.dispose();
+        } 
     
         private void radioButtonUrgenteActionPerformed(java.awt.event.ActionEvent evt) {     
                                                          

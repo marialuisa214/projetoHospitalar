@@ -11,7 +11,7 @@ public class TelaPrincipalEnfermeiro extends javax.swing.JFrame {
         this.enfermeiro  = enfermeiro;
         this.dados = dados;
         this.tabelaTriagem = new TabelaTriagem(dados); 
-        this.tabelaExame = new TabelaExameEnfermeiro(enfermeiro);
+        this.tabelaExame = new TabelaExameEnfermeiro(dados);
         initComponents();
 
         jTable1.setModel(tabelaTriagem);
@@ -198,7 +198,15 @@ public class TelaPrincipalEnfermeiro extends javax.swing.JFrame {
         
     }                                                  
 
-    private void buttonFazerExameActionPerformed(java.awt.event.ActionEvent evt) {                                                 
+    private void buttonFazerExameActionPerformed(java.awt.event.ActionEvent evt) {  
+        if(jTable2.getSelectedRow() != -1 ){
+            Exame exame = tabelaExame.selecionaItem(jTable2.getSelectedRow());
+            new TelaExameEnfermeiro(dados, exame.getPaciente(), exame, enfermeiro).setVisible(true);
+                this.dispose();
+        }else{
+            JOptionPane.showMessageDialog(null, "Selecione um exame antes de ir para a proxima página!");
+        }
+
         
     }                                               
     

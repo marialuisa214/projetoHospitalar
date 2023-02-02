@@ -64,6 +64,11 @@ public class testeModel {
     paciente.getProntuario().getHistoricoExame().add(exame1);
     paciente.getProntuario().getHistoricoExame().add(exame2);
 
+    Atendente atendente = new Atendente("Julio Mendonça", "7.234.234", "909.865.202-77", 'M', "10/12/2001","6074-2342", "Julio@gmail.com", "Brasília-DF", "Rua da Banana, 305", "4334", "325@201");
+
+    Atendente atendente1 = new Atendente("Michael Jackson Alves", "2.244.555", "890.345.657-02", 'M', "10/08/1990","7865-2356", "MichaelAlves@gmail.com", "Brasília-DF", "Rua da Acerola, 308", "5443", "1111");
+    
+
 
     //ENTRADAS
     Entrada entrada = new Entrada("Estável", paciente3);
@@ -105,6 +110,14 @@ public class testeModel {
 
     banco.bancoEnfermeiros.add(enfermeiro1);
     banco.bancoEnfermeiros.add(enfermeiro);
+    banco.bancoAtendentes.add(atendente1);
+    banco.bancoAtendentes.add(atendente);
+
+    banco.getBancoExames().add(exame3);
+    banco.getBancoExames().add(exame1);
+    banco.getBancoExames().add(exame);
+    banco.getBancoExames().add(exame2);
+
 
   
     new TelaLogin(banco).setVisible(true);
