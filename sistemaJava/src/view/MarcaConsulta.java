@@ -5,7 +5,7 @@ public class MarcaConsulta extends javax.swing.JFrame {
     public MarcaConsulta() {
         initComponents();
     }
-                
+
     private void initComponents() {
 
         labelNovaConsulta = new javax.swing.JLabel();
@@ -15,6 +15,7 @@ public class MarcaConsulta extends javax.swing.JFrame {
         dropboxPaciente = new javax.swing.JComboBox<>();
         labelDataHora = new javax.swing.JLabel();
         buttonAgendarConsulta = new javax.swing.JButton();
+        fieldDataHora = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,7 +60,8 @@ public class MarcaConsulta extends javax.swing.JFrame {
                             .addComponent(labelDataHora)
                             .addComponent(dropboxMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(dropboxPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelPaciente)))
+                            .addComponent(labelPaciente)
+                            .addComponent(fieldDataHora, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(197, 197, 197)
                         .addComponent(labelNovaConsulta))
@@ -83,7 +85,9 @@ public class MarcaConsulta extends javax.swing.JFrame {
                 .addComponent(dropboxPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(labelDataHora)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(fieldDataHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addComponent(buttonAgendarConsulta)
                 .addGap(19, 19, 19))
         );
@@ -142,6 +146,7 @@ public class MarcaConsulta extends javax.swing.JFrame {
     private javax.swing.JButton buttonAgendarConsulta;
     private javax.swing.JComboBox<String> dropboxMedico;
     private javax.swing.JComboBox<String> dropboxPaciente;
+    private javax.swing.JTextField fieldDataHora;
     private javax.swing.JLabel labelDataHora;
     private javax.swing.JLabel labelMedico;
     private javax.swing.JLabel labelNovaConsulta;

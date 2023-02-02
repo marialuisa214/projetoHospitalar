@@ -5,15 +5,15 @@ public class AgendaExame extends javax.swing.JFrame {
     public AgendaExame() {
         initComponents();
     }
-                          
+                       
     private void initComponents() {
 
-        scrollTableExame = new javax.swing.JScrollPane();
+        jScrollPane1 = new javax.swing.JScrollPane();
         tableExame = new javax.swing.JTable();
         buttonMarcaExame = new javax.swing.JToggleButton();
         buttonAlteraExame = new javax.swing.JToggleButton();
-        buttonDesmarcarConsulta = new javax.swing.JToggleButton();
-        buttonVoltar = new javax.swing.JButton();
+        buttonDesmExame = new javax.swing.JToggleButton();
+        labelAgendaExame = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -28,10 +28,10 @@ public class AgendaExame extends javax.swing.JFrame {
                 "Horário/Consulta", "Paciente"
             }
         ));
-        scrollTableExame.setViewportView(tableExame);
+        jScrollPane1.setViewportView(tableExame);
 
         buttonMarcaExame.setBackground(new java.awt.Color(153, 153, 153));
-        buttonMarcaExame.setText("Marcar Consulta");
+        buttonMarcaExame.setText("Marcar Exame");
         buttonMarcaExame.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonMarcaExameActionPerformed(evt);
@@ -39,28 +39,22 @@ public class AgendaExame extends javax.swing.JFrame {
         });
 
         buttonAlteraExame.setBackground(new java.awt.Color(153, 153, 153));
-        buttonAlteraExame.setText("Alterar Consulta");
+        buttonAlteraExame.setText("Alterar Exame");
         buttonAlteraExame.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonAlteraExameActionPerformed(evt);
             }
         });
 
-        buttonDesmarcarConsulta.setBackground(new java.awt.Color(153, 153, 153));
-        buttonDesmarcarConsulta.setText("Desmarcar Consulta");
-        buttonDesmarcarConsulta.addActionListener(new java.awt.event.ActionListener() {
+        buttonDesmExame.setBackground(new java.awt.Color(153, 153, 153));
+        buttonDesmExame.setText("Desmarcar Exame");
+        buttonDesmExame.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonDesmarcarConsultaActionPerformed(evt);
+                buttonDesmExameActionPerformed(evt);
             }
         });
 
-        buttonVoltar.setBackground(new java.awt.Color(153, 153, 153));
-        buttonVoltar.setText("Voltar");
-        buttonVoltar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonVoltarActionPerformed(evt);
-            }
-        });
+        labelAgendaExame.setText("Agenda Exame");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -68,55 +62,59 @@ public class AgendaExame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(28, 28, 28)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(buttonVoltar)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(scrollTableExame, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(buttonMarcaExame, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(buttonAlteraExame, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(buttonDesmarcarConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(buttonDesmExame, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonMarcaExame, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonAlteraExame, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(36, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(labelAgendaExame)
+                .addGap(248, 248, 248))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(23, Short.MAX_VALUE)
-                .addComponent(buttonVoltar)
-                .addGap(18, 18, 18)
+                .addGap(19, 19, 19)
+                .addComponent(labelAgendaExame)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(scrollTableExame, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(buttonMarcaExame)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(buttonAlteraExame)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(buttonDesmarcarConsulta)))
+                        .addComponent(buttonDesmExame))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31))
         );
 
         pack();
     }// </editor-fold>                        
 
-    private void buttonDesmarcarConsultaActionPerformed(java.awt.event.ActionEvent evt) {                                                        
+    private void buttonDesmExameActionPerformed(java.awt.event.ActionEvent evt) {                                                
         // TODO add your handling code here:
-    }                                                       
-
-    private void buttonMarcaExameActionPerformed(java.awt.event.ActionEvent evt) {                                                 
-        // TODO add your handling code here:
-    }                                                
+    }                                               
 
     private void buttonAlteraExameActionPerformed(java.awt.event.ActionEvent evt) {                                                  
         // TODO add your handling code here:
     }                                                 
 
-    private void buttonVoltarActionPerformed(java.awt.event.ActionEvent evt) {                                             
-        this.dispose();
-    }                                            
+    private void buttonMarcaExameActionPerformed(java.awt.event.ActionEvent evt) {                                                 
+        // TODO add your handling code here:
+    }                                                
 
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
-
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -145,10 +143,10 @@ public class AgendaExame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify                     
     private javax.swing.JToggleButton buttonAlteraExame;
-    private javax.swing.JToggleButton buttonDesmarcarConsulta;
+    private javax.swing.JToggleButton buttonDesmExame;
     private javax.swing.JToggleButton buttonMarcaExame;
-    private javax.swing.JButton buttonVoltar;
-    private javax.swing.JScrollPane scrollTableExame;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel labelAgendaExame;
     private javax.swing.JTable tableExame;
     // End of variables declaration                   
 }

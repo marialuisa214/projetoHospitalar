@@ -5,7 +5,7 @@ public class MarcaExame extends javax.swing.JFrame {
     public MarcaExame() {
         initComponents();
     }
-                          
+                         
     private void initComponents() {
 
         labelNovoExame = new javax.swing.JLabel();
@@ -15,6 +15,7 @@ public class MarcaExame extends javax.swing.JFrame {
         dropboxPaciente = new javax.swing.JComboBox<>();
         labelDataHora = new javax.swing.JLabel();
         buttonAgendarExame = new javax.swing.JButton();
+        fieldDataHora = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,20 +54,22 @@ public class MarcaExame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(208, 208, 208)
+                        .addComponent(labelNovoExame))
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(19, 19, 19)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(labelPaciente)
                             .addComponent(labelDataHora)
                             .addComponent(labelExame)
                             .addComponent(dropboxExame, 0, 435, Short.MAX_VALUE)
-                            .addComponent(dropboxPaciente, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(182, 182, 182)
-                        .addComponent(buttonAgendarExame))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(208, 208, 208)
-                        .addComponent(labelNovoExame)))
+                            .addComponent(dropboxPaciente, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(fieldDataHora, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(37, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 194, Short.MAX_VALUE)
+                .addComponent(buttonAgendarExame)
+                .addGap(184, 184, 184))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -83,9 +86,11 @@ public class MarcaExame extends javax.swing.JFrame {
                 .addComponent(dropboxPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(labelDataHora)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(fieldDataHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(buttonAgendarExame)
-                .addGap(24, 24, 24))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         pack();
@@ -142,6 +147,7 @@ public class MarcaExame extends javax.swing.JFrame {
     private javax.swing.JButton buttonAgendarExame;
     private javax.swing.JComboBox<String> dropboxExame;
     private javax.swing.JComboBox<String> dropboxPaciente;
+    private javax.swing.JTextField fieldDataHora;
     private javax.swing.JLabel labelDataHora;
     private javax.swing.JLabel labelExame;
     private javax.swing.JLabel labelNovoExame;
