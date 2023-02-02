@@ -9,14 +9,12 @@ public class TelaPrincipalAtendente extends javax.swing.JFrame {
         this.listaPaciente = pacientes;
         initComponents();
       }
-                        
+                    
     private void initComponents() {
 
         labelAtendente = new javax.swing.JLabel();
         labelIdAtendente = new javax.swing.JLabel();
         labelDataHora = new javax.swing.JLabel();
-        labelPacientecadastrado = new javax.swing.JLabel();
-        labelPacientenaocadastrado = new javax.swing.JLabel();
         fieldBuscaPaciente = new javax.swing.JTextField();
         buttonVoltar = new javax.swing.JButton();
         buttonBuscaPaciente = new javax.swing.JButton();
@@ -24,6 +22,9 @@ public class TelaPrincipalAtendente extends javax.swing.JFrame {
         buttonCadastraPaciente = new javax.swing.JButton();
         buttonAgendaConsulta = new javax.swing.JButton();
         buttonAgendaExame = new javax.swing.JButton();
+        buttonNovaEntrada = new javax.swing.JButton();
+        labelCadastrado = new javax.swing.JLabel();
+        labelNaocadastrado = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -32,10 +33,6 @@ public class TelaPrincipalAtendente extends javax.swing.JFrame {
         labelIdAtendente.setText("<id atendente>");
 
         labelDataHora.setText("<data/hora atual>");
-
-        labelPacientecadastrado.setText("Este paciente está cadastrado!");
-
-        labelPacientenaocadastrado.setText("Este paciente não está cadastrado!");
 
         fieldBuscaPaciente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,35 +83,49 @@ public class TelaPrincipalAtendente extends javax.swing.JFrame {
             }
         });
 
+        buttonNovaEntrada.setBackground(new java.awt.Color(153, 153, 153));
+        buttonNovaEntrada.setText("Nova Entrada");
+        buttonNovaEntrada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonNovaEntradaActionPerformed(evt);
+            }
+        });
+
+        labelCadastrado.setText("Este paciente está cadastrado!");
+
+        labelNaocadastrado.setText("Este paciente não está cadastrado!");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(buttonVoltar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 209, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(labelAtendente, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelDataHora, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelIdAtendente, javax.swing.GroupLayout.Alignment.LEADING)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(fieldBuscaPaciente)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(labelPacientecadastrado)
-                                    .addComponent(labelPacientenaocadastrado))
-                                .addGap(0, 54, Short.MAX_VALUE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(labelCadastrado)
+                                    .addComponent(labelNaocadastrado))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(buttonAgendaExame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(buttonAgendaConsulta, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addComponent(buttonCadastraPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(buttonSolicitações, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(buttonBuscaPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(buttonVoltar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(labelAtendente, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelDataHora, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelIdAtendente, javax.swing.GroupLayout.Alignment.LEADING))))
+                            .addComponent(buttonBuscaPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(buttonNovaEntrada, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(17, 17, 17))
         );
         layout.setVerticalGroup(
@@ -129,23 +140,27 @@ public class TelaPrincipalAtendente extends javax.swing.JFrame {
                     .addComponent(buttonVoltar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelDataHora)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(fieldBuscaPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(buttonBuscaPaciente))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonSolicitações)
-                    .addComponent(labelPacientecadastrado))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(buttonCadastraPaciente)
-                    .addComponent(labelPacientenaocadastrado))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(buttonSolicitações)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonCadastraPaciente))
+                    .addComponent(labelCadastrado)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(labelNaocadastrado)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(buttonAgendaConsulta)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(buttonAgendaExame)
-                .addGap(28, 28, 28))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(buttonNovaEntrada)
+                .addGap(27, 27, 27))
         );
 
         pack();
@@ -174,10 +189,21 @@ public class TelaPrincipalAtendente extends javax.swing.JFrame {
 
     private void buttonAgendaExameActionPerformed(java.awt.event.ActionEvent evt) {                                                  
         new AgendaExame().setVisible(true);
-    }                                                  
+    }                                                 
 
+    private void buttonNovaEntradaActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+        // TODO add your handling code here:
+    }                                                 
+
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
-
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -201,13 +227,14 @@ public class TelaPrincipalAtendente extends javax.swing.JFrame {
     private javax.swing.JButton buttonAgendaExame;
     private javax.swing.JButton buttonBuscaPaciente;
     private javax.swing.JButton buttonCadastraPaciente;
+    private javax.swing.JButton buttonNovaEntrada;
     private javax.swing.JButton buttonSolicitações;
     private javax.swing.JButton buttonVoltar;
     private javax.swing.JTextField fieldBuscaPaciente;
     private javax.swing.JLabel labelAtendente;
+    private javax.swing.JLabel labelCadastrado;
     private javax.swing.JLabel labelDataHora;
     private javax.swing.JLabel labelIdAtendente;
-    private javax.swing.JLabel labelPacientecadastrado;
-    private javax.swing.JLabel labelPacientenaocadastrado;
+    private javax.swing.JLabel labelNaocadastrado;
     // End of variables declaration                   
 }
