@@ -1,7 +1,7 @@
 package model;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+// import java.text.SimpleDateFormat;
+// import java.util.Date;
 
 public class Marcada extends Consulta {
 
@@ -10,8 +10,8 @@ public class Marcada extends Consulta {
     private String horario;
     private boolean status;
     private String descricaoMedica;
-    private SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
-    private Date c;
+    // private SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
+    // private Date c;
 
     //CONSTRUTOR
     public Marcada(String codigo, Paciente paciente,  Medico medico) {

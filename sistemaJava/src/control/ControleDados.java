@@ -20,9 +20,9 @@ public class ControleDados {
 
 
     //ATENDENTES
-    Atendente atendente = new Atendente("Julio Mendonça", "7.234.234", "909.865.202-77", 'M', "10/12/2001","6074-2342", "Julio@gmail.com", "Brasília-DF", "Rua da Banana, 305", "4334", "325@201");
+    // Atendente atendente = new Atendente("Julio Mendonça", "7.234.234", "909.865.202-77", 'M', "10/12/2001","6074-2342", "Julio@gmail.com", "Brasília-DF", "Rua da Banana, 305", "4334", "325@201");
 
-    Atendente atendente1 = new Atendente("Michael Jackson Alves", "2.244.555", "890.345.657-02", 'M', "10/08/1990","7865-2356", "MichaelAlves@gmail.com", "Brasília-DF", "Rua da Acerola, 308", "5443", "342@207");
+    // Atendente atendente1 = new Atendente("Michael Jackson Alves", "2.244.555", "890.345.657-02", 'M', "10/08/1990","7865-2356", "MichaelAlves@gmail.com", "Brasília-DF", "Rua da Acerola, 308", "5443", "342@207");
     
 
     //MEDICOS
