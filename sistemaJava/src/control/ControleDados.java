@@ -49,8 +49,14 @@ public ArrayList<Medico> getBancoMedicosPlantao() {
         this.bancoPacientes.add(paciente);
     }
 
+//ADMINISTRADOR
+    ArrayList<Administrador> bancoAdministradores = new ArrayList<>();
 
-//LISTA SOLICITACOES
+    public ArrayList<Administrador> getBancoAdministradores() {
+        return bancoAdministradores;
+    }
+
+    //LISTA SOLICITACOES
     ArrayList<Solicitacao> bancoSolicitacaos = new ArrayList<>();
 
     public ArrayList<Solicitacao> getBancoSolicitacaos() {

@@ -7,31 +7,38 @@ import javax.swing.JList;
 
 import control.*;
 import model.Atendente;
+import model.TabelaPaciente;
 
 
 
 public class TelaPrincipalAtendente extends javax.swing.JFrame {
 
-
+    
     public TelaPrincipalAtendente(ControleDados dados, Atendente atendente) {
-      this.dados = dados;
-      this.atendente = atendente;
-      this.c = new Date();
-      initComponents();
-    }
-                       
+        this.atendente = atendente;
+        this.dados = dados;
+        this.tabela = new TabelaPaciente(dados); 
+        this.c = new Date();
+
+        jTable1.setModel(tabela);
+
+        initComponents();
+      }
+                         
     private void initComponents() {
 
         labelAtendente = new javax.swing.JLabel();
         labelIdAtendente = new javax.swing.JLabel();
         labelDataHora = new javax.swing.JLabel();
+        fieldBuscaPaciente = new javax.swing.JTextField();
+        buttonVoltar = new javax.swing.JButton();
         buttonBuscaPaciente = new javax.swing.JButton();
+        buttonSolicitações = new javax.swing.JButton();
         buttonCadastraPaciente = new javax.swing.JButton();
         buttonAgendaConsulta = new javax.swing.JButton();
         buttonAgendaExame = new javax.swing.JButton();
-        buttonSolicitações = new javax.swing.JButton();
-        fieldBuscaPaciente = new javax.swing.JTextField();
-        listaPacientes = new javax.swing.JList<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -41,6 +48,15 @@ public class TelaPrincipalAtendente extends javax.swing.JFrame {
 
         labelDataHora.setText(formatador.format(c));
 
+        fieldBuscaPaciente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fieldBuscaPacienteActionPerformed(evt);
+            }
+        });
+
+        buttonVoltar.setBackground(new java.awt.Color(153, 153, 153));
+        buttonVoltar.setText("voltar");
+
         buttonBuscaPaciente.setBackground(new java.awt.Color(153, 153, 153));
         buttonBuscaPaciente.setText("Buscar Paciente");
         buttonBuscaPaciente.addActionListener(new java.awt.event.ActionListener() {
@@ -49,8 +65,16 @@ public class TelaPrincipalAtendente extends javax.swing.JFrame {
             }
         });
 
+        buttonSolicitações.setBackground(new java.awt.Color(153, 153, 153));
+        buttonSolicitações.setText("Solicitações");
+        buttonSolicitações.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSolicitaçõesActionPerformed(evt);
+            }
+        });
+
         buttonCadastraPaciente.setBackground(new java.awt.Color(153, 153, 153));
-        buttonCadastraPaciente.setText("Cadastrar Paciente");
+        buttonCadastraPaciente.setText("Novo Paciente");
         buttonCadastraPaciente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonCadastraPacienteActionPerformed(evt);
@@ -73,117 +97,139 @@ public class TelaPrincipalAtendente extends javax.swing.JFrame {
             }
         });
 
-        buttonSolicitações.setBackground(new java.awt.Color(153, 153, 153));
-        buttonSolicitações.setText("Solicitações");
-        buttonSolicitações.addActionListener(new java.awt.event.ActionListener() {
+        buttonVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonSolicitaçõesActionPerformed(evt);
+                buttonVoltarActionPerformed(evt);
             }
         });
 
-        fieldBuscaPaciente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fieldBuscaPacienteActionPerformed(evt);
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
             }
-        });
+        ));
+        jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(25, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(labelAtendente)
-                    .addComponent(labelDataHora)
-                    .addComponent(labelIdAtendente)
-                    .addComponent(fieldBuscaPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-                    .addComponent(listaPacientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(buttonBuscaPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(buttonCadastraPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(buttonAgendaConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(buttonAgendaExame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(buttonSolicitações, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(buttonVoltar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 209, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(labelAtendente, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelDataHora, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelIdAtendente, javax.swing.GroupLayout.Alignment.LEADING)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(fieldBuscaPaciente))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(buttonAgendaExame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(buttonAgendaConsulta, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(buttonCadastraPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(buttonSolicitações, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(buttonBuscaPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(17, 17, 17))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(labelAtendente)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelIdAtendente)
+                .addGap(17, 17, 17)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(labelAtendente)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(labelIdAtendente))
+                    .addComponent(buttonVoltar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelDataHora)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(fieldBuscaPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(buttonBuscaPaciente))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
+                        .addComponent(buttonSolicitações)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(buttonCadastraPaciente)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(buttonAgendaConsulta)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(buttonAgendaExame)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(buttonSolicitações))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(listaPacientes, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(53, Short.MAX_VALUE))
+                        .addGap(28, 28, 28))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
 
         pack();
-    }                        
+    }// </editor-fold>                        
+
+
+    private void buttonVoltarActionPerformed(java.awt.event.ActionEvent evt) {                                                    
+       new TelaLogin(dados).setVisible(true);
+       this.dispose();
+    } 
 
     private void buttonBuscaPacienteActionPerformed(java.awt.event.ActionEvent evt) {                                                    
         // TODO add your handling code here:
     }                                                   
 
     private void fieldBuscaPacienteActionPerformed(java.awt.event.ActionEvent evt) {                                                   
-        // this.listaPacientes = new JList<>(this.listaPaciente.listaNomePacientes());
-    }                                                  
 
-    private void buttonCadastraPacienteActionPerformed(java.awt.event.ActionEvent evt) {                                                       
-        // this.dispose();
-        // new CadastroPaciente(listaPaciente).setVisible(true);
-    }                                                      
+    }                                                   
 
-    private void buttonSolicitaçõesActionPerformed(java.awt.event.ActionEvent evt) {                                                   
-        // TODO add your handling code here:
-    }                                                  
+  private void buttonCadastraPacienteActionPerformed(java.awt.event.ActionEvent evt) {                                                       
+      this.dispose();
+    //   new CadastroPaciente(listaPaciente).setVisible(true);
+  }                                                      
 
-    private void buttonAgendaConsultaActionPerformed(java.awt.event.ActionEvent evt) {                                                     
-        // new AgendaConsulta().setVisible(true);
-    }                                                    
+  private void buttonSolicitaçõesActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+      new TelaSolicitacao().setVisible(true);
+      this.disable();
+  }                                                  
 
-    private void buttonAgendaExameActionPerformed(java.awt.event.ActionEvent evt) {                                                  
-        // new AgendaExame().setVisible(true);
-    }                                                 
+  private void buttonAgendaConsultaActionPerformed(java.awt.event.ActionEvent evt) {                                                     
+      new TelaAgendaConsulta().setVisible(true);
+  }                                                    
 
-    
+  private void buttonAgendaExameActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+    //   new AgendaExame().setVisible(true);
+  }   
+
     // Variables declaration - do not modify                     
     private javax.swing.JButton buttonAgendaConsulta;
     private javax.swing.JButton buttonAgendaExame;
     private javax.swing.JButton buttonBuscaPaciente;
     private javax.swing.JButton buttonCadastraPaciente;
     private javax.swing.JButton buttonSolicitações;
+    private javax.swing.JButton buttonVoltar;
     private javax.swing.JTextField fieldBuscaPaciente;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JLabel labelAtendente;
     private javax.swing.JLabel labelDataHora;
     private javax.swing.JLabel labelIdAtendente;
-    private javax.swing.JList<String> listaPacientes;
-
-    private ControleDados dados;
-    private Atendente atendente;
-    // End of variables declaration
+    // End of variables declaration      
     
+
     private SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
     private Date c;
+    private ControleDados dados;
+    private Atendente atendente;
+    private TabelaPaciente tabela;
 }
-
-

@@ -65,7 +65,7 @@ public class TelaLogin extends javax.swing.JFrame {
         });
 
         radioAdm.setFont(new java.awt.Font("Gujarati MT", 0, 14)); // NOI18N
-        radioAdm.setText("Admisnistrador");
+        radioAdm.setText("Administrador");
         radioAdm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 radioAdmActionPerformed(evt);
@@ -163,16 +163,24 @@ public class TelaLogin extends javax.swing.JFrame {
             
         
         }else if(radioAdm.isSelected()){
+            for(Administrador administrador: this.controle.getBancoAdministradores()){
+                if(textUsuario.getText().equals(administrador.getUsuario()) && passwordSenha.getText().equals(administrador.getSenha())){
+                    new TelaPrincipalAdministrador(controle, administrador).setVisible(true);
+                    this.dispose();
+                    
+                }
+            }
+
             
 
          
         }else if(radioAtendente.isSelected()){
             for(Atendente atendente: this.controle.getaBancoAtendente()){
                 if(textUsuario.getText().equals(atendente.getUsuario()) && passwordSenha.getText().equals(atendente.getSenha())){
-                    
-                    
                     new TelaPrincipalAtendente(controle, atendente).setVisible(true);
                     this.dispose();
+                    
+                    
                 }
             }
 
@@ -185,17 +193,12 @@ public class TelaLogin extends javax.swing.JFrame {
                     new TelaPrincipalEnfermeiro(controle, e).setVisible(true);
                     this.dispose();
                 }
-                System.out.print(e.getUsuario());
             }
             
         
         } else{
 
         }
-        
-        
-        
-        
         
         
     }                                           
