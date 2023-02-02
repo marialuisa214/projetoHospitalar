@@ -1,11 +1,23 @@
 package view;
 
+import control.ControleDados;
+import model.Atendente;
+import model.TabelaPaciente;
+
 public class TelaAgendaConsulta extends javax.swing.JFrame {
 
-    public TelaAgendaConsulta() {
+    public TelaAgendaConsulta(ControleDados dados,  Atendente atendente) {
+        this.dados = dados;
+        this.atendente = atendente;
+        this.tabela = new TabelaPaciente(dados);
+
         initComponents();
+        tableConsulta.setModel(this.tabela);
+        
+
+
     }
-                        
+                
     private void initComponents() {
 
         scrollTableConsulta = new javax.swing.JScrollPane();
@@ -104,7 +116,7 @@ public class TelaAgendaConsulta extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void buttonMarcaConsultaActionPerformed(java.awt.event.ActionEvent evt) {                                                    
-        // TODO add your handling code here:
+        new TelaMarcaConsulta().setVisible(true);
     }                                                   
 
     private void buttonAlteraConsultaActionPerformed(java.awt.event.ActionEvent evt) {                                                     
@@ -119,7 +131,6 @@ public class TelaAgendaConsulta extends javax.swing.JFrame {
         this.dispose();
     }                                            
 
-   
 
     // Variables declaration - do not modify                     
     private javax.swing.JToggleButton buttonAlteraConsulta;
@@ -130,4 +141,8 @@ public class TelaAgendaConsulta extends javax.swing.JFrame {
     private javax.swing.JScrollPane scrollTableConsulta;
     private javax.swing.JTable tableConsulta;
     // End of variables declaration                   
+
+    private TabelaPaciente tabela;
+    private ControleDados dados;
+    private Atendente atendente;
 }

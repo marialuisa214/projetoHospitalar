@@ -51,6 +51,13 @@ public class TelaCadastra extends javax.swing.JFrame {
         labelEstado = new javax.swing.JLabel();
         labelEndereco = new javax.swing.JLabel();
 
+        groupButton = new javax.swing.ButtonGroup();
+
+        groupButton.add(radioMedico);
+        groupButton.add(radioEnfermeiro);
+        groupButton.add(radioADM);
+        groupButton.add(radioAtendente);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         botaoVoltar.setText("Voltar");
@@ -61,6 +68,19 @@ public class TelaCadastra extends javax.swing.JFrame {
                 radioMedicoActionPerformed(evt);
             }
         });
+        radioADM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioADMActionPerformed(evt);
+            }
+        });radioAtendente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioAtendenteActionPerformed(evt);
+            }
+        });radioEnfermeiro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioEnfermeiroActionPerformed(evt);
+            }
+        });
 
         labeNovoFuncionario.setText("Novo Funcionario!");
 
@@ -68,11 +88,7 @@ public class TelaCadastra extends javax.swing.JFrame {
 
         labelNome.setText("Nome:");
 
-        formatedData.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                formatedDataActionPerformed(evt);
-            }
-        });
+        
 
         labelCPF.setText("CPF:");
 
@@ -84,9 +100,7 @@ public class TelaCadastra extends javax.swing.JFrame {
 
         labelSexo.setText("Sexo:");
 
-        labelInfo.setText("CRM:");
-
-        LabelEspecialidade.setText("Especialidade:");
+        
 
         botaoFinaliza.setText("Finalizar!");
         botaoFinaliza.addActionListener(new java.awt.event.ActionListener() {
@@ -96,20 +110,33 @@ public class TelaCadastra extends javax.swing.JFrame {
         });
 
         botaoSenha.setText("Gerar Senha");
-
-        textInfo.addActionListener(new java.awt.event.ActionListener() {
+        botaoSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textInfoActionPerformed(evt);
+                botaoSenhaActionPerformed(evt);
             }
         });
 
-        labelUsuario.setText("usuario:");
+        
+        labelInfo.setText("CRM:");
+        labelInfo.setVisible(false);
 
-        labelSenha.setText("senha:");
+        LabelEspecialidade.setText("Especialidade:");
+        LabelEspecialidade.setVisible(false);
+
+        labelUsuario.setText("Usuario:");
+        labelUsuario.setVisible(false);
+
+        labelSenha.setText("Senha:");
+        labelSenha.setVisible(false);
 
         labelUserGerado.setText("jLabel15");
+        labelUserGerado.setVisible(false);
 
         labelSenhaGerada.setText("jLabel16");
+        labelSenhaGerada.setVisible(false);
+
+        textInfo.setVisible(false);
+        textEspecialidade.setVisible(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -172,11 +199,7 @@ public class TelaCadastra extends javax.swing.JFrame {
         checkMasculino.setText("Masculino");
 
         checkFeminino.setText("Feminino");
-        checkFeminino.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkFemininoActionPerformed(evt);
-            }
-        });
+        ;
 
         botaoVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -184,31 +207,9 @@ public class TelaCadastra extends javax.swing.JFrame {
             }
         });
 
-        // textCpf.addActionListener(new java.awt.event.ActionListener() {
-        //     public void actionPerformed(java.awt.event.ActionEvent evt) {
-        //         textCpfActionPerformed(evt);
-        //     }
-        // });
-
-        // textEmail.addActionListener(new java.awt.event.ActionListener() {
-        //     public void actionPerformed(java.awt.event.ActionEvent evt) {
-        //         textEmailActionPerformed(evt);
-        //     }
-        // });
 
         labelDataNasc.setText("Data Nascimento:");
 
-        // textEstado.addActionListener(new java.awt.event.ActionListener() {
-        //     public void actionPerformed(java.awt.event.ActionEvent evt) {
-        //         textEstadoActionPerformed(evt);
-        //     }
-        // });
-
-        // textEndereco.addActionListener(new java.awt.event.ActionListener() {
-        //     public void actionPerformed(java.awt.event.ActionEvent evt) {
-        //         textEnderecoActionPerformed(evt);
-        //     }
-        // });
 
         labelTelefone.setText("Telefone:");
 
@@ -354,46 +355,64 @@ public class TelaCadastra extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void radioMedicoActionPerformed(java.awt.event.ActionEvent evt) {                                            
-        // TODO add your handling code here:
-    }                                           
+        labelInfo.setVisible(true);
+        LabelEspecialidade.setVisible(true);
+        textInfo.setVisible(true);
+        textEspecialidade.setVisible(true);
+        //cadastra MedicoAqui!
+    }   
 
-    private void formatedDataActionPerformed(java.awt.event.ActionEvent evt) {                                             
-        // TODO add your handling code here:
-    }                                            
+    private void radioADMActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        labelInfo.setText("Novo ID: ");
+        labelInfo.setVisible(true);
+        textInfo.setVisible(true);
+
+
+        textEspecialidade.setVisible(false);
+        LabelEspecialidade.setVisible(false);
+        //cadastra ADM!
+    } 
+    
+    
+    private void radioAtendenteActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        labelInfo.setText("Novo ID: ");
+        labelInfo.setVisible(true);
+        textInfo.setVisible(true);
+
+        textEspecialidade.setVisible(false);
+        LabelEspecialidade.setVisible(false);
+        //cadastra atendente
+
+    } 
+    
+    
+    private void radioEnfermeiroActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        labelInfo.setText("COREM: ");
+        labelInfo.setVisible(true);
+        LabelEspecialidade.setVisible(true);
+
+        textEspecialidade.setVisible(false);
+        LabelEspecialidade.setVisible(false);
+        //cadastra enfermeiro!
+    }                                         
+                                          
 
     private void botaoFinalizaActionPerformed(java.awt.event.ActionEvent evt) {                                              
         // TODO add your handling code here:
-    }                                             
+    }  
 
-    private void textInfoActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
-    }                                        
 
-    private void checkFemininoActionPerformed(java.awt.event.ActionEvent evt) {                                              
-        // TODO add your handling code here:
-    }                                             
+    private void botaoSenhaActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        // Gerar user e  senha Aleatoria (usar a funfao random)
+    }                                           
+                                       
+
+                                                
 
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {                                       
         new TelaPrincipalAdministrador(dados, adm).setVisible(true);
+        this.dispose();
     }                                      
-
-    // private void textCpfActionPerformed(java.awt.event.ActionEvent evt) {                                        
-    //     // TODO add your handling code here:
-    // }                                       
-
-    // private void textEmailActionPerformed(java.awt.event.ActionEvent evt) {                                          
-    //     // TODO add your handling code here:
-    // }                                         
-
-    // private void textEstadoActionPerformed(java.awt.event.ActionEvent evt) {                                           
-    //     // TODO add your handling code here:
-    // }                                          
-
-    // private void textEnderecoActionPerformed(java.awt.event.ActionEvent evt) {                                             
-    //     // TODO add your handling code here:
-    // }                                            
-
-    
 
     // Variables declaration - do not modify                     
     private javax.swing.JLabel LabelEspecialidade;
@@ -432,6 +451,8 @@ public class TelaCadastra extends javax.swing.JFrame {
     private javax.swing.JTextField textNome;
     private javax.swing.JTextField textRG;
     private javax.swing.JTextField textTelefone;
+
+    private javax.swing.ButtonGroup groupButton;
     // End of variables declaration    
     
     private Administrador adm;

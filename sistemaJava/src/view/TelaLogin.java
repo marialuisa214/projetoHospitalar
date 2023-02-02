@@ -31,13 +31,7 @@ public class TelaLogin extends javax.swing.JFrame {
         groupButton.add(radioAtendente);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setName("frameLogin"); // NOI18N
-
-        textUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textUsuarioActionPerformed(evt);
-            }
-        });
+        setName("frameLogin"); 
 
         labelUsuario.setFont(new java.awt.Font("Gujarati MT", 0, 14)); // NOI18N
         labelUsuario.setForeground(new java.awt.Color(102, 102, 255));
@@ -66,11 +60,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
         radioAdm.setFont(new java.awt.Font("Gujarati MT", 0, 14)); // NOI18N
         radioAdm.setText("Administrador");
-        radioAdm.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radioAdmActionPerformed(evt);
-            }
-        });
+        ;
 
         radioAtendente.setFont(new java.awt.Font("Gujarati MT", 0, 14)); // NOI18N
         radioAtendente.setText("Atendente");
@@ -80,11 +70,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
         radioEnfermeiro.setFont(new java.awt.Font("Gujarati MT", 0, 14)); // NOI18N
         radioEnfermeiro.setText("Enfermeiro");
-        radioEnfermeiro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radioEnfermeiroActionPerformed(evt);
-            }
-        });
+        
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -138,17 +124,7 @@ public class TelaLogin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>                        
 
-    private void textUsuarioActionPerformed(java.awt.event.ActionEvent evt) {                                            
-       
-    }                                           
-
-    private void radioAdmActionPerformed(java.awt.event.ActionEvent evt) {                                         
-      
-    }                                        
-
-    private void radioEnfermeiroActionPerformed(java.awt.event.ActionEvent evt) {                                                
-       
-    }                                               
+                       
 
     private void botaoEntrarActionPerformed(java.awt.event.ActionEvent evt) {                                            
         

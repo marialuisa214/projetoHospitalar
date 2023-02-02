@@ -48,6 +48,10 @@ public ArrayList<Medico> getBancoMedicosPlantao() {
     public void adicionaPacientes(Paciente paciente) {
         this.bancoPacientes.add(paciente);
     }
+    public void cadastraPaciente(String nome, String rg, String cpf, char sexo,String dataNascimento, String telefone, String email, String cidade, String endereco, String patologia) {
+        Paciente paciente = new Paciente(nome, rg, cpf, sexo, dataNascimento, telefone, email, cidade, endereco, patologia);
+        this.bancoPacientes.add(paciente);
+      }
 
 //ADMINISTRADOR
     ArrayList<Administrador> bancoAdministradores = new ArrayList<>();

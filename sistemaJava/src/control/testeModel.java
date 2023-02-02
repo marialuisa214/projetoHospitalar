@@ -53,6 +53,7 @@ public class testeModel {
 
     Exame exame3 = new Exame("Exame de sangue", "444", paciente);
 
+
     //PRONTUARIOS
     paciente.getProntuario().getHistoricoConsultasMarcadas().add(consulta);
     paciente.getProntuario().getHistoricoConsultasMarcadas().add(consulta1);
@@ -121,6 +122,7 @@ public class testeModel {
     banco.getBancoPacientes().add(paciente2);
     banco.getBancoPacientes().add(paciente3);
 
+    paciente2.getProntuario().setValidado(true);
 
   
     new TelaLogin(banco).setVisible(true);
