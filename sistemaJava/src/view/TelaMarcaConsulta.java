@@ -1,8 +1,17 @@
 package view;
 
+import java.util.ArrayList;
+
+import control.ControleDados;
+import model.Atendente;
+import model.Paciente;
+
 public class TelaMarcaConsulta  extends javax.swing.JFrame {
 
-    public TelaMarcaConsulta() {
+    public TelaMarcaConsulta(ControleDados dados, Atendente atendente, Paciente paciente) {
+        this.dados = dados;
+        this.atendente = atendente;
+        this.paciente = paciente;
         initComponents();
     }
                 
@@ -23,19 +32,21 @@ public class TelaMarcaConsulta  extends javax.swing.JFrame {
 
         labelMedico.setText("Médico Responsável");
 
-        dropboxMedico.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dropboxMedicoActionPerformed(evt);
-            }
-        });
+
+        ArrayList<String> arraylista = new ArrayList<>();
+        for(int i = 0; i<dados.getBancoMedicos().size(); i ++){
+            arraylista.add(dados.getBancoMedicos().get(i).getNome() + "  /   " + dados.getBancoMedicos().get(i).getEspecialidade());
+            System.out.println(arraylista.get(i));
+        }
+        String[] lista = arraylista.toArray(new String[0]);
+
+        dropboxMedico.setModel(new javax.swing.DefaultComboBoxModel<>(lista));
+        dropboxMedico.setModel(new javax.swing.DefaultComboBoxModel<>(lista));
+
 
         labelPaciente.setText("Paciente");
 
-        dropboxPaciente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dropboxPacienteActionPerformed(evt);
-            }
-        });
+       
 
         labelDataHora.setText("Data/Hora");
 
@@ -95,17 +106,22 @@ public class TelaMarcaConsulta  extends javax.swing.JFrame {
         pack();
     }// </editor-fold>                        
 
-    private void dropboxMedicoActionPerformed(java.awt.event.ActionEvent evt) {                                              
-        // TODO add your handling code here:
-    }                                             
+                                                 
 
     private void buttonAgendarConsultaActionPerformed(java.awt.event.ActionEvent evt) {                                                      
-        // TODO add your handling code here:
+        // if(tablePacientes.getSelectedRow() != -1){
+        //     Paciente paciente = tabela.selecionaItem(tablePacientes.getSelectedRow());
+        //     Entrada entrada = new Entrada(dropboxSituacao.getSelectedItem().toString(), paciente);
+        //     dados.getaBancoEntradas().add(entrada);
+
+        //     new TelaPrincipalAtendente(dados, atendente).setVisible(true);
+        //     this.dispose();
+        // }else{
+        //     JOptionPane.showMessageDialog(null, "Confira se selecionou um Paciente e preencheu corretamente o grau de dor!");
+        // }      
     }                                                     
 
-    private void dropboxPacienteActionPerformed(java.awt.event.ActionEvent evt) {                                                
-        // TODO add your handling code here:
-    }                                               
+                                                   
 
 
     // Variables declaration - do not modify                     
@@ -117,5 +133,9 @@ public class TelaMarcaConsulta  extends javax.swing.JFrame {
     private javax.swing.JLabel labelMedico;
     private javax.swing.JLabel labelNovaConsulta;
     private javax.swing.JLabel labelPaciente;
-    // End of variables declaration                   
+    // End of variables declaration             
+    
+    private Paciente paciente;
+    private Atendente atendente;
+    private ControleDados dados;
 }

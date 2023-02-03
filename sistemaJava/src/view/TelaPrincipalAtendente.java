@@ -2,9 +2,6 @@ package view;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import javax.swing.JList;
-
 import control.*;
 import model.Atendente;
 
@@ -50,6 +47,11 @@ public class TelaPrincipalAtendente extends javax.swing.JFrame {
 
         buttonVoltar.setBackground(new java.awt.Color(153, 153, 153));
         buttonVoltar.setText("voltar");
+        buttonVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonVoltarPacienteActionPerformed(evt);
+            }
+        });
 
         buttonBuscaPaciente.setBackground(new java.awt.Color(153, 153, 153));
         buttonBuscaPaciente.setText("Buscar Paciente");
@@ -175,13 +177,18 @@ public class TelaPrincipalAtendente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>                        
 
+    private void buttonVoltarPacienteActionPerformed(java.awt.event.ActionEvent evt) {    //GABI_MINHA AMIGA_faz ai pra mim!                                                
+        new TelaLogin(dados).setVisible(true);
+        this.dispose();
+    }
+    
     private void buttonBuscaPacienteActionPerformed(java.awt.event.ActionEvent evt) {    //GABI_MINHA AMIGA_faz ai pra mim!                                                
         for(int i = 0; i <= dados.getBancoPacientes().size(); i++){
             if(fieldBuscaPaciente.getText().equals(dados.getBancoPacientes().get(i).getCpf())){
                 labelCadastrado.setVisible(true);
             }
         }
-    }                                                   
+    } 
                                                   
 
     private void buttonCadastraPacienteActionPerformed(java.awt.event.ActionEvent evt) {  
@@ -199,7 +206,8 @@ public class TelaPrincipalAtendente extends javax.swing.JFrame {
     }                                                  
 
     private void buttonAgendaConsultaActionPerformed(java.awt.event.ActionEvent evt) { 
-        new TelaAgendaConsulta(dados, atendente).setVisible(true);                                        
+        new TelaAgendaConsulta(dados, atendente).setVisible(true); 
+        this.dispose();                                       
         
     }                                                    
 
@@ -208,7 +216,8 @@ public class TelaPrincipalAtendente extends javax.swing.JFrame {
     }                                                 
 
     private void buttonNovaEntradaActionPerformed(java.awt.event.ActionEvent evt) {    
-        new TelaRegistraEntrada().setVisible(true);                                              
+        new TelaRegistraEntrada(dados, atendente).setVisible(true);  
+        this.dispose();                                            
         
     }       
 

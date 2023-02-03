@@ -1,7 +1,10 @@
 package view;
 
+import javax.swing.JOptionPane;
+
 import control.ControleDados;
 import model.Atendente;
+import model.Paciente;
 import model.TabelaPaciente;
 
 public class TelaAgendaConsulta extends javax.swing.JFrame {
@@ -115,8 +118,17 @@ public class TelaAgendaConsulta extends javax.swing.JFrame {
         pack();
     }// </editor-fold>                        
 
-    private void buttonMarcaConsultaActionPerformed(java.awt.event.ActionEvent evt) {                                                    
-        new TelaMarcaConsulta().setVisible(true);
+    private void buttonMarcaConsultaActionPerformed(java.awt.event.ActionEvent evt) {   
+        if(tableConsulta.getSelectedRow() != -1){
+            Paciente paciente = tabela.selecionaItem(tableConsulta.getSelectedRow());
+            
+
+            new TelaMarcaConsulta(dados, atendente, paciente).setVisible(true);
+            this.dispose();
+        }else{
+            JOptionPane.showMessageDialog(null, "Confira se selecionou um Paciente e preencheu corretamente o grau de dor!");
+        }                                                           
+        
     }                                                   
 
     private void buttonAlteraConsultaActionPerformed(java.awt.event.ActionEvent evt) {                                                     
@@ -128,6 +140,7 @@ public class TelaAgendaConsulta extends javax.swing.JFrame {
     }                                                      
 
     private void buttonVoltarActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        new TelaPrincipalAtendente(dados, atendente).setVisible(true);
         this.dispose();
     }                                            
 
