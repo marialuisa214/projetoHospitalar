@@ -1,9 +1,13 @@
 package view;
 
 import java.util.ArrayList;
+import java.util.Random;
+
+import javax.swing.JOptionPane;
 
 import control.ControleDados;
 import model.Atendente;
+import model.Marcada;
 import model.Paciente;
 
 public class TelaMarcaConsulta  extends javax.swing.JFrame {
@@ -42,6 +46,7 @@ public class TelaMarcaConsulta  extends javax.swing.JFrame {
 
         dropboxMedico.setModel(new javax.swing.DefaultComboBoxModel<>(lista));
         dropboxMedico.setModel(new javax.swing.DefaultComboBoxModel<>(lista));
+        dropboxPaciente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { paciente.getNome()}));
 
 
         labelPaciente.setText("Paciente");
@@ -109,16 +114,23 @@ public class TelaMarcaConsulta  extends javax.swing.JFrame {
                                                  
 
     private void buttonAgendarConsultaActionPerformed(java.awt.event.ActionEvent evt) {                                                      
-        // if(tablePacientes.getSelectedRow() != -1){
-        //     Paciente paciente = tabela.selecionaItem(tablePacientes.getSelectedRow());
-        //     Entrada entrada = new Entrada(dropboxSituacao.getSelectedItem().toString(), paciente);
-        //     dados.getaBancoEntradas().add(entrada);
+        // if(dropboxMedico.getSelectedItem().equals(">> Selecione um Medico! <<")){
+        //     JOptionPane.showMessageDialog(rootPane, "Para registrar uma consulta, selecione um médico corretamente");
 
-        //     new TelaPrincipalAtendente(dados, atendente).setVisible(true);
-        //     this.dispose();
         // }else{
-        //     JOptionPane.showMessageDialog(null, "Confira se selecionou um Paciente e preencheu corretamente o grau de dor!");
-        // }      
+            for(int i = 0; i<dados.getBancoMedicos().size(); i ++){
+                if(dropboxMedico.getSelectedItem().equals(dados.getBancoMedicos().get(i).getNome() + "  /   " + dados.getBancoMedicos().get(i).getEspecialidade()) && labelDataHora.getText().length() > 2){
+                    Random r = new Random();
+                    Marcada m = new Marcada(Integer.toString(r.nextInt(1000)), paciente, dados.getBancoMedicos().get(i));
+                    m.setData(fieldDataHora.getText());
+                    dados.getBancoMedicos().get(i).getListConsultasPendentes().add(m);
+                    new TelaPrincipalAtendente(dados, atendente).setVisible(true);;
+                    this.dispose();
+                }
+
+            }
+
+        // }
     }                                                     
 
                                                    
@@ -138,4 +150,5 @@ public class TelaMarcaConsulta  extends javax.swing.JFrame {
     private Paciente paciente;
     private Atendente atendente;
     private ControleDados dados;
+    
 }
