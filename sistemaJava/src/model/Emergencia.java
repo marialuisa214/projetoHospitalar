@@ -1,38 +1,29 @@
 package model;
-import java.util.Calendar;
- 
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Emergencia extends Consulta {
     // ATRIBUTOS
     private String codigoChamada;
     private Triagem triagem;
+    private String data;
+    private Date c;
+    private SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
+
 
     // CONSTRUTOR
 
-    public Emergencia(String codigo, String codigoChamada, Triagem triagem) {
-        super(codigo);
+    public Emergencia(String codigo, Paciente paciente, String codigoChamada, Triagem triagem) {
+        super(codigo, paciente);
         this.codigoChamada = codigoChamada;
-        this.triagem = triagem;
-    }   
-
-    
-        Paciente p1 = new Paciente("Júlia Souza da Silva", "056.345.654-50", 'F', "19/11/1999", "gripe");
-        Paciente p2 = new Paciente("Joaquin Ferreira Costa", "056.938.393-30", 'M', "13/02/1996", "braço quebrado");
-
-        Calendar c1 = Calendar.getInstance();
-        Calendar c2 = Calendar.getInstance();
-
-        Entrada e1 = new Entrada(c1,"paciente apresenta sintomas gripais",p1);
-        Entrada e2 = new Entrada(c2,"paciente quebrou o braço direito",p2);
-
-        Triagem t1 = new Triagem("paciente está com sintomas gripais severos", "moderada",e1 );
-        Triagem t2 = new Triagem ("Paciente está com o braço direito quebrado", "grave",e2);
-
-        Emergencia emer1 = new Emergencia("345765","564129",t1);
-        Emergencia emer2 = new Emergencia ("978653","976468",t2);
+        this.c = new Date();
+        System.out.println(formatador.format(c));
+        this.data = formatador.format(c);
         
+        this.triagem = triagem;
 
+    }
     // METODOS
     public Triagem getTriagem() {
         return triagem;
@@ -47,5 +38,18 @@ public class Emergencia extends Consulta {
     public void setCodigoChamada(String codigoChamada) {
         this.codigoChamada = codigoChamada;
     }
-    
+    public Medico getMedico() {
+        return medico;
+    }
+
+    public void setMedico(Medico medico) {
+        this.medico = medico;
+    }
+
+    public String getData() {
+        return data;
+      }
+      public void setData(String data) {
+        this.data = data;
+    }
 }

@@ -1,36 +1,81 @@
 package model;
 
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+
 public class Marcada extends Consulta {
 
-    // ATRIBUTOS
-    private String horarioInicio; //ajustar formataçao das horas hein!!
-    private String horarioFim;
+    private String data; //ajustar formataçao das horas hein!!
+    private String horario;
+    private boolean status;
+    private String descricaoMedica;
+    private Medico medico;
+    private SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
+    private Date c;
+    
 
     //CONSTRUTOR
-    
-    public Marcada(String codigo, String horarioInicio, String horarioFim) {
-        super(codigo);
-        this.horarioInicio = horarioInicio;
-        this.horarioFim = horarioFim;
+    public Marcada(String codigo, Paciente paciente, Medico medico) {
+        super(codigo, paciente);
+        this.status = false;
+        this.medico = medico;
     }
     // METODOS
-    public String getHorarioFim() {
-        return horarioFim;
+
+    // public String get() {
+    //     return dia;
+    // }
+    // public void setDia(String dia) {
+    //     Dia = dia;
+    // }
+    // public void setDia(String dia) {
+    //     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyy");
+	// 	Date dataBase = null;
+
+	// 	try {
+	// 		dataBase = sdf.parse(dia);
+	// 	} catch (java.text.ParseException e) {
+	// 		return;
+	// 	}
+	// 	this.dia = dataBase;
+    // }
+
+    public String getHorario() {
+        return horario;
     }
-    public void setHorarioFim(String horarioFim) {
-        this.horarioFim = horarioFim;
+
+    public void setHorario(String hoario) {
+        this.horario = hoario;
     }
-    public String getHorarioInicio() {
-        return horarioInicio;
-    }
-    public void setHorarioInicio(String horarioInicio) {
-        this.horarioInicio = horarioInicio;
-    }
+
     public String getCodigo() {
         return codigo;
     }
     public void setCodigo(String codigo) {
         this.codigo = codigo;
+    }
+
+    public Medico getMedico() {
+        return medico;
+    }
+
+    public void setMedico(Medico medico) {
+        this.medico = medico;
+    }
+
+    public Paciente getPaciente() {
+        return paciente;
+    }
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
+    }
+
+    public boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
     public String getDescricaoMedica() {
         return descricaoMedica;
@@ -38,9 +83,17 @@ public class Marcada extends Consulta {
 
     public void setDescricaoMedica(String descricaoMedica) {
         this.descricaoMedica = descricaoMedica;
-        
     }
 
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
+
+  
 }
 
 

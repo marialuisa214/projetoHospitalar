@@ -79,6 +79,9 @@ public class Agenda {
     this.listaConsultas.add(consulta);
   }
 
+  
+}
+
    // public int diferencaHoras(String horarioInicio, String horarioFim) throws ParseException{
      
    //   DateFormat df = new SimpleDateFormat ("dd/MM/yyyy hh:mm");
@@ -101,5 +104,3 @@ public class Agenda {
    //   this.quantidadeConsultas = consultas;
    
    // }
-
-}

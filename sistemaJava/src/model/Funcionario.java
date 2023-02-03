@@ -7,10 +7,10 @@ public class Funcionario extends Pessoa {
 	private String senha;
 	
 //CONSTRUTOR	
-	public Funcionario(String nome, String cpf, char sexo, String dataNascimento, String usuario, String senha){
-		super(nome, cpf, sexo, dataNascimento);
+	public Funcionario(String nome, String rg, String cpf, char sexo, String dataNascimento, String telefone, String email, String cidade, String endereco, String usuario, String senha){
+		super(nome, rg, cpf, sexo, dataNascimento, telefone, email, cidade, endereco);
 		this.usuario = usuario;
-		this.senha = senha;	
+		this.senha = senha;
 	}
 	
 //METODOS

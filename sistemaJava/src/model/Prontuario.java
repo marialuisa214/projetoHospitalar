@@ -7,16 +7,12 @@ public class Prontuario {
 	// ATRIBUTOS
 	private Paciente paciente;
 	private String acompanhamento; // descrição médica
-	private float peso;
-	private float altura;
-	private boolean validado;
-	// private ArrayList<Consulta> historicoConsultas;
-	// private ArrayList<Exame> historicoExame;
-	// private float dataDeInicioProntuario; -> inserir formatação de data!! e
-	// colocar ela no construtor
-	private ArrayList<Consulta> historicoConsultas = new ArrayList<>();
+	private String peso;
+	private String altura;
+	private Boolean validado;
+	private ArrayList<Marcada> historicoConsultasMarcadas = new ArrayList<>();
+	private ArrayList<Emergencia> historicoConsultasEmergencia = new ArrayList<>();
 	private ArrayList<Exame> historicoExame =  new ArrayList<>();
-	//private float dataDeInicioProntuario; -> inserir formatação de data!! e colocar ela no construtor
 
 	// CONSTRUTOR
 	public Prontuario() {
@@ -44,36 +40,36 @@ public class Prontuario {
 		this.acompanhamento = acompanhamento;
 	}
 
-	public float getPeso() {
+	public String getPeso() {
 		return peso;
 	}
 
-	public void setPeso(float peso) {
+	public void setPeso(String peso) {
 		this.peso = peso;
 	}
 
-	public float getAltura() {
+	public String getAltura() {
 		return altura;
 	}
 
-	public void setAltura(float altura) {
+	public void setAltura(String altura) {
 		this.altura = altura;
 	}
 
-	public boolean getValidado() {
+	public Boolean getValidado() {
 		return validado;
 	}
 
-	public void setValidado(boolean validado) {
+	public void setValidado(Boolean validado) {
 		this.validado = validado;
 	}
 
-	public ArrayList<Consulta> getHistoricoConsultas() {
-		return historicoConsultas;
+	public ArrayList<Marcada> getHistoricoConsultasMarcadas() {
+		return historicoConsultasMarcadas;
 	}
 
-	public void setHistoricoConsulta(Consulta consulta) {
-		historicoConsultas.add(consulta);
+	public void setHistoricoConsultasMarcadas(Marcada consulta) {
+		historicoConsultasMarcadas.add(consulta);
 	}
 
 	public ArrayList<Exame> getHistoricoExame() {
@@ -82,6 +78,14 @@ public class Prontuario {
 
 	public void setHistoricoExame(Exame exame) {
 		historicoExame.add(exame);
+	}
+
+	public ArrayList<Emergencia> getHistoricoConsultasEmergencia() {
+		return historicoConsultasEmergencia;
+	}
+
+	public void setHistoricoConsultasEmergencia(ArrayList<Emergencia> historicoConsultasEmergencia) {
+		this.historicoConsultasEmergencia = historicoConsultasEmergencia;
 	}
 
 	// public ArrayList<Consulta> getHistoricoConsultas() {

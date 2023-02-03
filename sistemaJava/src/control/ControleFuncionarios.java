@@ -12,14 +12,14 @@ public class ControleFuncionarios {
     return new Medico(nome, rg, cpf, sexo, dataNascimento, telefone, email, cidade, endereco, usuario, senha, crm, especialidade);
   }
 
-  public Enfermeiro cadastraEnfermeiro(String nome, String cpf, char sexo, String dataNascimento, String usuario,
-      String senha) {
-    return new Enfermeiro(nome, cpf, sexo, dataNascimento, usuario, senha);
+  public Enfermeiro cadaEnfermeiro(String nome, String rg, String cpf, char sexo, String dataNascimento, String telefone, String email, String cidade, 
+      String endereco, String usuario, String senha, String coren){
+		return new Enfermeiro(nome, rg, cpf, sexo, dataNascimento, telefone, email, cidade, endereco, usuario, senha, coren);
   }
 
-  public Farmaceutico cadastraFarmaceutico(String nome, String cpf, char sexo, String dataNascimento, String usuario,
-      String senha, int crf) {
-    return new Farmaceutico(nome, cpf, sexo, dataNascimento, usuario, senha, crf);
+  public Farmaceutico cadastraFarmaceutico(String nome, String rg, String cpf, char sexo, String dataNascimento, String telefone, String email, String cidade, 
+      String endereco, String usuario, String senha, int crf){
+    return new Farmaceutico(nome, rg, cpf, sexo, dataNascimento, telefone, email, cidade, endereco, usuario, senha, crf);
   }
 
   public Atendente cadastraAtendente(String nome, String rg, String cpf, char sexo, String dataNascimento, String telefone, String email, 

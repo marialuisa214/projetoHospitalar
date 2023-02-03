@@ -1,20 +1,46 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Enfermeiro extends Funcionario {
+	private String coren;
 	
-//CONSTRUTOR	
-	public Enfermeiro(String nome, String cpf, char sexo, String dataNascimento, String usuario, String senha){
-		super(nome, cpf, sexo, dataNascimento, usuario, senha); 		
+
+	private ArrayList<Triagem> listaTriagem =new ArrayList<>();
+	private ArrayList<Exame> listaExame = new ArrayList<>();
+	
+	//CONSTRUTOR	
+	public Enfermeiro(String nome, String rg, String cpf, char sexo, String dataNascimento, String telefone, String email, String cidade, String endereco, String usuario, String senha, String coren){
+		super(nome, rg, cpf, sexo, dataNascimento, telefone, email, cidade, endereco, usuario, senha);	
+		this.coren = coren;
 	}
 
-     Enfermeiro enf1 = new Enfermeiro ("Bruna Ferreira da Silva", "056.438.504-50", 'F',"19/11/1998","074-345","73878" );
-	 Enfermeiro  enf2 = new Enfermeiro("Gabriel Morais Mendonça","021.389.506-31",'M',"11/02/1973","021-324", "38765");
-     Enfermeiro  enf3 = new Enfermeiro ("Maria Ferreira Gomes","057.436.508-56",'F',"15/08/1994","456-987","87986");
+	//METODO
+
+	public String getCorem() {
+		return coren;
+	}
+
+	public void setCorem(String corem) {
+		this.coren = coren;
+	}
+	
+	public ArrayList<Triagem> getListaTriagem() {
+		return listaTriagem;
+	}
+	public void setListaTriagem(ArrayList<Triagem> listaTriagem) {
+		this.listaTriagem = listaTriagem;
+	}
+
+	public ArrayList<Exame> getListaExame() {
+		return listaExame;
+	}
+
+	public void setListaExame(ArrayList<Exame> listaExame) {
+		this.listaExame = listaExame;
+	}
 
 
-//METODO
-	//fazAcompanhamento
-	//faz prontuario
 	
 
 }
