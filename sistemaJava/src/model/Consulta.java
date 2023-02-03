@@ -1,5 +1,6 @@
 package model;
 
+
 public abstract class Consulta {
 
     //ATRIBUTOS
@@ -14,6 +15,22 @@ public abstract class Consulta {
     public Consulta(String codigo) {
         this.codigo = codigo;
     }
+    
+    Consulta pac1 = new Consulta ();
+    Consulta pac2 = new Consulta();
+    Consulta pac3 = new Consulta ();
+    Consulta pac4 = new Consulta ();
+    Consulta pac5 = new Consutta ();
+    Consulta pac6 = new Consulta ();
+    Consulta pac7 = new Consulta ();
+    Consulta pac8 = new Consulta ();
+    Consulta pac9 = new Consulta ();
+    Consulta pac10 = new Consulta ();
+    Consulta pac11 = new Consulta ();
+    Consulta pac12 = new Consulta ();
+    Consulta pac13 = new Consulta ();
+    Consulta pac14 = new Consulta ();
+    Consulta pac15 = new Consulta ();
 
     //METODOS
     
