@@ -212,7 +212,7 @@ public class TelaPrincipalAtendente extends javax.swing.JFrame {
     }                                                    
 
     private void buttonAgendaExameActionPerformed(java.awt.event.ActionEvent evt) {                                                  
-        new TelaAgendaExame().setVisible(true);  
+        // new TelaAgendaExame().setVisible(true);  
     }                                                 
 
     private void buttonNovaEntradaActionPerformed(java.awt.event.ActionEvent evt) {    

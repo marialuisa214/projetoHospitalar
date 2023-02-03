@@ -37,7 +37,7 @@ public class testeModel {
      Marcada consulta1 = new Marcada("3333", paciente, medico);
 
      Marcada consulta2 = new Marcada("5555", paciente, medico);
-    
+
 
     //ENFERMEIROS
     Enfermeiro enfermeiro = new Enfermeiro("Milena Jaqueline Galvão", "49.657.617-3", "865.167.181-48", 'F', "08/01/1994", "(61) 98484-8540", "milena_galvao@utbr.com.br", "Brasília-DF", "Rua Deodato Louly", "5566", "1313", "777555");
@@ -121,6 +121,10 @@ public class testeModel {
     banco.getBancoPacientes().add(paciente1);
     banco.getBancoPacientes().add(paciente2);
     banco.getBancoPacientes().add(paciente3);
+
+    banco.getBancoConsultaMarcadas().add(consulta);
+    banco.getBancoConsultaMarcadas().add(consulta1);
+    banco.getBancoConsultaMarcadas().add(consulta2);
 
     paciente2.getProntuario().setValidado(true);
 

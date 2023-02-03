@@ -124,6 +124,7 @@ public class TelaMarcaConsulta  extends javax.swing.JFrame {
                     Marcada m = new Marcada(Integer.toString(r.nextInt(1000)), paciente, dados.getBancoMedicos().get(i));
                     m.setData(fieldDataHora.getText());
                     dados.getBancoMedicos().get(i).getListConsultasPendentes().add(m);
+                    paciente.getProntuario().getHistoricoConsultasMarcadas().add(m);
                     new TelaPrincipalAtendente(dados, atendente).setVisible(true);;
                     this.dispose();
                 }
