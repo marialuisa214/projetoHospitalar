@@ -4,14 +4,14 @@ import javax.swing.table.AbstractTableModel;
 
 import control.ControleDados;
 
-public class TabelaTodasConsultas extends AbstractTableModel {
+public class TabelaTodosExames extends AbstractTableModel {
     
     private ControleDados dados;
-    private String[] colunas = {"DATA", "PACIENTE", "ESPECIALIDADE"};
+    private String[] colunas = {"DATA", "PACIENTE", "TIPO EXAME"};
 
 
     //CONSTRUTOR
-    public TabelaTodasConsultas(ControleDados dados ){
+    public TabelaTodosExames(ControleDados dados ){
         this.dados = dados;
 
     }
@@ -23,7 +23,7 @@ public class TabelaTodasConsultas extends AbstractTableModel {
     @Override
 //    quantidade de linhas
     public int getRowCount() {
-        return dados.getBancoConsultaMarcadas().size();
+        return dados.getBancoExames().size();
     
     }
 
@@ -38,27 +38,27 @@ public class TabelaTodasConsultas extends AbstractTableModel {
     public Object getValueAt(int linha, int coluna) {
         switch(coluna){
             case 0:
-                return dados.getBancoConsultaMarcadas().get(linha).getData();
+                return this.dados.getBancoExames().get(linha).getData();
             case 1:
-                return dados.getBancoConsultaMarcadas().get(linha).getPaciente().getNome();
+                return this.dados.getBancoExames().get(linha).getPaciente().getNome();
             case 2:
-                return dados.getBancoConsultaMarcadas().get(linha).getMedico().getEspecialidade();
+                return this.dados.getBancoExames().get(linha).getNomeExame();
         }
 
         return null;
     }
     
-    public void addRow(Marcada cm){
-        this.dados.getBancoConsultaMarcadas().add(cm);;
+    public void addRow(Exame e){
+        this.dados.getBancoExames().add(e);;
         this.fireTableDataChanged();
     }
     
-    public Marcada selecionaItem(int linha){
-        return this.dados.getBancoConsultaMarcadas().get(linha);
+    public Exame selecionaItem(int linha){
+        return this.dados.getBancoExames().get(linha);
     }
 
     public void removeRow(int linha){
-        this.dados.getBancoConsultaMarcadas().remove(linha);
+        this.dados.getBancoExames().remove(linha);
         this.fireTableRowsDeleted(linha, linha);
     }
 }

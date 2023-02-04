@@ -1,8 +1,13 @@
 package view;
 
+import control.ControleDados;
+import model.Atendente;
+
 public class TelaSolicitacoesAtendente extends javax.swing.JFrame {
 
-    public TelaSolicitacoesAtendente() {
+    public TelaSolicitacoesAtendente(ControleDados dados, Atendente atendente) {
+        this.dados = dados;
+        this.atendente = atendente;
         initComponents();
     }
                          
@@ -154,5 +159,8 @@ public class TelaSolicitacoesAtendente extends javax.swing.JFrame {
     private javax.swing.JLabel labelSolicitacoesE;
     private javax.swing.JTable tableSolicitacoesConsulta;
     private javax.swing.JTable tableSolicitacoesExame;
-    // End of variables declaration                   
+    // End of variables declaration                  
+    
+    private ControleDados dados;
+    private Atendente atendente; 
 }

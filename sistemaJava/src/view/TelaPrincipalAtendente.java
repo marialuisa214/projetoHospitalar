@@ -199,7 +199,7 @@ public class TelaPrincipalAtendente extends javax.swing.JFrame {
     }                                                      
 
     private void buttonSolicitaçõesActionPerformed(java.awt.event.ActionEvent evt) {   
-        new TelaSolicitacoesAtendente().setVisible(true);
+        new TelaSolicitacoesAtendente(dados, atendente).setVisible(true);
         this.dispose();
 
         
@@ -212,7 +212,8 @@ public class TelaPrincipalAtendente extends javax.swing.JFrame {
     }                                                    
 
     private void buttonAgendaExameActionPerformed(java.awt.event.ActionEvent evt) {                                                  
-        // new TelaAgendaExame().setVisible(true);  
+        new TelaAgendaExame(dados, atendente).setVisible(true);  
+        this.dispose();
     }                                                 
 
     private void buttonNovaEntradaActionPerformed(java.awt.event.ActionEvent evt) {    
