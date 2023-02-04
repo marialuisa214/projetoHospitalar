@@ -1,9 +1,30 @@
 package view;
 
+import control.ControleDados;
+import model.Administrador;
+import model.Atendente;
+import model.TabelaFuncAdm;
+import model.TabelaFuncAtendente;
+import model.TabelaFuncEnfermeiro;
+import model.TabelaFuncMedico;
+
 public class TelaControleFuncionario extends javax.swing.JFrame {
 
-    public TelaControleFuncionario() {
+    public TelaControleFuncionario(ControleDados dados, Administrador adm) {
+        this.dados = dados;
+        this.adm = adm;
+
+        this.medicoTabela = new TabelaFuncMedico(dados); 
+        this.enfermeiroTabela = new TabelaFuncEnfermeiro(dados);
+        this.admTabela = new TabelaFuncAdm(dados);
+        this.atendenteTabela = new TabelaFuncAtendente(dados);
         initComponents();
+
+        tableMedico.setModel(medicoTabela);
+        tableEnfermeiro.setModel(enfermeiroTabela);
+        tableAtendente.setModel(atendenteTabela);
+        tableAdministrador.setModel(admTabela);
+
     }
                         
     private void initComponents() {
@@ -31,17 +52,37 @@ public class TelaControleFuncionario extends javax.swing.JFrame {
 
         labelGerenciadorDeFuncionarios.setText("Gerenciador de Funcionários");
 
-        fieldBuscaMedico.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fieldBuscaMedicoActionPerformed(evt);
-            }
-        });
+        
 
         buttonPesquisaMedico.setBackground(new java.awt.Color(153, 153, 153));
         buttonPesquisaMedico.setText("busca");
         buttonPesquisaMedico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonPesquisaMedicoActionPerformed(evt);
+            }
+        });
+
+        buttonPesquisaEnfermeiro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonPesquisaEnfermeiroActionPerformed(evt);
+            }
+        });
+        
+        buttonPesquisaAtendente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonPesquisaAtendenteActionPerformed(evt);
+            }
+        });
+        
+        buttonPesquisaAdm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonPesquisaAdmActionPerformed(evt);
+            }
+        });
+
+        buttonVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonVoltarActionPerformed(evt);
             }
         });
 
@@ -58,11 +99,7 @@ public class TelaControleFuncionario extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tableMedico);
 
-        fieldBuscaEnfermeiro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fieldBuscaEnfermeiroActionPerformed(evt);
-            }
-        });
+        
 
         buttonPesquisaEnfermeiro.setBackground(new java.awt.Color(153, 153, 153));
         buttonPesquisaEnfermeiro.setText("busca");
@@ -80,11 +117,7 @@ public class TelaControleFuncionario extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(tableEnfermeiro);
 
-        fieldBuscaAtendente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fieldBuscaAtendenteActionPerformed(evt);
-            }
-        });
+        
 
         buttonPesquisaAtendente.setBackground(new java.awt.Color(153, 153, 153));
         buttonPesquisaAtendente.setText("busca");
@@ -102,11 +135,7 @@ public class TelaControleFuncionario extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(tableAtendente);
 
-        fieldBuscaAdministrador.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fieldBuscaAdministradorActionPerformed(evt);
-            }
-        });
+    
 
         buttonPesquisaAdm.setBackground(new java.awt.Color(153, 153, 153));
         buttonPesquisaAdm.setText("busca");
@@ -202,25 +231,26 @@ public class TelaControleFuncionario extends javax.swing.JFrame {
         pack();
     }// </editor-fold>                        
 
-    private void fieldBuscaMedicoActionPerformed(java.awt.event.ActionEvent evt) {                                                 
-        
-    }                                                
-
-    private void fieldBuscaEnfermeiroActionPerformed(java.awt.event.ActionEvent evt) {                                                     
-        
-    }                                                    
-
-    private void fieldBuscaAtendenteActionPerformed(java.awt.event.ActionEvent evt) {                                                    
-        
-    }                                                   
-
-    private void fieldBuscaAdministradorActionPerformed(java.awt.event.ActionEvent evt) {                                                        
-        
-    }                                                       
+                                                           
 
     private void buttonPesquisaMedicoActionPerformed(java.awt.event.ActionEvent evt) {                                                     
         
-    }                                                    
+    }      
+    private void buttonPesquisaEnfermeiroActionPerformed(java.awt.event.ActionEvent evt) {                                                     
+        
+    } 
+    private void buttonPesquisaAtendenteActionPerformed(java.awt.event.ActionEvent evt) {                                                     
+        
+    } 
+    private void buttonPesquisaAdmActionPerformed(java.awt.event.ActionEvent evt) {                                                     
+        
+    }    
+    
+    private void buttonVoltarActionPerformed(java.awt.event.ActionEvent evt) {  
+        new TelaPrincipalAdministrador(dados, adm).setVisible(true);
+        this.dispose();                                                   
+        
+    } 
  
 
     // Variables declaration - do not modify                     
@@ -243,4 +273,13 @@ public class TelaControleFuncionario extends javax.swing.JFrame {
     private javax.swing.JTable tableEnfermeiro;
     private javax.swing.JTable tableMedico;
     // End of variables declaration    
+
+    private ControleDados dados;
+    private Administrador adm;
+
+    private TabelaFuncAdm admTabela;
+    private TabelaFuncEnfermeiro enfermeiroTabela;
+    private TabelaFuncAtendente atendenteTabela;
+    private TabelaFuncMedico medicoTabela;
+
 }

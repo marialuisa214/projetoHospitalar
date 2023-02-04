@@ -160,7 +160,7 @@ public class TelaPrincipalAdministrador extends javax.swing.JFrame {
         }
           
         private void buttonGerenciarActionPerformed(java.awt.event.ActionEvent evt) {                                                
-            new TelaControleFuncionario().setVisible(true);
+            new TelaControleFuncionario(dados, adm).setVisible(true);
             this.dispose();
         }                                               
     

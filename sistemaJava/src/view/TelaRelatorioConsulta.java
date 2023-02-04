@@ -235,7 +235,7 @@ public class TelaRelatorioConsulta extends javax.swing.JFrame {
     }                                                 
 
     private void botaoConsultaProntuarioActionPerformed(java.awt.event.ActionEvent evt) {  
-        new TelaProntuario(consulta.getPaciente().getProntuario() , dados, consulta).setVisible(true);
+        new TelaProntuario(consulta.getPaciente().getProntuario(), dados, consulta).setVisible(true);
         this.dispose();                                                     
         
     }                                                       
