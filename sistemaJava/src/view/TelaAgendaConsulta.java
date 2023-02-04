@@ -15,9 +15,6 @@ public class TelaAgendaConsulta extends javax.swing.JFrame {
         
         initComponents();
         tableConsulta.setModel(this.tabela);
-        
-
-
     }
                 
     private void initComponents() {
