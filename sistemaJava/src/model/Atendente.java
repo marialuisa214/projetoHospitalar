@@ -17,5 +17,8 @@ public class Atendente extends Funcionario{
 	public String getIdAtendente() {
 			return idAtendente;
 	}
+	public void setIdAtendente(String a) {
+		 this.idAtendente = a;
+}
 
 }

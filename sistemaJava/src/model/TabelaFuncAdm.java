@@ -6,7 +6,7 @@ import control.ControleDados;
 
 public class TabelaFuncAdm extends AbstractTableModel {
     private ControleDados dados;
-    private String[] colunas =  { "Atendente",  "ID" };
+    private String[] colunas =  { "Administrador",  "ID" };
 
 
     //CONSTRUTOR

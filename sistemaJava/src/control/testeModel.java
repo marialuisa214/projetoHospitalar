@@ -12,6 +12,7 @@ public class testeModel {
     ControleDados banco = new ControleDados();
 
     Administrador adm = new Administrador("Gabriella Monteiro do Nscimento","3.268.791","049.497.471-03",'F',"01/12/1997","3798-4569","gabriellanascimento@gmail.com","Arniqueiras","Condomínio Vista Nobre","roberto","1212");
+    adm.setIdAdmin("809213");
     banco.getBancoAdministradores().add(adm);
 
     Paciente paciente = new Paciente("Elaine Venson","3.890.657","004.625.879-00",'F',"25/03/1996","3478-2158","elainevenson@gmail.com","Brasília-DF","Bairro do Limoeiro","Nenhuma");
@@ -59,10 +60,15 @@ public class testeModel {
 
     //Atendente atendente = new Atendente(String nome, String rg, String cpf, char sexo, String dataNascimento, String telefone, String email, String cidade, String endereco, String usuario, String senha);
     Atendente atendente = new Atendente("Lorrane Lorena de Oliveira Ribeiro", "3.567.324","047.657.459.00",'F',"10/11/1995","(61)99185-7674", "lorraneLOribeiro@gmail.com","Gama","Quadra 12","lorrane" ,"1011");
+    atendente.setIdAtendente("83asja3");
     Atendente atendente1 = new Atendente("Laryssa Brito Tavares", "3.559.123","048.657.154.00",'F',"17/08/1997","(61)98759-7245", "laryssaBTavares@gmail.com","Guará 1","Quadra 7","laryssa" ,"1708");
+    atendente1.setIdAtendente("231g12j3");
     Atendente atendente2 = new Atendente("Beatriz Moreira do Nascimento", "3.466.324","047.032.477.01",'F',"08/11/1995","(61)97592-7677", "beatrizMNascimento@gmail.com","Gama","Quadra 07","beatriz" ,"0811");
+    atendente2.setIdAtendente("12d12");
     Atendente atendente3 = new Atendente("Emanuel Augusto dos Anjos", "3.570.897","047.765.657.02",'M',"10/11/1995","(61)99745-7678", "emanuelAAnjos@gmail.com","Guará 2","Quadra 15","emanuel" ,"1011");
+    atendente3.setIdAtendente("s67rvr");
     Atendente atendente4 = new Atendente("Jorge Evangelista Santana", "3.597.367","047.432.957.00",'M',"05/09/1992","(61)98745-3567", "jorgeESantana@gmail.com","Valparaíso-GO","Avenida das Castanheiras","jorge" ,"0509");
+    atendente4.setIdAtendente("03934x3");
 
     banco.getaBancoAtendente().add(atendente);
     banco.getaBancoAtendente().add(atendente1);
@@ -97,10 +103,12 @@ public class testeModel {
 
 
     //Marcada consuMarcada = new Marcada(String codigo, Paciente paciente, Medico medico);
-    Marcada consuMarcada = new Marcada("0404", paciente4, medico8);
-    paciente4.getProntuario().getHistoricoConsultasMarcadas().add(consuMarcada);
+    Marcada consuMarcada = new Marcada("0404", paciente1, medico8);
+    consuMarcada.setDescricaoMedica("Tudo certo, Regiane Esta otima! ");
     consuMarcada.setData("01/02/2023");
     consuMarcada.setHorario("15:00");
+    paciente1.getProntuario().getHistoricoConsultasMarcadas().add(consuMarcada);
+    
 
   // medico9.getListConsultasPendentes().add;
 
@@ -119,8 +127,8 @@ public class testeModel {
     
 //medico9.getListConsultasPendentes();
 
-    Marcada consuMarcada3 = new Marcada("0303", paciente3, medico);
-    paciente3.getProntuario().getHistoricoConsultasMarcadas().add(consuMarcada);
+    Marcada consuMarcada3 = new Marcada("0303", paciente2, medico);
+    paciente2.getProntuario().getHistoricoConsultasMarcadas().add(consuMarcada);
     consuMarcada.setData("07/02/2023");
     consuMarcada.setHorario("07:00");
 //medico9.getListConsultasPendentes();
@@ -286,11 +294,15 @@ public class testeModel {
     banco.getBancoConsultaEmergencias().add(emergencia1);
     
     Exame exame = new Exame("Ressonância magnética", "3221", paciente);
+    exame.setData("14/01/2023");
+    exame.setResultado("Tudo certo....A ressonância magnética do crânio é um dos exames mais modernos para a avaliação do encéfalo e o diagnóstico de diversas patologias que podem acometer essa região.");
     paciente.getProntuario().getHistoricoExame().add(exame);
-    // exame.setData(null);
+    
 
-    Exame exame1 = new Exame("Exame Urina", "8732", paciente3);
-    paciente3.getProntuario().getHistoricoExame().add(exame);
+    Exame exame1 = new Exame("Exame Urina", "8732", paciente2);
+    exame1.setData("18/01/2023");
+    exame1.setResultado("Os valores normais variam de 1005 a 1035. Urinas com densidade próximas de 1005 estão bem diluídas; próximas de 1035 estão muito concentradas, indicando desidratação.");
+    paciente2.getProntuario().getHistoricoExame().add(exame);
     // exame.setData(null);
 
     Exame exame2 = new Exame("Emograma", "2321", paciente4);
@@ -371,65 +383,9 @@ public class testeModel {
     exame.setData("28/02/2023");
     banco.getBancoExames().add(exame5);
     
-   
-
-   
-   
-        
-
-
-
-
-    // enfermeiro.getListaTriagem().add(triagem1);
-    // enfermeiro.getListaTriagem().add(triagem);
-
-
-
-    // enfermeiro.getListaExame().add(exame3);
-    // enfermeiro.getListaExame().add(exame1);
-    // enfermeiro.getListaExame().add(exame);
-
-
-
-    //  medico.getListConsultasPendentes().add(consulta);
-    //  medico.getListConsultasPendentes().add(consulta2);
-    //  medico.getListConsultasPendentes().add(consulta1);
-
-    
-
-    // ControleDados banco = new ControleDados();
-    // banco.adicionaMedico(medico);
-    // banco.adicionaMedico(medico1);
-    // banco.adicionaMedico(medico2);
-
-
-    // banco.bancoEnfermeiros.add(enfermeiro1);
-    // banco.bancoEnfermeiros.add(enfermeiro);
-    // banco.bancoAtendentes.add(atendente1);
-    // banco.bancoAtendentes.add(atendente);
-
-    // banco.getBancoExames().add(exame3);
-    // banco.getBancoExames().add(exame1);
-    // banco.getBancoExames().add(exame);
-    // banco.getBancoExames().add(exame2);
-    // banco.getBancoAdministradores().add(adm);
-
-    // banco.getBancoPacientes().add(paciente);
-    // banco.getBancoPacientes().add(paciente1);
-    // banco.getBancoPacientes().add(paciente2);
-    // banco.getBancoPacientes().add(paciente3);
-
-    // banco.getBancoConsultaMarcadas().add(consulta);
-    // banco.getBancoConsultaMarcadas().add(consulta1);
-    // banco.getBancoConsultaMarcadas().add(consulta2);
-
-    // paciente2.getProntuario().setValidado(true);
 
   
     new TelaLogin(banco).setVisible(true);
-    // paciente.getProntuario().getHistoricoConsultasMarcadas().size();
-
-    // // System.out.println(enfermeiro.getListaTriagem().get(0).getEntrada().getDataEntrada());
 
 
    

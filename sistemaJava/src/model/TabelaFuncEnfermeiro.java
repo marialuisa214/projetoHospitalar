@@ -6,7 +6,7 @@ import control.ControleDados;
 
 public class TabelaFuncEnfermeiro extends AbstractTableModel {
     private ControleDados dados;
-    private String[] colunas =  { "Atendente",  "COREM" };
+    private String[] colunas =  { "Enfermeiro",  "COREM" };
 
 
     //CONSTRUTOR
