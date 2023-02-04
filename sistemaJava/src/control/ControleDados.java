@@ -96,6 +96,7 @@ public ArrayList<Medico> getBancoMedicosPlantao() {
         
         return bancoEntradas;
     }
+    
 
 // Atendente
     ArrayList<Atendente> bancoAtendentes =  new ArrayList<>();
@@ -105,9 +106,19 @@ public ArrayList<Medico> getBancoMedicosPlantao() {
 
 //EXAMES
     ArrayList<Exame> bancoExames = new ArrayList<>();
-
     public ArrayList<Exame> getBancoExames() {
         return bancoExames;
+    }
+
+//lista consultas para serem feitas pelo atendente
+    ArrayList<Marcada> bancoSolicitacoesMarcada  = new ArrayList<>();
+    public ArrayList<Marcada> getBancoSolicitacoesMarcada() {
+        return bancoSolicitacoesMarcada;
+    }
+
+    ArrayList<Exame> bancoSolicitacoeExame  = new ArrayList<>();
+    public ArrayList<Exame> getBancoSolicitacoesExame() {
+        return bancoSolicitacoeExame;
     }
 
     

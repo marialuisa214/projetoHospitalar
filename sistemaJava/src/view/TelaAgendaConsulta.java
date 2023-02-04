@@ -7,6 +7,7 @@ import model.Atendente;
 import model.Paciente;
 import model.TabelaPaciente;
 import model.TabelaTodasConsultas;
+import model.Marcada;
 
 public class TelaAgendaConsulta extends javax.swing.JFrame {
 
@@ -30,7 +31,7 @@ public class TelaAgendaConsulta extends javax.swing.JFrame {
         buttonMarcaConsulta = new javax.swing.JToggleButton();
         buttonAlteraConsulta = new javax.swing.JToggleButton();
         buttonDesmarcaConsulta = new javax.swing.JToggleButton();
-        buttonVoltar = new javax.swing.JButton();
+        botaoVoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,11 +78,11 @@ public class TelaAgendaConsulta extends javax.swing.JFrame {
             }
         });
 
-        buttonVoltar.setBackground(new java.awt.Color(153, 153, 153));
-        buttonVoltar.setText("Voltar");
-        buttonVoltar.addActionListener(new java.awt.event.ActionListener() {
+        botaoVoltar.setBackground(new java.awt.Color(153, 153, 153));
+        botaoVoltar.setText("Voltar");
+        botaoVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonVoltarActionPerformed(evt);
+                botaoVoltarActionPerformed(evt);
             }
         });
 
@@ -92,7 +93,7 @@ public class TelaAgendaConsulta extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(47, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(buttonVoltar)
+                    .addComponent(botaoVoltar)
                     .addComponent(escolheMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(scrollTableConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -107,7 +108,7 @@ public class TelaAgendaConsulta extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(11, Short.MAX_VALUE)
-                .addComponent(buttonVoltar)
+                .addComponent(botaoVoltar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(escolheMedico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -133,18 +134,21 @@ public class TelaAgendaConsulta extends javax.swing.JFrame {
 
         }
         new TelaMarcaConsulta(dados, atendente, paciente).setVisible(true);
-            this.dispose();
-        }                                                      
+        this.dispose();
+        }                                                     
 
     private void buttonAlteraConsultaActionPerformed(java.awt.event.ActionEvent evt) {                                                     
-        // TODO add your handling code here:
+        
     }                                                    
 
     private void buttonDesmarcaConsultaActionPerformed(java.awt.event.ActionEvent evt) {                                                       
-        // TODO add your handling code here:
+       if(tableConsulta.getSelectedRow() != -1 ){
+            tabela.removeRow(tableConsulta.getSelectedRow());
+    }
+        
     }                                                      
 
-    private void buttonVoltarActionPerformed(java.awt.event.ActionEvent evt) {                                             
+    private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {                                             
         new TelaPrincipalAtendente(dados, atendente).setVisible(true);
         this.dispose();
     }                                            
@@ -154,7 +158,7 @@ public class TelaAgendaConsulta extends javax.swing.JFrame {
     private javax.swing.JToggleButton buttonAlteraConsulta;
     private javax.swing.JToggleButton buttonDesmarcaConsulta;
     private javax.swing.JToggleButton buttonMarcaConsulta;
-    private javax.swing.JButton buttonVoltar;
+    private javax.swing.JButton botaoVoltar;
     private java.awt.Choice escolheMedico;
     private javax.swing.JScrollPane scrollTableConsulta;
     private javax.swing.JTable tableConsulta;

@@ -2,32 +2,34 @@ package view;
 
 import control.ControleDados;
 import model.Atendente;
-import model.TabelaPaciente;
-import model.TabelaTodasConsultas;
+import model.Paciente;
+import model.TabelaTodosExames;
 
 public class TelaAgendaExame extends javax.swing.JFrame {
 
-    public TelaAgendaExame(ControleDados dados, Atendente atendente) {
+    public TelaAgendaExame(ControleDados dados,  Atendente atendente) {
         this.dados = dados;
         this.atendente = atendente;
-        // this.tabela = new TabelaTodasConsultas(dados);
+        this.tabela = new TabelaTodosExames(dados);
+        
         initComponents();
-
+        tableConsulta.setModel(this.tabela);
 
     }
-                          
+                
     private void initComponents() {
 
-        scrollTableExame = new javax.swing.JScrollPane();
-        tableExame = new javax.swing.JTable();
-        buttonMarcaExame = new javax.swing.JToggleButton();
-        buttonAlteraExame = new javax.swing.JToggleButton();
-        buttonDesmarcarConsulta = new javax.swing.JToggleButton();
+        scrollTableConsulta = new javax.swing.JScrollPane();
+        tableConsulta = new javax.swing.JTable();
+        escolheMedico = new java.awt.Choice();
+        buttonMarcaConsulta = new javax.swing.JToggleButton();
+        buttonAlteraConsulta = new javax.swing.JToggleButton();
+        buttonDesmarcaConsulta = new javax.swing.JToggleButton();
         buttonVoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        tableExame.setModel(new javax.swing.table.DefaultTableModel(
+        tableConsulta.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -38,29 +40,35 @@ public class TelaAgendaExame extends javax.swing.JFrame {
                 "Horário/Consulta", "Paciente"
             }
         ));
-        scrollTableExame.setViewportView(tableExame);
+        scrollTableConsulta.setViewportView(tableConsulta);
 
-        buttonMarcaExame.setBackground(new java.awt.Color(153, 153, 153));
-        buttonMarcaExame.setText("Marcar Consulta");
-        buttonMarcaExame.addActionListener(new java.awt.event.ActionListener() {
+        escolheMedico.add("Selecione um Paciente!");
+        for(int i = 0; i<dados.getBancoPacientes().size(); i ++){
+            escolheMedico.add(dados.getBancoPacientes().get(i).getNome());
+            
+        }
+
+        buttonMarcaConsulta.setBackground(new java.awt.Color(153, 153, 153));
+        buttonMarcaConsulta.setText("Marcar Exame");
+        buttonMarcaConsulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonMarcaExameActionPerformed(evt);
+                buttonMarcaConsultaActionPerformed(evt);
             }
         });
 
-        buttonAlteraExame.setBackground(new java.awt.Color(153, 153, 153));
-        buttonAlteraExame.setText("Alterar Consulta");
-        buttonAlteraExame.addActionListener(new java.awt.event.ActionListener() {
+        buttonAlteraConsulta.setBackground(new java.awt.Color(153, 153, 153));
+        buttonAlteraConsulta.setText("Alterar Exame");
+        buttonAlteraConsulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonAlteraExameActionPerformed(evt);
+                buttonAlteraConsultaActionPerformed(evt);
             }
         });
 
-        buttonDesmarcarConsulta.setBackground(new java.awt.Color(153, 153, 153));
-        buttonDesmarcarConsulta.setText("Desmarcar Consulta");
-        buttonDesmarcarConsulta.addActionListener(new java.awt.event.ActionListener() {
+        buttonDesmarcaConsulta.setBackground(new java.awt.Color(153, 153, 153));
+        buttonDesmarcaConsulta.setText("Desmarcar Exame");
+        buttonDesmarcaConsulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonDesmarcarConsultaActionPerformed(evt);
+                buttonDesmarcaConsultaActionPerformed(evt);
             }
         });
 
@@ -76,50 +84,63 @@ public class TelaAgendaExame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(47, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(buttonVoltar)
+                    .addComponent(escolheMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(scrollTableExame, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(scrollTableConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(buttonMarcaExame, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(buttonAlteraExame, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(buttonDesmarcarConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(36, Short.MAX_VALUE))
+                            .addComponent(buttonMarcaConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonAlteraConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonDesmarcaConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(34, 34, 34))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(23, Short.MAX_VALUE)
+                .addContainerGap(11, Short.MAX_VALUE)
                 .addComponent(buttonVoltar)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(escolheMedico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(scrollTableExame, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(scrollTableConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(buttonMarcaExame)
+                        .addComponent(buttonMarcaConsulta)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(buttonAlteraExame)
+                        .addComponent(buttonAlteraConsulta)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(buttonDesmarcarConsulta)))
-                .addGap(31, 31, 31))
+                        .addComponent(buttonDesmarcaConsulta)))
+                .addGap(26, 26, 26))
         );
 
         pack();
     }// </editor-fold>                        
 
-    private void buttonDesmarcarConsultaActionPerformed(java.awt.event.ActionEvent evt) {                                                        
-        // TODO add your handling code here:
-    }                                                       
+    private void buttonMarcaConsultaActionPerformed(java.awt.event.ActionEvent evt) {   
+        for(int i = 0; i<dados.getBancoPacientes().size(); i ++){
+            if(escolheMedico.getSelectedItem().equals(dados.getBancoPacientes().get(i).getNome())){
+                this.paciente = dados.getBancoPacientes().get(i);
+            }
 
-    private void buttonMarcaExameActionPerformed(java.awt.event.ActionEvent evt) {                                                 
-        // TODO add your handling code here:
-    }                                                
+        }
+        new TelaMarcaExame(dados, atendente, paciente).setVisible(true);
+        this.dispose();
+        }                                                      
 
-    private void buttonAlteraExameActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+    private void buttonAlteraConsultaActionPerformed(java.awt.event.ActionEvent evt) {                                                     
         // TODO add your handling code here:
-    }                                                 
+    }                                                    
+
+    private void buttonDesmarcaConsultaActionPerformed(java.awt.event.ActionEvent evt) {                                                           
+        if(tableConsulta.getSelectedRow() != -1 ){
+            tabela.removeRow(tableConsulta.getSelectedRow());
+            
+        }
+    }                                                      
 
     private void buttonVoltarActionPerformed(java.awt.event.ActionEvent evt) {                                             
         new TelaPrincipalAtendente(dados, atendente).setVisible(true);
@@ -128,15 +149,17 @@ public class TelaAgendaExame extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify                     
-    private javax.swing.JToggleButton buttonAlteraExame;
-    private javax.swing.JToggleButton buttonDesmarcarConsulta;
-    private javax.swing.JToggleButton buttonMarcaExame;
+    private javax.swing.JToggleButton buttonAlteraConsulta;
+    private javax.swing.JToggleButton buttonDesmarcaConsulta;
+    private javax.swing.JToggleButton buttonMarcaConsulta;
     private javax.swing.JButton buttonVoltar;
-    private javax.swing.JScrollPane scrollTableExame;
-    private javax.swing.JTable tableExame;
-    // End of variables declaration            
-    
-    private TabelaPaciente tabela;
+    private java.awt.Choice escolheMedico;
+    private javax.swing.JScrollPane scrollTableConsulta;
+    private javax.swing.JTable tableConsulta;
+    // End of variables declaration                   
+
+    private TabelaTodosExames tabela;
     private ControleDados dados;
     private Atendente atendente;
+    private Paciente paciente;
 }

@@ -59,6 +59,7 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
 
+
         radioAdm.setFont(new java.awt.Font("Gujarati MT", 0, 14)); // NOI18N
         radioAdm.setText("Administrador");
 

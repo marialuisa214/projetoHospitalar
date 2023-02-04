@@ -189,7 +189,7 @@ public class TelaPrincipalEnfermeiro extends javax.swing.JFrame {
     private void buttonFazerTriagemActionPerformed(java.awt.event.ActionEvent evt) {  
         if(jTable1.getSelectedRow() != -1 ){
 
-            Entrada e= tabelaTriagem.selecionaItem(jTable1.getSelectedRow());
+            Entrada e = tabelaTriagem.selecionaItem(jTable1.getSelectedRow());
             new TelaTriagemEnfermeiro(dados, e, enfermeiro).setVisible(true);                                               
             this.dispose();
         }else{
