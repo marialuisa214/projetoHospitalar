@@ -263,15 +263,15 @@ public class TelaCadastraPaciente extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void inputNomeActionPerformed(java.awt.event.ActionEvent evt) {                                          
-        // TODO add your handling code here:
+       
     }                                         
 
     private void inputCpfActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
+       
     }                                        
 
     private void inputNascimentoActionPerformed(java.awt.event.ActionEvent evt) {                                                
-        // TODO add your handling code here:
+       
     }                                               
 
     private void selecaoSexoFemininoActionPerformed(java.awt.event.ActionEvent evt) {                                                     
@@ -296,19 +296,19 @@ public class TelaCadastraPaciente extends javax.swing.JFrame {
     }                                                      
 
     private void inputEnderecoActionPerformed(java.awt.event.ActionEvent evt) {                                              
-        // TODO add your handling code here:
+       
     }                                             
 
     private void inputTelefoneActionPerformed(java.awt.event.ActionEvent evt) {                                              
-        // TODO add your handling code here:
+       
     }                                             
 
     private void inputRGActionPerformed(java.awt.event.ActionEvent evt) {                                        
-        // TODO add your handling code here:
+       
     }                                       
 
     private void inputEmailActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        // TODO add your handling code here:
+       
     }                                          
 
     private void buttonVoltarActionPerformed(java.awt.event.ActionEvent evt) {                                             

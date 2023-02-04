@@ -2,9 +2,6 @@ package view;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import javax.swing.JOptionPane;
-
 import control.ControleDados;
 import model.Administrador;
 

@@ -2,9 +2,6 @@ package view;
 
 import java.util.ArrayList;
 import java.util.Random;
-
-import javax.swing.JOptionPane;
-
 import control.ControleDados;
 import model.Atendente;
 import model.Marcada;

@@ -18,12 +18,4 @@ public class Atendente extends Funcionario{
 			return idAtendente;
 	}
 
-	public void agendaConsulta(Agenda agenda, Paciente paciente,  Consulta consulta){
-		agenda.adicionaConsulta(consulta);
-		// paciente.getProntuario().adicionaConsulta(consulta);
-
-
-	}
-
-	
 }

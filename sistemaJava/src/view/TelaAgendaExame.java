@@ -110,15 +110,15 @@ public class TelaAgendaExame extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void buttonDesmarcarConsultaActionPerformed(java.awt.event.ActionEvent evt) {                                                        
-        // TODO add your handling code here:
+       
     }                                                       
 
     private void buttonMarcaExameActionPerformed(java.awt.event.ActionEvent evt) {                                                 
-        // TODO add your handling code here:
+       
     }                                                
 
     private void buttonAlteraExameActionPerformed(java.awt.event.ActionEvent evt) {                                                  
-        // TODO add your handling code here:
+       
     }                                                 
 
     private void buttonVoltarActionPerformed(java.awt.event.ActionEvent evt) {                                             
@@ -135,7 +135,7 @@ public class TelaAgendaExame extends javax.swing.JFrame {
     private javax.swing.JScrollPane scrollTableExame;
     private javax.swing.JTable tableExame;
     // End of variables declaration            
-    
+
     private TabelaPaciente tabela;
     private ControleDados dados;
     private Atendente atendente;

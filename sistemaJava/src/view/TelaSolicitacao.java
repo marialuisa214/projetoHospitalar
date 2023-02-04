@@ -69,7 +69,7 @@ public class TelaSolicitacao extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
+        
     }                                        
 
     

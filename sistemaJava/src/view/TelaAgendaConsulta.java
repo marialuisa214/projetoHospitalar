@@ -1,7 +1,5 @@
 package view;
 
-import javax.swing.JOptionPane;
-
 import control.ControleDados;
 import model.Atendente;
 import model.Paciente;
@@ -137,11 +135,11 @@ public class TelaAgendaConsulta extends javax.swing.JFrame {
         }                                                      
 
     private void buttonAlteraConsultaActionPerformed(java.awt.event.ActionEvent evt) {                                                     
-        // TODO add your handling code here:
+
     }                                                    
 
     private void buttonDesmarcaConsultaActionPerformed(java.awt.event.ActionEvent evt) {                                                       
-        // TODO add your handling code here:
+
     }                                                      
 
     private void buttonVoltarActionPerformed(java.awt.event.ActionEvent evt) {                                             

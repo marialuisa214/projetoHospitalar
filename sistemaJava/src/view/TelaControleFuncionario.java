@@ -203,23 +203,23 @@ public class TelaControleFuncionario extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void fieldBuscaMedicoActionPerformed(java.awt.event.ActionEvent evt) {                                                 
-        // TODO add your handling code here:
+        
     }                                                
 
     private void fieldBuscaEnfermeiroActionPerformed(java.awt.event.ActionEvent evt) {                                                     
-        // TODO add your handling code here:
+        
     }                                                    
 
     private void fieldBuscaAtendenteActionPerformed(java.awt.event.ActionEvent evt) {                                                    
-        // TODO add your handling code here:
+        
     }                                                   
 
     private void fieldBuscaAdministradorActionPerformed(java.awt.event.ActionEvent evt) {                                                        
-        // TODO add your handling code here:
+        
     }                                                       
 
     private void buttonPesquisaMedicoActionPerformed(java.awt.event.ActionEvent evt) {                                                     
-        // TODO add your handling code here:
+        
     }                                                    
  
 

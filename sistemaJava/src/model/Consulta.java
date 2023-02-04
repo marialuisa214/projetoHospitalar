@@ -1,7 +1,5 @@
 package model;
 
-import java.util.Date;
-
 public abstract class Consulta {
 
     //ATRIBUTOS
