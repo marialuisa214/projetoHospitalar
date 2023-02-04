@@ -1,16 +1,20 @@
 package view;
 
+import javax.swing.JOptionPane;
+
 import control.ControleDados;
 import model.Atendente;
+import model.Paciente;
 import model.TabelaPaciente;
+import model.TabelaTodasConsultas;
 
 public class TelaAgendaConsulta extends javax.swing.JFrame {
 
     public TelaAgendaConsulta(ControleDados dados,  Atendente atendente) {
         this.dados = dados;
         this.atendente = atendente;
-        this.tabela = new TabelaPaciente(dados);
-
+        this.tabela = new TabelaTodasConsultas(dados);
+        
         initComponents();
         tableConsulta.setModel(this.tabela);
         
@@ -42,6 +46,12 @@ public class TelaAgendaConsulta extends javax.swing.JFrame {
             }
         ));
         scrollTableConsulta.setViewportView(tableConsulta);
+
+        escolheMedico.add("Selecione um Paciente!");
+        for(int i = 0; i<dados.getBancoPacientes().size(); i ++){
+            escolheMedico.add(dados.getBancoPacientes().get(i).getNome());
+            
+        }
 
         buttonMarcaConsulta.setBackground(new java.awt.Color(153, 153, 153));
         buttonMarcaConsulta.setText("Marcar Consulta");
@@ -115,9 +125,16 @@ public class TelaAgendaConsulta extends javax.swing.JFrame {
         pack();
     }// </editor-fold>                        
 
-    private void buttonMarcaConsultaActionPerformed(java.awt.event.ActionEvent evt) {                                                    
-        new TelaMarcaConsulta().setVisible(true);
-    }                                                   
+    private void buttonMarcaConsultaActionPerformed(java.awt.event.ActionEvent evt) {   
+        for(int i = 0; i<dados.getBancoPacientes().size(); i ++){
+            if(escolheMedico.getSelectedItem().equals(dados.getBancoPacientes().get(i).getNome())){
+                this.paciente = dados.getBancoPacientes().get(i);
+            }
+
+        }
+        new TelaMarcaConsulta(dados, atendente, paciente).setVisible(true);
+            this.dispose();
+        }                                                      
 
     private void buttonAlteraConsultaActionPerformed(java.awt.event.ActionEvent evt) {                                                     
         // TODO add your handling code here:
@@ -128,6 +145,7 @@ public class TelaAgendaConsulta extends javax.swing.JFrame {
     }                                                      
 
     private void buttonVoltarActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        new TelaPrincipalAtendente(dados, atendente).setVisible(true);
         this.dispose();
     }                                            
 
@@ -142,7 +160,8 @@ public class TelaAgendaConsulta extends javax.swing.JFrame {
     private javax.swing.JTable tableConsulta;
     // End of variables declaration                   
 
-    private TabelaPaciente tabela;
+    private TabelaTodasConsultas tabela;
     private ControleDados dados;
     private Atendente atendente;
+    private Paciente paciente;
 }

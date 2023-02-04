@@ -61,14 +61,19 @@ public ArrayList<Medico> getBancoMedicosPlantao() {
     }
 
     //LISTA SOLICITACOES
-    ArrayList<Solicitacao> bancoSolicitacaos = new ArrayList<>();
+    // ArrayList<Marcada> listaSolicitacaoConsulta = new ArrayList<>();
+    // ArrayList<Exame> listaSolicitacaoExame = new ArrayList<>();
 
-    public ArrayList<Solicitacao> getBancoSolicitacaos() {
-        return bancoSolicitacaos;
-    }
-    public void adicionaSolicitacao(Solicitacao solicitacao) {
-        this.bancoSolicitacaos.add(solicitacao);
-    }
+    // public ArrayList<Marcada> getListaSolicitacaoConsulta() {
+    //     return listaSolicitacaoConsulta;
+    // }
+
+    // public ArrayList<Exame> getListaSolicitacaoExame() {
+    //     return listaSolicitacaoExame;
+    // }
+
+
+    
 //ENFERMEIROS
     ArrayList<Enfermeiro> bancoEnfermeiros = new ArrayList<>();
 

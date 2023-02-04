@@ -1,9 +1,19 @@
 package view;
 
+import control.ControleDados;
+import model.Atendente;
+import model.TabelaPaciente;
+import model.TabelaTodasConsultas;
+
 public class TelaAgendaExame extends javax.swing.JFrame {
 
-    public TelaAgendaExame() {
+    public TelaAgendaExame(ControleDados dados, Atendente atendente) {
+        this.dados = dados;
+        this.atendente = atendente;
+        // this.tabela = new TabelaTodasConsultas(dados);
         initComponents();
+
+
     }
                           
     private void initComponents() {
@@ -112,6 +122,7 @@ public class TelaAgendaExame extends javax.swing.JFrame {
     }                                                 
 
     private void buttonVoltarActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        new TelaPrincipalAtendente(dados, atendente).setVisible(true);
         this.dispose();
     }                                            
 
@@ -123,5 +134,9 @@ public class TelaAgendaExame extends javax.swing.JFrame {
     private javax.swing.JButton buttonVoltar;
     private javax.swing.JScrollPane scrollTableExame;
     private javax.swing.JTable tableExame;
-    // End of variables declaration                   
+    // End of variables declaration            
+    
+    private TabelaPaciente tabela;
+    private ControleDados dados;
+    private Atendente atendente;
 }

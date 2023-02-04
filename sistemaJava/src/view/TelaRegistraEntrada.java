@@ -1,9 +1,23 @@
 package view;
 
+import javax.swing.JOptionPane;
+
+import control.ControleDados;
+import model.Atendente;
+import model.Entrada;
+import model.Paciente;
+import model.TabelaPaciente;
+
 public class TelaRegistraEntrada extends javax.swing.JFrame {
 
-    public TelaRegistraEntrada() {
+    public TelaRegistraEntrada(ControleDados dados, Atendente atendente) {
+        this.dados = dados;
+        this.atendente = atendente;
+        this.tabela  = new TabelaPaciente(dados);
         initComponents();
+
+        tablePacientes.setModel(tabela);
+
     }
                        
     private void initComponents() {
@@ -15,15 +29,22 @@ public class TelaRegistraEntrada extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tablePacientes = new javax.swing.JTable();
         labelSituacao = new javax.swing.JLabel();
-        dropboxSituacao = new javax.swing.JComboBox<>();
+        dropboxSituacao = new javax.swing.JComboBox<String>();
         buttonNovaEntrada = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        
 
         labelRegistroDeEntrada.setText("Registro de Entrada");
 
         buttonVoltar.setBackground(new java.awt.Color(153, 153, 153));
         buttonVoltar.setText("Voltar");
+        buttonVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonVoltarActionPerformed(evt);
+            }
+        });
 
         buttonBusca.setBackground(new java.awt.Color(153, 153, 153));
         buttonBusca.setText("Buscar");
@@ -43,10 +64,16 @@ public class TelaRegistraEntrada extends javax.swing.JFrame {
 
         labelSituacao.setText("Situação do Paciente:");
 
-        dropboxSituacao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        dropboxSituacao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione o grau de dor", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
 
         buttonNovaEntrada.setBackground(new java.awt.Color(153, 153, 153));
         buttonNovaEntrada.setText("Nova Entrada");
+        buttonNovaEntrada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonNovaEntradaActionPerformed(evt);
+            }
+        });
+        
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -99,7 +126,27 @@ public class TelaRegistraEntrada extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>                        
+    }// </editor-fold>         
+    
+    
+    private void buttonNovaEntradaActionPerformed(java.awt.event.ActionEvent evt) {   
+        if(tablePacientes.getSelectedRow() != -1){
+            Paciente paciente = tabela.selecionaItem(tablePacientes.getSelectedRow());
+            Entrada entrada = new Entrada(dropboxSituacao.getSelectedItem().toString(), paciente);
+            dados.getaBancoEntradas().add(entrada);
+
+            new TelaPrincipalAtendente(dados, atendente).setVisible(true);
+            this.dispose();
+        }else{
+            JOptionPane.showMessageDialog(null, "Confira se selecionou um Paciente e preencheu corretamente o grau de dor!");
+        }                                              
+    }
+
+    private void buttonVoltarActionPerformed(java.awt.event.ActionEvent evt) {    
+        new TelaPrincipalAtendente(dados, atendente).setVisible(true);  
+        this.dispose();                                            
+        
+    }
 
 
     // Variables declaration - do not modify                     
@@ -112,5 +159,9 @@ public class TelaRegistraEntrada extends javax.swing.JFrame {
     private javax.swing.JLabel labelRegistroDeEntrada;
     private javax.swing.JLabel labelSituacao;
     private javax.swing.JTable tablePacientes;
-    // End of variables declaration                   
+    // End of variables declaration    
+    
+    private ControleDados dados;
+    private Atendente atendente;
+    private TabelaPaciente tabela;
 }

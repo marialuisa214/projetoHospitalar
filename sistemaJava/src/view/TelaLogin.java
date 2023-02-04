@@ -210,4 +210,8 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.ButtonGroup groupButton;
     // End of variables declaration
     private ControleDados controle;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> f772f56db784570b7e852aedd07299ea7426f5c8

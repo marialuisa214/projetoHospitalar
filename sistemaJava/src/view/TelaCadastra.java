@@ -397,8 +397,8 @@ public class TelaCadastra extends javax.swing.JFrame {
     }                                         
                                           
 
-    private void botaoFinalizaActionPerformed(java.awt.event.ActionEvent evt) {                                              
-        // TODO add your handling code here:
+    private void botaoFinalizaActionPerformed(java.awt.event.ActionEvent evt) {     
+        
     }  
 
 

@@ -5,17 +5,36 @@ public class TelaSolicitacoesAtendente extends javax.swing.JFrame {
     public TelaSolicitacoesAtendente() {
         initComponents();
     }
-                        
+                         
     private void initComponents() {
 
+        labelDataHora = new javax.swing.JLabel();
+        labelIdAtendente = new javax.swing.JLabel();
+        labelAtendente = new javax.swing.JLabel();
+        buttonVoltar = new javax.swing.JButton();
+        labelSolicitacoesC = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tableSolicitacoesConsulta = new javax.swing.JTable();
+        buttonAgendarC = new javax.swing.JButton();
+        labelSolicitacoesE = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        tableSolicitacoesExame = new javax.swing.JTable();
+        buttonAgendarE = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        labelDataHora.setText("<data/hora atual>");
+
+        labelIdAtendente.setText("<id atendente>");
+
+        labelAtendente.setText("<nome atendente>");
+
+        buttonVoltar.setBackground(new java.awt.Color(153, 153, 153));
+        buttonVoltar.setText("Voltar");
+
+        labelSolicitacoesC.setText("Solicitações de Consulta");
+
+        tableSolicitacoesConsulta.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -26,16 +45,31 @@ public class TelaSolicitacoesAtendente extends javax.swing.JFrame {
                 "Funcionário", "CRM/COREM", "Solicitação"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane2.setViewportView(tableSolicitacoesConsulta);
 
-        jButton1.setBackground(new java.awt.Color(153, 153, 153));
-        jButton1.setText("Aceita");
+        buttonAgendarC.setBackground(new java.awt.Color(153, 153, 153));
+        buttonAgendarC.setText("Agendar");
 
-        jButton2.setBackground(new java.awt.Color(153, 153, 153));
-        jButton2.setText("Rejeita");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        labelSolicitacoesE.setText("Solicitações de Exame");
+
+        tableSolicitacoesExame.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Funcionário", "CRM/COREM", "Solicitação"
+            }
+        ));
+        jScrollPane1.setViewportView(tableSolicitacoesExame);
+
+        buttonAgendarE.setBackground(new java.awt.Color(153, 153, 153));
+        buttonAgendarE.setText("Agendar");
+        buttonAgendarE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                buttonAgendarEActionPerformed(evt);
             }
         });
 
@@ -44,40 +78,81 @@ public class TelaSolicitacoesAtendente extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(59, 59, 59)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(35, Short.MAX_VALUE))
+                    .addComponent(labelSolicitacoesE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(18, 18, 18)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(buttonAgendarC, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(buttonAgendarE, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(buttonVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(labelSolicitacoesC))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(labelAtendente)
+                                .addComponent(labelDataHora)
+                                .addComponent(labelIdAtendente)))))
+                .addGap(51, 51, 51))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(64, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(labelAtendente)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(54, 54, 54))
+                        .addComponent(labelIdAtendente))
+                    .addComponent(buttonVoltar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(labelDataHora)
+                        .addGap(9, 9, 9))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(labelSolicitacoesC, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonAgendarC))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(labelSolicitacoesE, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonAgendarE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>                        
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
-    }                                        
+    private void buttonAgendarEActionPerformed(java.awt.event.ActionEvent evt) {                                               
+        
+    }                                              
 
+    
 
     // Variables declaration - do not modify                     
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton buttonAgendarC;
+    private javax.swing.JButton buttonAgendarE;
+    private javax.swing.JButton buttonVoltar;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel labelAtendente;
+    private javax.swing.JLabel labelDataHora;
+    private javax.swing.JLabel labelIdAtendente;
+    private javax.swing.JLabel labelSolicitacoesC;
+    private javax.swing.JLabel labelSolicitacoesE;
+    private javax.swing.JTable tableSolicitacoesConsulta;
+    private javax.swing.JTable tableSolicitacoesExame;
     // End of variables declaration                   
-
 }

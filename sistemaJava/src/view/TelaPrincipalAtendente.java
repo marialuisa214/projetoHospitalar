@@ -47,6 +47,11 @@ public class TelaPrincipalAtendente extends javax.swing.JFrame {
 
         buttonVoltar.setBackground(new java.awt.Color(153, 153, 153));
         buttonVoltar.setText("voltar");
+        buttonVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonVoltarPacienteActionPerformed(evt);
+            }
+        });
 
         buttonBuscaPaciente.setBackground(new java.awt.Color(153, 153, 153));
         buttonBuscaPaciente.setText("Buscar Paciente");
@@ -172,13 +177,18 @@ public class TelaPrincipalAtendente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>                        
 
+    private void buttonVoltarPacienteActionPerformed(java.awt.event.ActionEvent evt) {    //GABI_MINHA AMIGA_faz ai pra mim!                                                
+        new TelaLogin(dados).setVisible(true);
+        this.dispose();
+    }
+    
     private void buttonBuscaPacienteActionPerformed(java.awt.event.ActionEvent evt) {    //GABI_MINHA AMIGA_faz ai pra mim!                                                
         for(int i = 0; i <= dados.getBancoPacientes().size(); i++){
             if(fieldBuscaPaciente.getText().equals(dados.getBancoPacientes().get(i).getCpf())){
                 labelCadastrado.setVisible(true);
             }
         }
-    }                                                   
+    } 
                                                   
 
     private void buttonCadastraPacienteActionPerformed(java.awt.event.ActionEvent evt) {  
@@ -189,22 +199,25 @@ public class TelaPrincipalAtendente extends javax.swing.JFrame {
     }                                                      
 
     private void buttonSolicitaçõesActionPerformed(java.awt.event.ActionEvent evt) {   
-        // new TelaSolicitacoesAtendente().setVisible(true);
+        new TelaSolicitacoesAtendente().setVisible(true);
+        this.dispose();
 
         
     }                                                  
 
     private void buttonAgendaConsultaActionPerformed(java.awt.event.ActionEvent evt) { 
-        new TelaAgendaConsulta(dados, atendente).setVisible(true);                                        
+        new TelaAgendaConsulta(dados, atendente).setVisible(true); 
+        this.dispose();                                       
         
     }                                                    
 
     private void buttonAgendaExameActionPerformed(java.awt.event.ActionEvent evt) {                                                  
-        new TelaAgendaExame().setVisible(true);  
+        // new TelaAgendaExame().setVisible(true);  
     }                                                 
 
     private void buttonNovaEntradaActionPerformed(java.awt.event.ActionEvent evt) {    
-        new TelaRegistraEntrada().setVisible(true);                                              
+        new TelaRegistraEntrada(dados, atendente).setVisible(true);  
+        this.dispose();                                            
         
     }       
 

@@ -3,6 +3,8 @@ package view;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.swing.JOptionPane;
+
 import control.ControleDados;
 import model.Administrador;
 
@@ -146,7 +148,13 @@ public class TelaPrincipalAdministrador extends javax.swing.JFrame {
         }                                                     
     
         private void buttonBuscaActionPerformed(java.awt.event.ActionEvent evt) {                                            
-            // TODO add your handling code here:
+            for(int i = 0 ; i<= dados.getBancoPacientes().size(); i++){
+                if(dados.getBancoPacientes().get(i).getCpf().equals(fieldBusca.getText())){
+                    labelCadastrado.setVisible(true);
+
+                }
+
+            }
         } 
         
         private void buttonVoltarActionPerformed(java.awt.event.ActionEvent evt) {                                            
@@ -155,7 +163,8 @@ public class TelaPrincipalAdministrador extends javax.swing.JFrame {
         }
           
         private void buttonGerenciarActionPerformed(java.awt.event.ActionEvent evt) {                                                
-            // TODO add your handling code here:
+            new TelaControleFuncionario().setVisible(true);
+            this.dispose();
         }                                               
     
         
