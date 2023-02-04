@@ -150,8 +150,9 @@ public class testeModel {
     Enfermeiro enfermeiro1 = new Enfermeiro("Gabriel Morais Mendonça", "3.643.785", "021.389.506-31", 'M', "11/02/1973", "(61)99368-7890", "gabrielMorais@gmail.com", "Asa Sul", "Quadra CLS 103 Bloco A", "gggg", "1102", "1102");
     Enfermeiro enfermeiro2 = new Enfermeiro("Maria Ferreira Gomes", "3.567.106", "057.436.508-56", 'F', "15/08/1994", "(61)98745-3567", "mariaFereira@gmail.com", "Asa Sul", "Quadra CLS 103 Bloco A", "mmmmm", "1508", "1508");
 
-    //Entrada entrada = new Entrada(Calendar dataEntrada, String situacaoPaciente, Paciente paciente);
     //Triagem triagem = new Triagem(entrada, enfermeiro);
+    //Entrada entrada = new Entrada(Calendar dataEntrada, String situacaoPaciente, Paciente paciente);
+    
     Triagem triagem = new Triagem("04/02/2023", enfermeiro);
     Entrada entrada = new Entrada("9", paciente5);
 
@@ -181,18 +182,12 @@ public class testeModel {
     Emergencia emergencia1 = new Emergencia("0002", paciente7, "2000", triagem1);
 
     /*System.out.println(paciente.getIdade());
-
     LocalDateTime data = LocalDateTime.now();
     System.out.println(data);
-
     TimeZone timeZone = TimeZone.getTimeZone("America/Fortaleza");
-
     Locale locale = Locale.US;
-
     Calendar calendar = Calendar.getInstance(timeZone,locale);
-
     System.out.println(calendar);
-
     calendar.set(2023,12,25);*/
     
    
